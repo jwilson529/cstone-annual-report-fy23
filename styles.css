@@ -1,0 +1,1011 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
+
+
+
+@font-face {
+    font-family: "Kobern-Regular";
+    src: url("fonts/Kobern-Regular.eot");
+    src: url("fonts/Kobern-Regular.woff2") format("woff2"), url("fonts/Kobern-Regular.woff") format("woff"), url("fonts/Kobern-Regular.ttf") format("truetype"), url("fonts/Kobern-Regular.svg#Kobern-Regular") format("svg"), url("fonts/Kobern-Regular.eot?#iefix") format("embedded-opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Kobern-Italic";
+    src: url("fonts/Kobern-Italic.eot");
+    src: url("fonts/Kobern-Italic.woff2") format("woff2"), url("fonts/Kobern-Italic.woff") format("woff"), url("fonts/Kobern-Italic.ttf") format("truetype"), url("fonts/Kobern-Italic.svg#Kobern-Italic") format("svg"), url("fonts/Kobern-Italic.eot?#iefix") format("embedded-opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Kobern-Bold";
+    src: url("fonts/Kobern-Bold.eot");
+    src: url("fonts/Kobern-Bold.woff2") format("woff2"), url("fonts/Kobern-Bold.woff") format("woff"), url("fonts/Kobern-Bold.ttf") format("truetype"), url("fonts/Kobern-Bold.svg#Kobern-Bold") format("svg"), url("fonts/Kobern-Bold.eot?#iefix") format("embedded-opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/*body {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh; // Full viewport height
+}*/
+
+.section {
+    scroll-snap-align: start;
+    height: 100vh; // Assuming each section takes full viewport height
+}
+
+
+
+/* body, h1, h2, h3, h4, h5, h6, p, a {
+     font-family: 'Kobern-Regular';
+ }*/
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+    font-family: 'Lato', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    /* Bold weight for headers */
+}
+
+a {
+    font-weight: 500;
+    /* Medium weight for links */
+}
+
+p {
+    font-weight: 400;
+    /* Regular weight for paragraphs */
+}
+
+
+/* Text Colors */
+.text-ar-yellow {
+    color: #F4B753;
+}
+
+.text-ar-orange {
+    color: #e4923f;
+}
+
+.text-ar-blue {
+    color: #367689;
+}
+
+.text-ar-red-1 {
+    color: #e7bba9;
+}
+
+.text-ar-red-2 {
+    color: #dc9a7d;
+}
+
+.text-ar-dark-gray {
+    color: #414142;
+}
+
+.text-ar-light-gray {
+    color: #ecebee;
+}
+
+/* Background Colors */
+/* Background Colors */
+
+.bg-ar-yellow {
+    background-color: #f4b753;
+}
+
+.bg-ar-yellow-light {
+    background-color: #f9d4aa;
+}
+
+.bg-ar-orange {
+    background-color: #e4923f;
+}
+
+.bg-ar-orange-light {
+    background-color: #eac68d;
+}
+
+.bg-ar-blue {
+    background-color: #367689;
+}
+
+.bg-ar-blue-light {
+    background-color: #8db5c4;
+}
+
+.bg-ar-red-1 {
+    background-color: #e7bba9;
+}
+
+.bg-ar-red-1-light {
+    background-color: #f0d7d2;
+}
+
+.bg-ar-red-2 {
+    background-color: #dc9a7d;
+}
+
+.bg-ar-red-2-light {
+    background-color: #eac7ab;
+}
+
+.bg-ar-dark-gray {
+    background-color: #414142;
+}
+
+.bg-ar-light-gray {
+    background-color: #ecebee;
+}
+
+.bg-ar-offwhite {
+    background-color: #f7f7f7;
+}
+
+/* ----- General & Layout Styles ----- */
+body {
+    color: #414142;
+}
+
+.container {
+    padding: 1.3em;
+}
+
+/* Full height section */
+.section {
+    min-height: 100vh;
+}
+
+/* Floating image styles */
+#floating-image {
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+/* Main content styles */
+.main-content.full-width {
+    margin-right: 0% !important;
+}
+
+.main-content.with-sidebar {
+    margin-right: 20% !important;
+}
+
+.ar-bg-light-gray {
+    background-color: #ecebee;
+}
+
+.ar-dark-gray {
+    color: #414142;
+}
+
+/* ----- Sidebar Styles ----- */
+.ar-bg-dark-gray {
+    background-color: #414142;
+}
+
+.navbar-nav {
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-item {
+    text-align: center;
+    width: 100%;
+}
+
+img.centerstone-logo {
+    width: 250px;
+    height: auto;
+}
+
+/* General sidebar styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    background-color: #414142;
+    color: white;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /*    z-index: 9999;*/
+}
+
+/* Speed up the sidebar transition when appearing */
+.sidebar.sidebar-visible {
+    transition-duration: 0.3s;
+}
+
+/* Slow down the sidebar transition when hiding */
+.sidebar.sidebar-hidden {
+    transition-duration: 0.35s;
+}
+
+/* Speed up the main content transition when hiding */
+.main-content.full-width {
+    transition-duration: 0.3s;
+}
+
+/* Slow down the main content transition when appearing */
+.main-content.with-sidebar {
+    transition-duration: 0.35s;
+}
+
+.sidebar.sidebar-visible {
+    right: 0%;
+    width: 20%;
+    /* Adjust these values as needed */
+}
+
+.sidebar.sidebar-hidden {
+    right: -20%;
+    /* Adjust these values as needed */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Style for custom menu button */
+#sidebarCollapse {
+    width: 70px;
+    /* Set square dimensions */
+    height: 70px;
+    position: absolute;
+    top: 20px;
+    left: -30px;
+    /* Position it halfway outside the sidebar */
+    /*    z-index: 10000;*/
+    /* Make sure it appears on top */
+    transform: rotate(45deg);
+    /* Rotate it 45 degrees */
+    background: #414142;
+    /* Set background color */
+}
+
+#sidebarCollapse .fa-times,
+#sidebarCollapse .fa-chevron-left {
+    transform: rotate(-45deg);
+}
+
+.sidebar,
+.main-content {
+    transition: all 0.3s ease-out;
+}
+
+.main-content.with-sidebar {
+    width: 80%;
+    margin-right: 1em;
+}
+
+.main-content.full-width {
+    width: 100%;
+    margin-right: 1em;
+}
+
+.sidebar {
+    right: -19%;
+    width: 20%;
+}
+
+.sidebar.visible {
+    right: 0;
+    width: 20%;
+}
+
+.sidebar.visible-mobile {
+    right: 0;
+    width: 80%;
+}
+
+#sidebarCollapse:focus {
+    outline: none;
+    box-shadow: 0 0 1px #414142;
+}
+
+.sidebar {
+    z-index: 1030;
+    /* This value should be higher than the main content's z-index */
+}
+
+.main-content {
+    /*    z-index: 1;*/
+    /* Lower than sidebar */
+}
+
+#sidebarMenu {
+    background-image:
+        url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiM0MTQxNDIiIG9wYWNpdHk9IjAuMyIvPjwvc3ZnPg=='),
+        url(img/Annual_Report_1_copy.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 60%;
+    padding: 20px;
+}
+
+
+
+#sidebarMenu::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+/* ----- Text & Typography Styles ----- */
+
+/* Fancy blockquotes */
+.fancy-blockquote.text-left,
+.fancy-blockquote.text-right {
+    font-style: italic;
+    position: relative;
+}
+
+.fancy-blockquote.text-left {
+    border-left: 5px solid #f4b753;
+    padding-left: 20px;
+}
+
+.fancy-blockquote.text-right {
+    border-right: 5px solid #f4b753;
+    padding-right: 20px;
+}
+
+/* Text highlighting */
+.highlight-bg {
+    display: inline-block;
+    position: relative; /* Position relative for pseudo-element */
+    padding: 2px 0 0 0;
+}
+
+.highlight-text {
+    display: inline;
+    padding: 0 3px;
+    font-size: 1.2em;
+    position: relative;
+    z-index: 2; /* Ensuring text stays above the sliding background */
+    transition: color 0.5s ease 0s; /* Transition for text color change */
+}
+
+/* Create the pseudo-element for the sliding background */
+.highlight-bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f4b753; /* The color for the sliding background */
+    transform: scaleX(0);
+    transform-origin: left;
+    z-index: 1; /* Below the text */
+    transition: transform 0.5s ease 0s; /* Synchronized transition */
+}
+
+/* Styles to apply once the AOS animation ends */
+.highlight-bg.highlight-active::after,
+.highlight-bg:hover::after {
+    transform: scaleX(1);
+}
+
+.highlight-bg.highlight-active .highlight-text,
+.highlight-bg:hover .highlight-text {
+    color: #ffffff;
+}
+
+
+/* Bigger text for nav links */
+.bigger-text .nav-link {
+    font-size: 1.5em;
+}
+
+/* ----- Interactive Styles ----- */
+
+/* Animated underline links */
+.animated-underline {
+    position: relative;
+    text-decoration: none;
+}
+
+.animated-underline::before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    bottom: 0;
+    left: 50%;
+    /* Start from the middle */
+    right: 50%;
+    /* Start from the middle */
+    background-image: linear-gradient(to right, transparent, #f4b753, transparent);
+    visibility: hidden;
+    transition: all 0.2s ease-in-out, visibility 0.1s ease-in-out;
+}
+
+.animated-underline:hover::before,
+.animated-underline.active::before {
+    visibility: visible;
+    left: 0;
+    /* Grow to full width */
+    right: 0;
+    /* Grow to full width */
+}
+
+
+
+#toggleIcon.moved-icon {
+    position: relative;
+    top: 20px;
+    right: 18px;
+}
+
+/* ----- Landing page section ----- */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: var(--fade-opacity);
+    }
+}
+
+#update-988,
+#by-the-numbers,
+#financial-growth,
+#our-board-members,
+#our-donors,
+#annual-report-23,
+#letter-from-david,
+#history-centerstone {
+    position: relative;
+}
+
+#update-988::before,
+#by-the-numbers::before,
+#financial-growth::before,
+#our-board-members::before,
+#our-donors::before,
+#annual-report-23::before,
+#letter-from-david::before,
+#history-centerstone::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: var(--fade-opacity, 0.5); /* Default opacity if variable is not set */
+    z-index: 0;
+    animation-name: none;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+#update-988.in-viewport::before,
+#by-the-numbers.in-viewport::before,
+#financial-growth.in-viewport::before,
+#our-board-members.in-viewport::before,
+#our-donors.in-viewport::before,
+#annual-report-23.in-viewport::before,
+#letter-from-david.in-viewport::before,
+#history-centerstone.in-viewport::before {
+    animation-name: fadeIn;
+    /* Apply the animation only when in viewport */
+}
+
+#update-988 .container,
+#by-the-numbers .container,
+#financial-growth .container,
+#our-board-members .container,
+#our-donors .container,
+#annual-report-23 .container,
+#letter-from-david .container,
+#history-centerstone .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Default background image */
+#update-988::before,
+#by-the-numbers::before,
+#financial-growth::before,
+#our-board-members::before,
+#our-donors::before,
+#annual-report-23::before {
+    background-image: url('img/Annual_Report_3.webp');
+}
+
+#letter-from-david::before {
+    background-image: url('img/caterpillar-twig.webp');
+    --fade-opacity: 0.09;
+}
+
+#history-centerstone::before {
+    background-image: url('img/caterpillar-twig.webp');
+    --fade-opacity: 0.09;
+}
+
+#update-988::before {
+    background-image: url('img/watercolor_pupa_1.webp');
+    --fade-opacity: 0.09;
+}
+
+#by-the-numbers::before {
+    background-image: url('img/watercolor_pupa_2.webp');
+    --fade-opacity: 0.09;
+}
+
+#financial-growth::before {
+    background-image: url('img/watercolor_butterfly_1.webp');
+    --fade-opacity: 0.09;
+}
+
+#our-board-members::before {
+    opacity: 0;
+    position: fixed !important;
+    background-size: cover !important;
+    background-image: url('img/watercolor_butterfly_2.webp');
+    --fade-opacity: 0.09;
+}
+
+#our-donors::before {
+    opacity: 0;
+    position: fixed !important;
+    background-size: cover !important;
+    background-image: url('img/watercolor_butterfly_3.webp');
+    --fade-opacity: 0.09;
+}
+
+#our-board-members:not(.in-viewport)::before {
+    visibility: hidden;
+    opacity: 0;
+}
+
+
+#financial-growth::before {
+    z-index: 2;
+    /* This will position it above the other elements */
+    background-image: url('img/watercolor_butterfly_1.webp');
+    --fade-opacity: 0.09;
+}
+
+#financial-growth .container {
+    z-index: 3;
+}
+
+/* Example of setting different opacity for specific sections */
+#annual-report-23::before {
+    background-image: url('img/Annual_Report_3.webp');
+    --fade-opacity: 0.05; /* Adjust the opacity as needed */
+}
+
+#letter-from-david::before {
+    background-image: url('img/caterpillar-twig.webp');
+    --fade-opacity: 0.05; /* Different opacity */
+}
+
+
+
+
+/* ----- Our Board Members section ----- */
+#our-board-members h6 {
+    color: #ecebee;
+}
+
+
+/* ----- Media Queries ----- */
+/* Define breakpoints only once */
+
+@media (max-width: 1400px) {
+    .bigger-text .nav-link {
+        font-size: 1.1em;
+    }
+}
+
+/* For screens smaller than 1200px */
+@media (max-width: 1199.98px) {
+    .vh-100 {
+        max-height: none;
+    }
+
+    .section {
+        align-items: flex-start !important;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .sidebar,
+    .main-content.with-sidebar {
+        width: 80%;
+    }
+
+    .sidebar-hidden {
+        right: -80%;
+    }
+
+    .main-content.full-width {
+        width: 100%;
+    }
+
+    .bigger-text .nav-link {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+@media (max-width: 576px) {
+    #sidebarCollapse {
+        width: 50px;
+        height: 50px;
+        top: 20px;
+        left: -15px;
+    }
+
+    #toggleIcon.moved-icon {
+        position: relative;
+        top: 14px;
+        right: 12px;
+    }
+
+    .section {
+        min-height: 100vh !important;
+        height: 100% !important;
+    }
+
+    #annual-report-23 {
+        min-height: 100vh !important;
+    }
+
+    #annual-report-23::before {
+        background-size: 50%;
+    }
+
+}
+
+@media (min-width: 992px) {
+
+    .sidebar,
+    .main-content.with-sidebar {
+        width: 20%;
+    }
+
+    .sidebar-hidden {
+        right: -20%;
+    }
+
+    .main-content.full-width {
+        width: 100%;
+    }
+}
+
+/* Default to single column */
+.multi-column-ul {
+    column-count: 1;
+    column-gap: 1em;
+    column-rule: 1px solid #ccc;
+}
+
+/* Two columns for medium screens */
+@media (min-width: 576px) {
+    .multi-column-ul {
+        column-count: 2;
+    }
+}
+
+/* Three columns for large screens */
+@media (min-width: 992px) {
+    .multi-column-ul {
+        column-count: 3;
+    }
+}
+
+
+.credits {
+    height: 400px;
+    overflow-y: hidden;
+
+}
+
+#donorList {
+    position: relative;
+}
+
+#donorList li {
+    padding: 20px 0;
+    /* Adjust as needed */
+}
+
+#donorList li .name {
+    display: inline-block;
+}
+
+
+
+
+#video-gallery {
+    position: relative;
+    z-index: 2;
+}
+
+.carousel-item {
+    width: 100%;
+}
+
+#video-gallery a img {
+    transition: all 0.3s ease-in-out;
+}
+
+#video-gallery a:hover img {
+    filter: grayscale(10%);
+    transform: translateY(-10px);
+}
+
+/* To tilt the list on the x-axis */
+/*#donor-list-container {
+    transform: rotateX(35deg);
+    transform-origin: center;
+}*/
+
+/* To make the font size larger */
+#donorList li {
+    font-size: 2rem;
+    /* Change as required */
+}
+
+/* Hover effect for list items */
+#donorList li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Text shadow for cinematic feel */
+#donorList li {
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.heading {
+    font-weight: bold;
+    text-transform: uppercase;
+    /* Other styling as needed */
+}
+
+/* Minimalist Scrollbar */
+.credits::-webkit-scrollbar {
+    width: 4px;
+    /* Adjust the width of the scrollbar */
+}
+
+.credits::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.credits::-webkit-scrollbar-thumb {
+    background: #fff;
+    /* Orange thumb */
+}
+
+.credits::-webkit-scrollbar-thumb:hover {
+    background: #fff;
+    /* Slightly darker on hover for better visibility */
+}
+
+/* Default state of the buttons */
+.toggle-filter,
+.not-filter {
+    color: #414142;
+    /* Dark color for text */
+    border-color: #e4923f;
+    /* A distinct border color */
+    background-color: #ecebee;
+    /* Light background */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    /* Smooth transition for hover and active states */
+}
+
+/* Hover state of the buttons */
+.toggle-filter:hover,
+.not-filter:hover {
+    color: #F4B753;
+    /* Lighter color when hovered */
+    background-color: #414142;
+    /* Darker background on hover */
+    border-color: #dc9a7d;
+    /* Change border color on hover */
+}
+
+/* Active state of the buttons */
+.toggle-filter.active,
+.not-filter.active,
+.btn-outline-primary:not(:disabled):not(.disabled).active,
+.btn-outline-primary:not(:disabled):not(.disabled):active,
+.show>.btn-outline-primary.dropdown-toggle {
+    color: #ecebee;
+    /* Contrast color for active state text */
+    background-color: #e4923f;
+    /* Distinctive background for active state */
+    border-color: #F4B753;
+    /* Bright border color for active state */
+}
+
+.toggle-filter:focus,
+.not-filter:focus {
+    outline: 3px solid #F4B753 !important;
+    /* Change to your preferred color */
+}
+
+
+
+#search-container {
+    margin-bottom: 10px;
+    /* Additional styling */
+}
+
+#liveSearch {
+    width: 100%;
+    /* Full width */
+    padding: 15px;
+    /* Larger padding for a taller field */
+    font-size: 18px;
+    /* Larger font size */
+    background-color: transparent;
+    /* Transparent background */
+    border: none;
+    /* No border */
+    border-bottom: 1px solid white;
+    /* White bottom border */
+    box-shadow: none;
+    /* No shadow */
+    outline: none;
+    /* No focus outline */
+    color: white;
+    /* Text color */
+
+    /* Adjust as needed for your design */
+}
+
+#liveSearch::placeholder {
+    color: white;
+    /* White placeholder text */
+    font-size: 18px;
+    /* Consistent font size with the input text */
+    opacity: 1;
+    /* Full opacity for visibility */
+}
+
+#liveSearch:focus {
+    border-bottom: 1px solid white;
+    /* Maintain white bottom border on focus */
+}
+
+/*.toggle-filter.active {
+    background-color: #007bff;
+    color: white;
+}*/
+
+
+.hover-item:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.image-wrapper:hover .hover-image {
+    transform: scale(1.1);
+    transition: transform .2s ease-in-out;
+}
+
+/* AOS duration and delay example */
+[data-aos] {
+    transition-duration: 1s;
+    transition-delay: 0.5s;
+}
+
+
+.modal-dialog.modal-fullscreen {
+    margin: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    max-width: none;
+}
+
+.modal-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-body {
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+
+.modal-backdrop.show {
+    z-index: 1040;
+    /* or higher if necessary */
+}
+
+.modal {
+    z-index: 1050;
+    /* this should be higher than .modal-backdrop */
+}
+
+a.btn.rounded-left {
+    border-top-left-radius: 0.25rem !important;
+    border-bottom-left-radius: 0.25rem !important;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+a.btn.rounded-right {
+    border-top-right-radius: 0.25rem !important;
+    border-bottom-right-radius: 0.25rem !important;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+
+.modal-body {
+    overflow-y: auto; /* Ensures the content within the modal can scroll */
+}
+
+.sticky-top {
+    top: 0; /* Positions the element at the top of the modal */
+    z-index: 1020; /* Ensures it stays above other content */
+}
