@@ -32,18 +32,6 @@
     font-display: swap;
 }
 
-body {
-    overflow-x: hidden;
-}
-
-
-.section {
-    scroll-snap-align: start;
-    height: 100vh; // Assuming each section takes full viewport height
-}
-
-
-
 /* body, h1, h2, h3, h4, h5, h6, p, a {
      font-family: 'Kobern-Regular';
  }*/
@@ -170,6 +158,10 @@ body {
     color: #414142;
 }
 
+body, html {
+    overflow-x: hidden; /* This prevents horizontal scrolling */
+}
+
 .container {
     padding: 1.3em;
 }
@@ -228,157 +220,6 @@ img.centerstone-logo {
     height: auto;
 }
 
-/* General sidebar styles */
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 20%;
-    height: 100%;
-    background-color: #414142;
-    color: white;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /*    z-index: 9999;*/
-}
-
-/* Speed up the sidebar transition when appearing */
-.sidebar.sidebar-visible {
-    transition-duration: 0.3s;
-}
-
-/* Slow down the sidebar transition when hiding */
-.sidebar.sidebar-hidden {
-    transition-duration: 0.35s;
-}
-
-/* Speed up the main content transition when hiding */
-.main-content.full-width {
-    transition-duration: 0.3s;
-}
-
-/* Slow down the main content transition when appearing */
-.main-content.with-sidebar {
-    transition-duration: 0.35s;
-}
-
-.sidebar.sidebar-visible {
-    right: 0%;
-    width: 20%;
-    /* Adjust these values as needed */
-}
-
-.sidebar.sidebar-hidden {
-    right: -20%;
-    /* Adjust these values as needed */
-}
-
-.sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.sidebar ul li {
-    margin-bottom: 10px;
-}
-
-.sidebar ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-/* Style for custom menu button */
-#sidebarCollapse {
-    width: 70px;
-    /* Set square dimensions */
-    height: 70px;
-    position: absolute;
-    top: 20px;
-    left: -30px;
-    /* Position it halfway outside the sidebar */
-    /*    z-index: 10000;*/
-    /* Make sure it appears on top */
-    transform: rotate(45deg);
-    /* Rotate it 45 degrees */
-    background: #414142;
-    /* Set background color */
-}
-
-#sidebarCollapse .fa-times,
-#sidebarCollapse .fa-chevron-left {
-    transform: rotate(-45deg);
-}
-
-.sidebar,
-.main-content {
-    transition: all 0.3s ease-out;
-}
-
-.main-content.with-sidebar {
-    width: 80%;
-    margin-right: 1em;
-}
-
-.main-content.full-width {
-    width: 100%;
-    margin-right: 1em;
-}
-
-.sidebar {
-    right: -19%;
-    width: 20%;
-}
-
-.sidebar.visible {
-    right: 0;
-    width: 20%;
-}
-
-.sidebar.visible-mobile {
-    right: 0;
-    width: 80%;
-}
-
-#sidebarCollapse:focus {
-    outline: none;
-    box-shadow: 0 0 1px #414142;
-}
-
-.sidebar {
-    z-index: 1030;
-    /* This value should be higher than the main content's z-index */
-}
-
-.main-content {
-    /*    z-index: 1;*/
-    /* Lower than sidebar */
-}
-
-#sidebarMenu {
-    background-image:
-        url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9IiM0MTQxNDIiIG9wYWNpdHk9IjAuMyIvPjwvc3ZnPg=='),
-        url(img/Annual_Report_1_copy.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center 60%;
-    padding: 20px;
-}
-
-
-
-#sidebarMenu::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-}
-
 /* ----- Text & Typography Styles ----- */
 
 /* Fancy blockquotes */
@@ -401,7 +242,8 @@ img.centerstone-logo {
 /* Text highlighting */
 .highlight-bg {
     display: inline-block;
-    position: relative; /* Position relative for pseudo-element */
+    position: relative;
+    /* Position relative for pseudo-element */
     padding: 2px 0 0 0;
 }
 
@@ -410,8 +252,14 @@ img.centerstone-logo {
     padding: 0 3px;
     font-size: 1.2em;
     position: relative;
-    z-index: 2; /* Ensuring text stays above the sliding background */
-    transition: color 0.5s ease 0s; /* Transition for text color change */
+    z-index: 2;
+    /* Ensuring text stays above the sliding background */
+    transition: color 0.5s ease 0s;
+    /* Transition for text color change */
+}
+
+h2.w-100 .highlight-text {
+    color: transparent;
 }
 
 /* Create the pseudo-element for the sliding background */
@@ -422,11 +270,14 @@ img.centerstone-logo {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #f4b753; /* The color for the sliding background */
+    background-color: #f4b753;
+    /* The color for the sliding background */
     transform: scaleX(0);
     transform-origin: left;
-    z-index: 1; /* Below the text */
-    transition: transform 0.5s ease 0s; /* Synchronized transition */
+    z-index: 1;
+    /* Below the text */
+    transition: transform 0.5s ease 0s;
+    /* Synchronized transition */
 }
 
 /* Styles to apply once the AOS animation ends */
@@ -525,7 +376,8 @@ img.centerstone-logo {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    opacity: var(--fade-opacity, 0.5); /* Default opacity if variable is not set */
+    opacity: var(--fade-opacity, 0.5);
+    /* Default opacity if variable is not set */
     z-index: 0;
     animation-name: none;
     animation-duration: 2s;
@@ -565,16 +417,17 @@ img.centerstone-logo {
 #our-donors::before,
 #annual-report-23::before {
     background-image: url('img/Annual_Report_3.webp');
+    --fade-opacity: 0.05;
 }
 
 #letter-from-david::before {
     background-image: url('img/caterpillar-twig.webp');
-    --fade-opacity: 0.09;
+    --fade-opacity: 0.03;
 }
 
 #history-centerstone::before {
     background-image: url('img/caterpillar-twig.webp');
-    --fade-opacity: 0.09;
+    --fade-opacity: 0.03;
 }
 
 #update-988::before {
@@ -625,23 +478,119 @@ img.centerstone-logo {
     z-index: 3;
 }
 
-/* Example of setting different opacity for specific sections */
-#annual-report-23::before {
-    background-image: url('img/Annual_Report_3.webp');
-    --fade-opacity: 0.05; /* Adjust the opacity as needed */
-}
-
-#letter-from-david::before {
-    background-image: url('img/caterpillar-twig.webp');
-    --fade-opacity: 0.05; /* Different opacity */
-}
-
-
-
 
 /* ----- Our Board Members section ----- */
 #our-board-members h6 {
     color: #ecebee;
+}
+
+
+/* ------Sidebar ----------------------- */
+/* General Sidebar Styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -19%;
+    width: 20%;
+    height: 100%;
+    background-color: #414142;
+    color: white;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1030;
+    /* Higher than main content */
+    transition: all 0.3s ease-out;
+}
+
+/* Sidebar Visibility States */
+.sidebar.sidebar-visible,
+.sidebar.visible {
+    right: 0;
+}
+
+.sidebar.sidebar-hidden {
+    right: -20%;
+    transition-duration: 0.35s;
+}
+
+.sidebar.visible-mobile {
+    right: 0;
+    width: 80%;
+}
+
+/* Sidebar List Styles */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Custom Menu Button */
+#sidebarCollapse {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 20px;
+    left: -30px;
+    transform: rotate(45deg);
+    background: #414142;
+    outline: none;
+    box-shadow: 0 0 1px #414142;
+}
+
+#sidebarCollapse .fa-times,
+#sidebarCollapse .fa-chevron-left {
+    transform: rotate(-45deg);
+}
+
+/* Main Content Styles */
+.main-content {
+    transition: all 0.3s ease-out;
+    margin-right: 1em;
+}
+
+.main-content.with-sidebar {
+    width: 80%;
+    transition-duration: 0.35s;
+}
+
+.main-content.full-width {
+    width: 100%;
+    transition-duration: 0.3s;
+}
+
+/* Sidebar Menu Background */
+#sidebarMenu {
+    background-image: url('data:image/svg+xml;base64,...'), url(img/Annual_Report_1_copy.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 60%;
+    padding: 20px;
+}
+
+#sidebarMenu::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.sidebar {
+    max-height: 100vh; /* 100% of the viewport height */
 }
 
 
@@ -663,6 +612,7 @@ img.centerstone-logo {
     .section {
         align-items: flex-start !important;
     }
+
     img.centerstone-logo {
         width: 200px;
         height: auto;
@@ -712,14 +662,6 @@ img.centerstone-logo {
     .section {
         min-height: 100vh !important;
         height: 100% !important;
-    }
-
-    #annual-report-23 {
-        min-height: 100vh !important;
-    }
-
-    #annual-report-23::before {
-        background-size: 50%;
     }
 
 }
@@ -1005,20 +947,32 @@ a.btn.rounded-right {
 }
 
 .modal-body {
-    overflow-y: auto; /* Ensures the content within the modal can scroll */
+    overflow-y: auto;
+    /* Ensures the content within the modal can scroll */
 }
 
 .sticky-top {
-    top: 0; /* Positions the element at the top of the modal */
-    z-index: 1020; /* Ensures it stays above other content */
+    top: 0;
+    /* Positions the element at the top of the modal */
+    z-index: 1020;
+    /* Ensures it stays above other content */
 }
 
 
 @media (max-width: 768px) {
     .display-3 {
-        font-size: 1.5rem; /* Adjust size as needed */
+        font-size: 3rem;
     }
+
     .display-4 {
-        font-size: 1.25rem; /* Adjust size as needed */
+        font-size: 1.75rem;
+    }
+}
+
+@media screen and (max-width: 992px) { /* Adjust this value based on your mobile breakpoint */
+    [data-aos] {
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
     }
 }

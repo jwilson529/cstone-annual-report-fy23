@@ -6,15 +6,7 @@
     AOS.init();
 
     $('#annual-report-23 .highlight-text').one("transitionend webkitTransitionEnd oTransitionEnd", function() {
-      console.log('aos-animationend ddd');
       $(this).closest('.highlight-bg').addClass('highlight-active');
-    });
-
-    $('#annual-report-23 .highlight-text').each(function() {
-      $(this).on('animationend', function() {
-        // Directly apply the styles to .highlight-bg after AOS animation ends
-        $(this).closest('.highlight-bg').addClass('highlight-active');
-      });
     });
 
 
@@ -331,7 +323,7 @@
     $(window).on('scroll resize', checkVisibility);
 
     // Scrollify Initialization
-    if ($(window).width() >= 768) { // 768px is generally the breakpoint for mobile devices
+    if ($(window).width() >= 992) { // 768px is generally the breakpoint for mobile devices
       $.scrollify({
         section: ".section"
       });
@@ -373,6 +365,10 @@
     // Toggle sidebar visibility and adjust main content
     function toggleSidebar() {
       let windowWidth = $(window).width();
+      console.log('main-content: ' + $('.main-content').width());
+      console.log('combined-sections: ' + $('#combined-sections').width());
+      console.log('body: ' + $('body').width());
+      
       let position = parseFloat($(".sidebar").css("right")); // Parse the value to a float
 
       if (position < 0) { // If it's negative (hidden)
@@ -407,72 +403,56 @@
 
     // Initialize sidebar based on window size
     function initializeSidebar() {
-      let windowWidth = $(window).width();
-      let position = parseFloat($(".sidebar").css("right")); // Parse the value to a float
-
-      if (position < 0) { // If it's negative (hidden)
-
-        $("#toggleIcon").removeClass("fa-times").addClass("fa-chevron-left moved-icon"); // Change icon to chevron-left
-        $(".main-content").removeClass("with-sidebar").addClass("full-width"); // Reset content margin-right
-
-        if (windowWidth < 992) {
-          $(".sidebar").css({
-            "right": `-75%`, // Hide sidebar but leave 5% visible for the button
-            "width": "80%" // Set to 80% width
-          });
-        } else {
-          $(".sidebar").css("right", "-19%"); // Hide sidebar
-        }
-
-      } else {
-        $("#toggleIcon").removeClass("fa-chevron-left moved-icon").addClass("fa-times"); // Change icon to X
-
-        if (windowWidth < 992) {
-          $(".sidebar").css({
-            "right": "0%",
-            "width": "80%" // Set to 80% width if window width is below 992px
-          });
-        } else {
-          $(".sidebar").css({
-            "right": "0%",
-            "width": "20%" // Reset to 20% width for window width above 992px
-          });
-          $(".main-content").removeClass("full-width").addClass("with-sidebar"); // Expand content to full width
-        }
-      }
-    }
-
-    $(window).on("resize", function() {
       const windowWidth = $(window).width();
-      const toggleIconWidth = $("#toggleIcon").outerWidth(true); // Get the total width including margin, padding, and border
+      console.log('combined-sections: ' + $('#combined-sections').width());
+      console.log('body: ' + $('body').width());
 
-      if (windowWidth >= 992) {
+      if (windowWidth < 992) {
+        // Set initial state for mobile
         $(".sidebar").css({
-          "right": "0%",
-          "width": "20%"
-        });
-        $(".main-content").removeClass("full-width").addClass("with-sidebar");
-        $("#toggleIcon").removeClass("fa-chevron-left moved-icon").addClass("fa-times");
-
-        // Reset the left margin/padding of .main-content
-        $(".main-content").css("margin-left", "0px");
-      } else if (windowWidth >= 768 && windowWidth < 992) {
-        // You can customize the behavior here for window sizes between 768px and 992px
-        // For example, you could keep the sidebar and main content as they are above 992px
-        $(".main-content").removeClass("full-width").addClass("with-sidebar");
-        $(".main-content").css("margin-left", "0px");
-      } else {
-        $(".sidebar").css({
-          "right": `-${80 - 2}%`,
+          "right": `-${80 - 5}%`, // Adjust as needed
           "width": "80%"
         });
-        $(".main-content").removeClass("with-sidebar").addClass("full-width");
-        $("#toggleIcon").removeClass("fa-times").addClass("fa-chevron-left moved-icon");
-
-        // Set the left margin/padding of .main-content to ensure the toggle icon doesn't overlap
-        $(".main-content").css("margin-left", `${toggleIconWidth + 20}px`); // 20px buffer
+        $(".main-content").css("width", "100%").removeClass("with-sidebar");
+        $("#toggleIcon").addClass("fa-chevron-left moved-icon").removeClass("fa-times");
+      } else {
+        // Set initial state for desktop
+        $(".sidebar").addClass("visible").css("width", "20%");
+        $(".main-content").css("width", "80%").addClass("with-sidebar");
+        $("#toggleIcon").addClass("fa-times").removeClass("fa-chevron-left moved-icon");
       }
-    });
+
+      console.log('main-content: ' + $('.main-content').width());
+    }
+
+
+
+    // $(window).on("resize", function() {
+    //   const windowWidth = $(window).width();
+    //   const toggleIconWidth = $("#toggleIcon").outerWidth(true); // Get the total width including margin, padding, and border
+
+    //   if (windowWidth >= 992) {
+    //     $(".sidebar").css({
+    //       "right": "0%",
+    //       "width": "20%"
+    //     });
+    //     $(".main-content").removeClass("full-width").addClass("with-sidebar");
+    //     $("#toggleIcon").removeClass("fa-chevron-left moved-icon").addClass("fa-times");
+
+    //     // Reset the left margin/padding of .main-content
+    //     $(".main-content").css("margin-left", "0px");
+    //   } else {
+    //     $(".sidebar").css({
+    //       "right": `-${80 - 2}%`,
+    //       "width": "80%"
+    //     });
+    //     $(".main-content").removeClass("with-sidebar").addClass("full-width");
+    //     $("#toggleIcon").removeClass("fa-times").addClass("fa-chevron-left moved-icon");
+
+    //     // Set the left margin/padding of .main-content to ensure the toggle icon doesn't overlap
+    //     $(".main-content").css("margin-left", `${toggleIconWidth + 20}px`); // 20px buffer
+    //   }
+    // });
 
 
     // Toggle sidebar when menu button is clicked
