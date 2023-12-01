@@ -32,11 +32,10 @@
     font-display: swap;
 }
 
-/*body {
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    height: 100vh; // Full viewport height
-}*/
+body {
+    overflow-x: hidden;
+}
+
 
 .section {
     scroll-snap-align: start;
@@ -664,6 +663,10 @@ img.centerstone-logo {
     .section {
         align-items: flex-start !important;
     }
+    img.centerstone-logo {
+        width: 200px;
+        height: auto;
+    }
 }
 
 @media (max-width: 992px) {
@@ -1008,4 +1011,14 @@ a.btn.rounded-right {
 .sticky-top {
     top: 0; /* Positions the element at the top of the modal */
     z-index: 1020; /* Ensures it stays above other content */
+}
+
+
+@media (max-width: 768px) {
+    .display-3 {
+        font-size: 1.5rem; /* Adjust size as needed */
+    }
+    .display-4 {
+        font-size: 1.25rem; /* Adjust size as needed */
+    }
 }

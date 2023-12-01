@@ -5,45 +5,45 @@
     // Initialize AOS
     AOS.init();
 
-    $('#annual-report-23 .highlight-text').one("transitionend webkitTransitionEnd oTransitionEnd", function(){
+    $('#annual-report-23 .highlight-text').one("transitionend webkitTransitionEnd oTransitionEnd", function() {
       console.log('aos-animationend ddd');
       $(this).closest('.highlight-bg').addClass('highlight-active');
     });
 
     $('#annual-report-23 .highlight-text').each(function() {
-        $(this).on('animationend', function() {
-            // Directly apply the styles to .highlight-bg after AOS animation ends
-            $(this).closest('.highlight-bg').addClass('highlight-active');
-        });
+      $(this).on('animationend', function() {
+        // Directly apply the styles to .highlight-bg after AOS animation ends
+        $(this).closest('.highlight-bg').addClass('highlight-active');
+      });
     });
 
 
     // Listener for click events on the buttons
     $('.toggle-filter').on('click', function(event) {
-        event.stopPropagation(); // Prevent click from propagating to document
+      event.stopPropagation(); // Prevent click from propagating to document
 
-        $("#donorList").css({
-            'animation': 'none',
-            'top': '0'
-        });
-        $('#donorList').animate({ scrollTop: 0 }, 'slow');
-        $('.toggle-filter').removeClass('active');
-        $(this).addClass('active');
-        filterList();
+      $("#donorList").css({
+        'animation': 'none',
+        'top': '0'
+      });
+      $('#donorList').animate({ scrollTop: 0 }, 'slow');
+      $('.toggle-filter').removeClass('active');
+      $(this).addClass('active');
+      filterList();
     });
 
     // Listener for click events on the document
     $(document).on('click', function(event) {
-        var $buttonGroup = $(".btn-group");
+      var $buttonGroup = $(".btn-group");
 
-        // Check if the click was outside the button group
-        if (!$buttonGroup.is(event.target) && $buttonGroup.has(event.target).length === 0) {
-            $('.toggle-filter').removeClass('active');
-        }
-        $("#donorList").css({
-          'animation': 'scrollUp 650s linear infinite',
-          'top': '0'
-        });
+      // Check if the click was outside the button group
+      if (!$buttonGroup.is(event.target) && $buttonGroup.has(event.target).length === 0) {
+        $('.toggle-filter').removeClass('active');
+      }
+      $("#donorList").css({
+        'animation': 'scrollUp 650s linear infinite',
+        'top': '0'
+      });
     });
 
 
@@ -220,7 +220,7 @@
     });
 
     // When the donor modal is shown
-    $('#donorModal').on('shown.bs.modal', function () {
+    $('#donorModal').on('shown.bs.modal', function() {
       // Disable scrollify
       $.scrollify.disable();
 
@@ -236,7 +236,7 @@
     });
 
     // Enable scrollify again when the donor modal is closed
-    $('#donorModal').on('hidden.bs.modal', function () {
+    $('#donorModal').on('hidden.bs.modal', function() {
       $.scrollify.enable();
     });
 
@@ -252,13 +252,13 @@
     });
 
     // When the modal is opened
-    $('#donorModal').on('shown.bs.modal', function () {
-        $.scrollify.disable();
+    $('#donorModal').on('shown.bs.modal', function() {
+      $.scrollify.disable();
     });
 
     // When the modal is closed
-    $('#donorModal').on('hidden.bs.modal', function () {
-        $.scrollify.enable();
+    $('#donorModal').on('hidden.bs.modal', function() {
+      $.scrollify.enable();
     });
 
 
@@ -329,7 +329,46 @@
     // Check visibility initially and on scroll
     checkVisibility();
     $(window).on('scroll resize', checkVisibility);
-    // Function Declarations
+
+    // Scrollify Initialization
+    if ($(window).width() >= 768) { // 768px is generally the breakpoint for mobile devices
+      $.scrollify({
+        section: ".section"
+      });
+      // Handle Scrollify navigation
+      $(document).on("click", ".nav-link", function(event) {
+        event.preventDefault();
+        const target = $(this).attr("href");
+        const index = $(target).index('.section');
+        if (index !== -1) {
+          $.scrollify.move(index);
+        }
+      });
+    }
+
+    // Handle scroll event for activating section links
+    $(window).on('scroll', function() {
+      const offset = 50;
+      const currentScroll = $(this).scrollTop() + offset;
+      let $currentSection;
+
+      $('section[id]').each(function() {
+        const divPosition = $(this).offset().top;
+
+        if (divPosition - 1 < currentScroll) {
+          $currentSection = $(this);
+        }
+
+        $('.nav-link').removeClass('active');
+
+        if ($currentSection) {
+          const id = $currentSection.attr('id');
+          $('[href="#' + id + '"]').addClass('active');
+        }
+      });
+    });
+
+    // SIDEBAR //
 
     // Toggle sidebar visibility and adjust main content
     function toggleSidebar() {
@@ -368,65 +407,40 @@
 
     // Initialize sidebar based on window size
     function initializeSidebar() {
-      const windowWidth = $(window).width();
+      let windowWidth = $(window).width();
+      let position = parseFloat($(".sidebar").css("right")); // Parse the value to a float
 
-      if (windowWidth >= 992) {
-        // Desktop Screen
-        $(".sidebar").addClass("visible");
-        $(".main-content").addClass("with-sidebar");
-        $("#toggleIcon").addClass("fa-times").removeClass("fa-chevron-left moved-icon");
+      if (position < 0) { // If it's negative (hidden)
+
+        $("#toggleIcon").removeClass("fa-times").addClass("fa-chevron-left moved-icon"); // Change icon to chevron-left
+        $(".main-content").removeClass("with-sidebar").addClass("full-width"); // Reset content margin-right
+
+        if (windowWidth < 992) {
+          $(".sidebar").css({
+            "right": `-75%`, // Hide sidebar but leave 5% visible for the button
+            "width": "80%" // Set to 80% width
+          });
+        } else {
+          $(".sidebar").css("right", "-19%"); // Hide sidebar
+        }
+
       } else {
-        // Mobile Screen
-        $(".sidebar").css({
-          "right": `-${80 - 2}%`, // Hide sidebar but leave 5% visible for the button
-          "width": "80%" // Set to 80% width
-        });
-        $(".main-content").addClass("full-width").removeClass("with-sidebar");
-        $("#toggleIcon").addClass("fa-chevron-left moved-icon").removeClass("fa-times");
+        $("#toggleIcon").removeClass("fa-chevron-left moved-icon").addClass("fa-times"); // Change icon to X
+
+        if (windowWidth < 992) {
+          $(".sidebar").css({
+            "right": "0%",
+            "width": "80%" // Set to 80% width if window width is below 992px
+          });
+        } else {
+          $(".sidebar").css({
+            "right": "0%",
+            "width": "20%" // Reset to 20% width for window width above 992px
+          });
+          $(".main-content").removeClass("full-width").addClass("with-sidebar"); // Expand content to full width
+        }
       }
     }
-
-    // Event Listeners
-
-    // Scrollify Initialization
-    if ($(window).width() >= 768) { // 768px is generally the breakpoint for mobile devices
-      $.scrollify({
-        section: ".section"
-      });
-      // Handle Scrollify navigation
-      $(document).on("click", ".nav-link", function(event) {
-        event.preventDefault();
-        const target = $(this).attr("href");
-        const index = $(target).index('.section');
-        if (index !== -1) {
-          $.scrollify.move(index);
-        }
-      });
-    }
-
-
-
-    // Handle scroll event for activating section links
-    $(window).on('scroll', function() {
-      const offset = 50;
-      const currentScroll = $(this).scrollTop() + offset;
-      let $currentSection;
-
-      $('section[id]').each(function() {
-        const divPosition = $(this).offset().top;
-
-        if (divPosition - 1 < currentScroll) {
-          $currentSection = $(this);
-        }
-
-        $('.nav-link').removeClass('active');
-
-        if ($currentSection) {
-          const id = $currentSection.attr('id');
-          $('[href="#' + id + '"]').addClass('active');
-        }
-      });
-    });
 
     $(window).on("resize", function() {
       const windowWidth = $(window).width();
