@@ -2,12 +2,41 @@
     // Initialize sidebar depending on the screen size
     initializeSidebar();
 
-    // Initialize AOS
-    AOS.init();
-
-    $('#annual-report-23 .highlight-text').one("transitionend webkitTransitionEnd oTransitionEnd", function() {
-      $(this).closest('.highlight-bg').addClass('highlight-active');
+    // Initialize AOS with disable option set to false
+    AOS.init({
+        disable: false,
+        startEvent: 'DOMContentLoaded',
     });
+
+    // Refresh AOS to ensure animations are applied
+    AOS.refresh();
+
+
+    function applyHighlight() {
+        if ($(window).width() >= 992) {
+            // Desktop: Wait for AOS to finish
+            $('#highlight-section .highlight-text').one("transitionend webkitTransitionEnd oTransitionEnd", function() {
+                // Add the class only if AOS has finished animating this element
+                if ($(this).closest('[data-aos]').hasClass('aos-animate')) {
+                    $(this).closest('.highlight-bg').addClass('highlight-active');
+                }
+
+                if ($(this).is('#highlight-section .highlight-text:last')) {
+                    setTimeout(function() {
+                        $('.blockquote .highlight-text').closest('.highlight-bg').addClass('highlight-active');
+                    }, 400);
+                }
+            });
+        } else {
+            // Mobile: Apply highlight immediately
+            $('#highlight-section .highlight-text, .blockquote .highlight-text').closest('.highlight-bg').addClass('highlight-active');
+        }
+    }
+
+    $(document).ready(applyHighlight);
+    $(window).resize(applyHighlight);
+
+
 
 
     // Listener for click events on the buttons
@@ -211,47 +240,7 @@
       });
     });
 
-    // When the donor modal is shown
-    $('#donorModal').on('shown.bs.modal', function() {
-      // Disable scrollify
-      $.scrollify.disable();
 
-      // Clear previous content
-      $("#modal_donors, #modal_sapphire, #modal-honorary, #modal-memorial, #modal-endowment").empty();
-
-      // Populate the modal sections within rows and columns
-      appendItemsToColumns("#modal_donors", donors);
-      appendItemsToColumns("#modal_sapphire", sapphire);
-      appendItemsToColumns("#modal-honorary", honorary);
-      appendItemsToColumns("#modal-memorial", memorial);
-      appendItemsToColumns("#modal-endowment", restricted.concat(unrestricted)); // Combining both arrays for a single section
-    });
-
-    // Enable scrollify again when the donor modal is closed
-    $('#donorModal').on('hidden.bs.modal', function() {
-      $.scrollify.enable();
-    });
-
-
-    // Disable Scrollify when the scrollable list is focused
-    $('#donor-list-container').on('mouseenter', function() {
-      $.scrollify.disable();
-    });
-
-    // Re-enable Scrollify when the scrollable list loses focus
-    $('#donor-list-container').on('mouseleave', function() {
-      $.scrollify.enable();
-    });
-
-    // When the modal is opened
-    $('#donorModal').on('shown.bs.modal', function() {
-      $.scrollify.disable();
-    });
-
-    // When the modal is closed
-    $('#donorModal').on('hidden.bs.modal', function() {
-      $.scrollify.enable();
-    });
 
 
 
@@ -299,12 +288,34 @@
 
     const $elements = $("#update-988, #by-the-numbers, #financial-growth, #our-board-members, #our-donors, #annual-report-23, #letter-from-david, #history-centerstone");
 
+
+
+    //SCROLLIFY
+
+    function debounce(func, wait, immediate) {
+      var timeout;
+      return function() {
+        var context = this, args = arguments;
+        var later = function() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    };
+
+
+
+
+    // Utility function to check the visibility of elements
     function checkVisibility() {
       $elements.each(function() {
         const $element = $(this);
-
         const topOfElement = $element.offset().top;
-        const bottomOfElement = $element.offset().top + $element.outerHeight();
+        const bottomOfElement = topOfElement + $element.outerHeight();
         const topOfViewport = $(window).scrollTop();
         const bottomOfViewport = topOfViewport + $(window).height();
 
@@ -316,49 +327,81 @@
       });
     }
 
-
-
-    // Check visibility initially and on scroll
-    checkVisibility();
-    $(window).on('scroll resize', checkVisibility);
-
-    // Scrollify Initialization
-    if ($(window).width() >= 992) { // 768px is generally the breakpoint for mobile devices
-      $.scrollify({
-        section: ".section"
-      });
-      // Handle Scrollify navigation
-      $(document).on("click", ".nav-link", function(event) {
-        event.preventDefault();
-        const target = $(this).attr("href");
-        const index = $(target).index('.section');
-        if (index !== -1) {
-          $.scrollify.move(index);
-        }
-      });
-    }
-
-    // Handle scroll event for activating section links
-    $(window).on('scroll', function() {
+    // Function to handle activation of section links
+    function handleSectionActivation() {
       const offset = 50;
-      const currentScroll = $(this).scrollTop() + offset;
+      const currentScroll = $(window).scrollTop() + offset;
       let $currentSection;
 
       $('section[id]').each(function() {
         const divPosition = $(this).offset().top;
-
         if (divPosition - 1 < currentScroll) {
           $currentSection = $(this);
         }
+      });
 
-        $('.nav-link').removeClass('active');
+      $('.nav-link').removeClass('active');
+      if ($currentSection) {
+        const id = $currentSection.attr('id');
+        $('[href="#' + id + '"]').addClass('active');
+      }
+    }
 
-        if ($currentSection) {
-          const id = $currentSection.attr('id');
-          $('[href="#' + id + '"]').addClass('active');
+    // Initialize Scrollify if window width is sufficient
+    function initializeScrollify() {
+      if ($(window).width() >= 992) { // Adjust breakpoint as needed
+        $.scrollify({
+          section: ".section",
+          setHeights: false
+        });
+      }
+    }
+
+    // Function to handle Scrollify navigation
+    function handleScrollifyNavigation() {
+      $(document).on("click", ".nav-link", function(event) {
+        console.log('nav-link click');
+        
+        // Check if the window's width is greater than 992px
+        if ($(window).width() > 992) {
+          event.preventDefault();
+          const target = $(this).attr("href");
+          const index = $(target).index('.section');
+          if (index !== -1) {
+            $.scrollify.move(index);
+          }
         }
       });
+    }
+
+
+    // Event Listeners
+    $(window).on('scroll resize', checkVisibility);
+    // Usage with your scroll event
+    $(window).on('scroll', debounce(handleSectionActivation, 50));
+    initializeScrollify();
+    handleScrollifyNavigation();
+
+    // Modal event handlers
+    $('#donorModal').on('shown.bs.modal', function() {
+      $.scrollify.disable();
+      // Rest of the modal open logic
     });
+
+    $('#donorModal').on('hidden.bs.modal', function() {
+      $.scrollify.enable();
+      // Additional logic when modal is closed, if needed
+    });
+
+    // Handle Scrollify state for scrollable list
+    $('#donor-list-container').on('mouseenter mouseleave', function(event) {
+      if (event.type === 'mouseenter') {
+        $.scrollify.disable();
+      } else {
+        $.scrollify.enable();
+      }
+    });
+
 
     // SIDEBAR //
 
