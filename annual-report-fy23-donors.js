@@ -1547,7 +1547,7 @@ var honorary = [
 
 
 var memorial = [
-  `In memory of Matthew Elston: <br>Julie Solomon`,
+  `In memory of Matthew Elston<br>Julie Solomon`,
 
   `In memory of Ellie Falke<br>Kristina Grenga`,
 
@@ -1559,20 +1559,22 @@ var memorial = [
 
   `In memory of Glennis Perkinson<br>Chris and Marie Mowbray`,
 
-  `In memory of Jim Overturf<br>Anonymous Donor<br>Michael and Brenda Buntin<br>Shea and Bradley Haury<br>Steve and Leslie Holman<br>Frank and Vickie Hunsaker<br>Margaret S. Johnson<br>Lauren and Brent Johnson<br>John and Tracey Markley<br>Charles Smith<br>John and Cathy Stewart<br>Nancy C. Williams<br>Trudee and Matthew Wynn`,
-
-  `In memory of Richard Parkinson<br>Karen and Steve Kahre<br>Trisha Sossong`,
-
   `In memory of Andrew Vincent Perez<br>Jesus Perez`,
-
-  `In memory of David Schrader<br>Charles F. Callihan<br>Robert Lambert<br>Steve and Nancy Low`,
 
   `In memory of Vance R. Stinson<br>Lois Martin`,
 
   `In memory of Steve Wold<br>Happy Fulk`,
 
-  `In memory of Scott Woolard<br>Thomas E. Caliper<br>Donna Fell<br>Judith and Dennis Kilmer<br>Deborah Payne<br>David Phelps<br>Jacob and Carolyn Rendleman<br>Paula and Randy Switzer<br>Richard Switzer<br>Jayleen and Ronald Waldron<br>Kathy and Earl Werner<br>Jason and Christy Woolard`
+  `In memory of Richard Parkinson<br>Karen and Steve Kahre<br>Trisha Sossong`,
+
+  `In memory of David Schrader<br>Charles F. Callihan<br>Robert Lambert<br>Steve and Nancy Low`,
 ];
+
+var memorialLong = [
+  `In memory of Scott Woolard<br>Thomas E. Caliper<br>Donna Fell<br>Judith and Dennis Kilmer<br>Deborah Payne<br>David Phelps<br>Jacob and Carolyn Rendleman<br>Paula and Randy Switzer<br>Richard Switzer<br>Jayleen and Ronald Waldron<br>Kathy and Earl Werner<br>Jason and Christy Woolard`,
+
+  `In memory of Jim Overturf<br>Anonymous Donor<br>Michael and Brenda Buntin<br>Shea and Bradley Haury<br>Steve and Leslie Holman<br>Frank and Vickie Hunsaker<br>Margaret S. Johnson<br>Lauren and Brent Johnson<br>John and Tracey Markley<br>Charles Smith<br>John and Cathy Stewart<br>Nancy C. Williams<br>Trudee and Matthew Wynn`
+  ]
 
 var restricted = [
   "The Ella P. Hayes Fund (supports any program in the Tennessee service area)",
@@ -1627,3 +1629,14 @@ var unrestricted = [
   "The Jack Wallace Endowment Fund",
   "The Carol Zwick Endowment Fund"
 ];
+
+var investedFunds = [
+  'The Community Foundation of Middle Tennessee – The David C. Guth, Jr. Fund for Centerstone',
+  'The Community Foundation of Middle Tennessee – Centerstone Military Services Designated Fund',
+  'Decatur County Foundation (Indiana) – Centerstone of Indiana Endowment Fund',
+  'Heritage Fund–The Community Foundation of Bartholomew County – The Centerstone Mental Health Fund (Indiana)',
+  'Community Foundation of Madison and Jefferson County (Indiana) – Centerstone Mental Health Fund for Jefferson County',
+  'Wayne County Foundation (Indiana) – Camilla B. Dunn Endowment Fund to Benefit Centerstone',
+  'Jennings County Community Foundation (Indiana) – Centerstone, Inc. Endowment',
+  'Manatee Community Foundation (Florida) – Centerstone Fund ',
+  ];

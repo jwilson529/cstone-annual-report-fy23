@@ -1,43 +1,43 @@
   jQuery(document).ready(function($) {
     // Initialize sidebar depending on the screen size
     initializeSidebar();
-
+    applyHighlight();
     // Initialize AOS with disable option set to false
     AOS.init({
-        disable: false,
-        startEvent: 'DOMContentLoaded',
+      disable: false,
+      startEvent: 'DOMContentLoaded',
     });
 
     // Refresh AOS to ensure animations are applied
     AOS.refresh();
 
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+      event.preventDefault();
+      $(this).ekkoLightbox();
+    });
+
 
     function applyHighlight() {
-        if ($(window).width() >= 992) {
-            // Desktop: Wait for AOS to finish
-            $('#highlight-section .highlight-text').one("transitionend webkitTransitionEnd oTransitionEnd", function() {
-                // Add the class only if AOS has finished animating this element
-                if ($(this).closest('[data-aos]').hasClass('aos-animate')) {
-                    $(this).closest('.highlight-bg').addClass('highlight-active');
-                }
+      if ($(window).width() >= 992) {
+        // Desktop: Wait for AOS to finish
+        $('#highlight-section .highlight-text').one("transitionend webkitTransitionEnd oTransitionEnd", function() {
+          // Add the class only if AOS has finished animating this element
+          if ($(this).closest('[data-aos]').hasClass('aos-animate')) {
+            $(this).closest('.highlight-bg').addClass('highlight-active');
+          }
 
-                if ($(this).is('#highlight-section .highlight-text:last')) {
-                    setTimeout(function() {
-                        $('.blockquote .highlight-text').closest('.highlight-bg').addClass('highlight-active');
-                    }, 400);
-                }
-            });
-        } else {
-            // Mobile: Apply highlight immediately
-            $('#highlight-section .highlight-text, .blockquote .highlight-text').closest('.highlight-bg').addClass('highlight-active');
-        }
+          if ($(this).is('#highlight-section .highlight-text:last')) {
+            setTimeout(function() {
+              $('.blockquote .highlight-text').closest('.highlight-bg').addClass('highlight-active');
+            }, 400);
+          }
+        });
+      } else {
+        // Mobile: Apply highlight immediately
+        $('#highlight-section .highlight-text, .blockquote .highlight-text').closest('.highlight-bg').addClass('highlight-active');
+      }
     }
-
-    $(document).ready(applyHighlight);
     $(window).resize(applyHighlight);
-
-
-
 
     // Listener for click events on the buttons
     $('.toggle-filter').on('click', function(event) {
@@ -86,6 +86,7 @@
 
           // Search within this section
           section.find("li").each(function() {
+            console.log(section);
             if (!$(this).hasClass('heading')) {
               var name = $(this).text().toLowerCase().replace(/\s+/g, ' ').trim();
               if (name.includes(searchValue)) {
@@ -169,52 +170,208 @@
     });
     // Populate the list
     // Create and append "Donors" section with heading
-    $("#donorList").append("<div id='donorSection'><li class='heading'>Donors</li></div>");
+    $("#donorList").append("<div id='donorSection'><ul class='heading'><li>Donors</li></ul></div>");
 
-    // Iterate through donors and append each donor to the donor section
+    // Create a container for the grid in the modal
+    $("#modal-donors, #modal-sapphire, #modal-honorary, #modal-memorial, #modal-endowment").append("<div class='row my-3'></div>");
+
+    // Iterate through donors and append each donor to both the donor section and the modal donors
     $.each(donors, function(index, value) {
-      $("#donorSection").append("<li><span class='name'>" + value + "</span></li>");
+      var donorListItem = "<li><span class='name'>" + value + "</span></li>";
+      var donorGridItem = "<div class='col-md-4 col-lg-3'><div class='donor-name border-bottom'>" + value + "</div></div>";
+
+      // Append to the donor section
+      $("#donorSection .heading").append(donorListItem);
+
+      // Also append to the modal donors in a grid layout
+      $("#modal-donors .row").append(donorGridItem);
     });
+
 
     // Create and append "Honorary" section with heading
     $("#donorList").append("<div id='honorarySection'><li class='heading'>Honorary</li></div>");
 
-    // Iterate through honorary and append each honorary member to the honorary section
+    // Iterate through endowment and append each member to the endowment section
     $.each(honorary, function(index, value) {
       $("#honorarySection").append("<li><span class='name'>" + value + "</span></li>");
     });
 
+    // Function to format honorary text
+    function formatHonoraryText(value) {
+        var parts = value.split('<br>');
+        var formattedText = "<span class='honorary-intro'>" + parts[0] + "</span><br>";
+
+        if (parts.length > 1) {
+            formattedText += "<span class='honorary-name'>" + parts[1] + "</span>";
+            for (var i = 2; i < parts.length; i++) {
+                formattedText += "<br><span class='honorary-from'>" + parts[i] + "</span>";
+            }
+        }
+
+        return formattedText;
+    }
+
+    // Iterate through honorary and append each honorary member to the honorary section
+    $.each(honorary, function(index, value) {
+        var formattedValue = formatHonoraryText(value);
+
+        var honoraryListItem = "<li>" + formattedValue + "</li>";
+        var honoraryGridItem = `
+            <div class='col-md-4 col-lg-4 mb-3'>
+                <div class='card mb-3 h-100'>
+                    <div class='card-body'>
+                        <p class='card-text'>${formattedValue}</p>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // Also append to the modal honorary in a grid layout
+        $("#modal-honorary .row").append(honoraryGridItem);
+    });
+
+
+    // Function to format memorial text
+    function formatMemorialText(value) {
+        var parts = value.split('<br>');
+        var formattedText = "<span class='memorial-intro'>" + parts[0] + "</span><br>";
+
+        for (var i = 1; i < parts.length; i++) {
+            formattedText += "<span class='memorial-name'>" + parts[i] + "</span>";
+            if (i < parts.length - 1) {
+                formattedText += "<br>";
+            }
+        }
+
+        return formattedText;
+    }
+
     // Create and append "Memorial" section with heading
-    $("#donorList").append("<div id='memorialSection'><li class='heading'>Memorial</li></div>");
+    $("#donorList").append("<div id='memorialSection'><li class='heading'>Memorial</li><ul id='memorialList'></ul></div>");
+
+    // Iterate through memorial and append each member to the memorial section
+    $.each(memorial, function(index, value) {
+        var formattedValue = formatMemorialText(value);
+
+        var memorialListItem = "<li>" + formattedValue + "</li>";
+        $("#memorialList").append(memorialListItem);
+
+        var memorialGridItem = `
+            <div class='col-md-4 col-lg-4 mb-3'>
+                <div class='card mb-3 h-100'>
+                    <div class='card-body'>
+                        <p class='card-text'>${formattedValue}</p>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // Also append to the modal memorial in a grid layout
+        $("#modal-memorial .row").append(memorialGridItem);
+    });
+
 
     // Iterate through memorial and append each memorial member to the memorial section
-    $.each(memorial, function(index, value) {
-      $("#memorialSection").append("<li><span class='name'>" + value + "</span></li>");
+    // Function to format memorial text
+    function formatMemorialText(value) {
+        var parts = value.split('<br>');
+        var formattedText = "<span class='memorial-intro'>" + parts[0] + "</span><br>";
+
+        if (parts.length > 1) {
+            formattedText += "<span class='memorial-name'>" + parts[1] + "</span>";
+            for (var i = 2; i < parts.length; i++) {
+                formattedText += "<br><span class='memorial-name'>" + parts[i] + "</span>";
+            }
+        }
+
+        return formattedText;
+    }
+
+    // Iterate through the memorial arrays and create the cards
+    $.each([memorial, memorialLong], function(arrayIndex, memorialArray) {
+        $.each(memorialArray, function(index, value) {
+            var formattedValue = formatMemorialText(value);
+
+            var memorialGridItem = `
+                <div class='col-md-6 col-lg-4'>
+                    <div class='card mb-3'>
+                        <div class='card-body'>
+                            <p class='card-text'>${formattedValue}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
     });
 
     // Create and append "Sapphire" section with heading
-    $("#donorList").append("<div id='sapphireSection'><li class='heading'>Sapphire</li></div>");
+    $("#donorList").append("<div id='sapphireSection'><li class='heading'>Sapphire Society</li></div>");
 
     // Iterate through sapphire and append each member to the sapphire section
     $.each(sapphire, function(index, value) {
       $("#sapphireSection").append("<li><span class='name'>" + value + "</span></li>");
+
+      var sapphireListItem = "<li><span class='name'>" + value + "</span></li>";
+      var sapphireGridItem = "<div class='col-md-4 col-lg-3'><div class='donor-name border-bottom'>" + value + "</div></div>";
+
+      // Append to the sapphire section
+      $("#sapphireSection .heading").append(sapphireListItem);
+
+      // Also append to the modal sapphires in a grid layout
+      $("#modal-sapphire .row").append(sapphireGridItem);
+
     });
 
-    // Create and append "Endowment" section with heading
-    $("#donorList").append("<div id='endowment-r-Section'><li class='heading'>Endowment - Restricted</li></div>");
+    // Function to format endowment text
+    function formatEndowmentText(value) {
+        return "<span class='endowment-name'>" + value + "</span>";
+    }
 
-    // Iterate through endowment and append each member to the endowment section
+    // Create and append "Endowment" section with heading
+    $("#donorList").append("<div id='endowmentSection'><li class='heading'>Endowment</li><ul id='endowmentList'></ul></div>");
+
+    // Iterate through restricted endowment and append each member to the endowment section
     $.each(restricted, function(index, value) {
-      $("#endowment-r-Section").append("<li><span class='name'>" + value + "</span></li>");
+        var formattedValue = formatEndowmentText(value);
+
+        var endowmentListItem = "<li>" + formattedValue + "</li>";
+        $("#endowmentList").append(endowmentListItem);
+
+        var endowmentGridItem = `
+            <div class='col-md-4 col-lg-4 mb-3'>
+                <div class='card mb-3 h-100'>
+                    <div class='card-body'>
+                        <p class='card-text'>${formattedValue}</p>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // Also append to a modal endowment in a grid layout (if needed)
+        $("#modal-endowment .row").append(endowmentGridItem);
     });
 
-    // Create and append "Endowment" section with heading
-    $("#donorList").append("<div id='endowment-ur-Section'><li class='heading'>Endowment - Unrestricted</li></div>");
-
-    // Iterate through endowment and append each member to the endowment section
+    // Iterate through unrestricted endowment and append each member to the endowment section
     $.each(unrestricted, function(index, value) {
-      $("#endowment-ur-Section").append("<li><span class='name'>" + value + "</span></li>");
+        var formattedValue = formatEndowmentText(value);
+
+        var endowmentListItem = "<li>" + formattedValue + "</li>";
+        $("#endowmentList").append(endowmentListItem);
+
+        // If grid layout is also required for unrestricted endowment
+        var endowmentGridItem = `
+            <div class='col-md-4 col-lg-4 mb-3'>
+                <div class='card mb-3 h-100'>
+                    <div class='card-body'>
+                        <p class='card-text'>${formattedValue}</p>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        $("#modal-endowment .row").append(endowmentGridItem);
     });
+
 
     // Function to append items to Bootstrap columns within a row
     function appendItemsToColumns(containerId, items) {
@@ -231,15 +388,24 @@
     }
 
     // jQuery to handle scrolling within the modal
-    $(document).on('click', '.not-filter', function() {
-      var sectionId = $(this).data('section');
-      $('#donorModal').on('shown.bs.modal', function() {
-        $('#donorModal .modal-body').animate({
-          scrollTop: $(sectionId).offset().top
-        }, 500);
-      });
-    });
+    $(document).on('click', '#donorModal .not-filter', function(event) {
+        event.preventDefault();
+        var sectionId = $(this).attr('href');
+        var targetElement = $(sectionId);
+        var modalBody = $('#donorModal .modal-body');
 
+        if(targetElement.length) {
+            var targetOffset = targetElement.offset().top;
+            var modalBodyOffset = modalBody.offset().top;
+            var scrollDistance = targetOffset - modalBodyOffset - 120; // 120 can be adjusted for any fixed header or margin
+
+            modalBody.animate({
+                scrollTop: modalBody.scrollTop() + scrollDistance
+            }, 1000); // Duration of the animation in milliseconds
+        } else {
+            console.log('Target element not found for ID:', sectionId);
+        }
+    });
 
 
 
@@ -286,16 +452,15 @@
     );
 
 
-    const $elements = $("#update-988, #by-the-numbers, #financial-growth, #our-board-members, #our-donors, #annual-report-23, #letter-from-david, #history-centerstone");
-
-
+    const $elements = $("#annual-report-23, #letter-from-david, #history-centerstone, #highlights-accomplishments, #patient-stories, #update-988, #national-policy, #by-the-numbers, #financial-growth, #military-services, #institute, #our-board-members, #our-donors, #team-photo-gallery, #about-the-design");
 
     //SCROLLIFY
 
     function debounce(func, wait, immediate) {
       var timeout;
       return function() {
-        var context = this, args = arguments;
+        var context = this,
+          args = arguments;
         var later = function() {
           timeout = null;
           if (!immediate) func.apply(context, args);
@@ -329,7 +494,7 @@
 
     // Function to handle activation of section links
     function handleSectionActivation() {
-      const offset = 50;
+      const offset = -150;
       const currentScroll = $(window).scrollTop() + offset;
       let $currentSection;
 
@@ -349,19 +514,39 @@
 
     // Initialize Scrollify if window width is sufficient
     function initializeScrollify() {
-      if ($(window).width() >= 992) { // Adjust breakpoint as needed
+      if ($(window).width() >= 992) {
         $.scrollify({
           section: ".section",
-          setHeights: false
+          easing: "easeOutExpo",
+          scrollSpeed: 800,
+          setHeights: true,
+          updateHash: false,
+          after: function(sectionIndex) {
+              var scrolledSection = $.scrollify.current();
+              if (scrolledSection.length > 0) {
+                  var topOffset = scrolledSection.offset().top;
+                  if (window.scrollY !== topOffset) {
+                      window.scrollTo(0, topOffset);
+                  }
+              }
+          }
         });
+      } else {
+        $.scrollify.destroy();
       }
     }
+
+    // Also consider reinitializing on window resize
+    $(window).on('resize', function() {
+      initializeScrollify();
+    });
+
 
     // Function to handle Scrollify navigation
     function handleScrollifyNavigation() {
       $(document).on("click", ".nav-link", function(event) {
         console.log('nav-link click');
-        
+
         // Check if the window's width is greater than 992px
         if ($(window).width() > 992) {
           event.preventDefault();
@@ -378,7 +563,7 @@
     // Event Listeners
     $(window).on('scroll resize', checkVisibility);
     // Usage with your scroll event
-    $(window).on('scroll', debounce(handleSectionActivation, 50));
+    $(window).on('scroll', debounce(handleSectionActivation, 150));
     initializeScrollify();
     handleScrollifyNavigation();
 
@@ -411,7 +596,7 @@
       console.log('main-content: ' + $('.main-content').width());
       console.log('combined-sections: ' + $('#combined-sections').width());
       console.log('body: ' + $('body').width());
-      
+
       let position = parseFloat($(".sidebar").css("right")); // Parse the value to a float
 
       if (position < 0) { // If it's negative (hidden)
@@ -435,7 +620,7 @@
 
         if (windowWidth < 992) {
           $(".sidebar").css({
-            "right": `-${80 - 5}%`, // Hide sidebar but leave 5% visible for the button
+            "right": `-${80 - 2}%`, // Hide sidebar but leave 5% visible for the button
             "width": "80%" // Set to 80% width
           });
         } else {
@@ -444,58 +629,47 @@
       }
     }
 
-    // Initialize sidebar based on window size
     function initializeSidebar() {
       const windowWidth = $(window).width();
-      console.log('combined-sections: ' + $('#combined-sections').width());
-      console.log('body: ' + $('body').width());
-
       if (windowWidth < 992) {
-        // Set initial state for mobile
-        $(".sidebar").css({
-          "right": `-${80 - 5}%`, // Adjust as needed
+        // Mobile settings
+        $(".sidebar").removeAttr('style').css({
+          "right": `-${80 - 2}%`, // Adjust as needed
           "width": "80%"
-        });
-        $(".main-content").css("width", "100%").removeClass("with-sidebar");
+        }).removeClass("visible");
+
+        $(".main-content").removeAttr('style').css("width", "100%").removeClass("with-sidebar");
+
         $("#toggleIcon").addClass("fa-chevron-left moved-icon").removeClass("fa-times");
       } else {
-        // Set initial state for desktop
-        $(".sidebar").addClass("visible").css("width", "20%");
-        $(".main-content").css("width", "80%").addClass("with-sidebar");
+        // Desktop settings
+        $(".sidebar").removeAttr('style').addClass("visible").css("width", "20%");
+        $(".main-content").removeAttr('style').css("width", "80%").addClass("with-sidebar");
         $("#toggleIcon").addClass("fa-times").removeClass("fa-chevron-left moved-icon");
       }
-
-      console.log('main-content: ' + $('.main-content').width());
     }
 
+    // Debounce function to limit how often a function can run
+    function debounce(func, wait, immediate) {
+      let timeout;
+      return function() {
+        const context = this,
+          args = arguments;
+        const later = function() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+        };
+        const callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+      };
+    }
 
+    const debouncedInitializeSidebar = debounce(initializeSidebar, 250);
 
-    // $(window).on("resize", function() {
-    //   const windowWidth = $(window).width();
-    //   const toggleIconWidth = $("#toggleIcon").outerWidth(true); // Get the total width including margin, padding, and border
+    $(window).on("resize", debouncedInitializeSidebar);
 
-    //   if (windowWidth >= 992) {
-    //     $(".sidebar").css({
-    //       "right": "0%",
-    //       "width": "20%"
-    //     });
-    //     $(".main-content").removeClass("full-width").addClass("with-sidebar");
-    //     $("#toggleIcon").removeClass("fa-chevron-left moved-icon").addClass("fa-times");
-
-    //     // Reset the left margin/padding of .main-content
-    //     $(".main-content").css("margin-left", "0px");
-    //   } else {
-    //     $(".sidebar").css({
-    //       "right": `-${80 - 2}%`,
-    //       "width": "80%"
-    //     });
-    //     $(".main-content").removeClass("with-sidebar").addClass("full-width");
-    //     $("#toggleIcon").removeClass("fa-times").addClass("fa-chevron-left moved-icon");
-
-    //     // Set the left margin/padding of .main-content to ensure the toggle icon doesn't overlap
-    //     $(".main-content").css("margin-left", `${toggleIconWidth + 20}px`); // 20px buffer
-    //   }
-    // });
 
 
     // Toggle sidebar when menu button is clicked

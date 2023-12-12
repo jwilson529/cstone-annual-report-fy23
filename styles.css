@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
 
-
-
-
 @font-face {
     font-family: "Kobern-Regular";
     src: url("fonts/Kobern-Regular.eot");
@@ -30,9 +27,6 @@
     font-display: swap;
 }
 
-/* body, h1, h2, h3, h4, h5, h6, p, a {
-     font-family: 'Kobern-Regular';
- }*/
 
 body,
 h1,
@@ -44,6 +38,7 @@ h6,
 p,
 a {
     font-family: 'Lato', sans-serif;
+    font-size: 18px;
 }
 
 h1,
@@ -58,7 +53,11 @@ h6 {
 
 a {
     font-weight: 500;
-    /* Medium weight for links */
+    color: #367689;
+}
+
+a::hover {
+    color: #367689;
 }
 
 p {
@@ -66,6 +65,10 @@ p {
     /* Regular weight for paragraphs */
 }
 
+figcaption h4 {
+    color: #fff;
+    font-size: 1.2em;
+}
 
 /* Text Colors */
 .text-ar-yellow {
@@ -156,7 +159,8 @@ body {
     color: #414142;
 }
 
-body, html {
+body,
+html {
     overflow-x: hidden;
 }
 
@@ -248,7 +252,7 @@ img.centerstone-logo {
 .highlight-text {
     display: inline;
     padding: 0 3px;
-    font-size: 1.2em;
+    font-size: 2rem;
     position: relative;
     z-index: 2;
     /* Ensuring text stays above the sliding background */
@@ -353,6 +357,14 @@ h2.w-100 .highlight-text {
 #our-donors,
 #annual-report-23,
 #letter-from-david,
+#military-services,
+#national-policy,
+#patient-stories,
+#highlights-accomplishments,
+#team-photo-gallery,
+#institute,
+#about-the-design,
+#donorModal .modal-body,
 #history-centerstone {
     position: relative;
 }
@@ -364,6 +376,14 @@ h2.w-100 .highlight-text {
 #our-donors::before,
 #annual-report-23::before,
 #letter-from-david::before,
+#military-services::before,
+#national-policy::before,
+#patient-stories::before,
+#highlights-accomplishments::before,
+#team-photo-gallery::before,
+#institute::before,
+#about-the-design::before,
+#donorModal .modal-body::before,
 #history-centerstone::before {
     content: "";
     position: absolute;
@@ -375,7 +395,6 @@ h2.w-100 .highlight-text {
     background-repeat: no-repeat;
     background-position: center;
     opacity: var(--fade-opacity, 0.5);
-    /* Default opacity if variable is not set */
     z-index: 0;
     animation-name: none;
     animation-duration: 2s;
@@ -390,6 +409,14 @@ h2.w-100 .highlight-text {
 #our-donors.in-viewport::before,
 #annual-report-23.in-viewport::before,
 #letter-from-david.in-viewport::before,
+#military-services.in-viewport::before,
+#national-policy.in-viewport::before,
+#patient-stories.in-viewport::before,
+#highlights-accomplishments.in-viewport::before,
+#team-photo-gallery.in-viewport::before,
+#institute.in-viewport::before,
+#about-the-design.in-viewport::before,
+#donorModal .modal-body.in-viewport::before,
 #history-centerstone.in-viewport::before {
     animation-name: fadeIn;
     /* Apply the animation only when in viewport */
@@ -402,6 +429,14 @@ h2.w-100 .highlight-text {
 #our-donors .container,
 #annual-report-23 .container,
 #letter-from-david .container,
+#military-services .container,
+#national-policy .container,
+#patient-stories .container,
+#highlights-accomplishments .container,
+#team-photo-gallery .container,
+#institute .container,
+#about-the-design .container,
+#donorModal .modal-body .container,
 #history-centerstone .container {
     position: relative;
     z-index: 1;
@@ -413,50 +448,85 @@ h2.w-100 .highlight-text {
 #financial-growth::before,
 #our-board-members::before,
 #our-donors::before,
+#highlights-accomplishments::before,
 #annual-report-23::before {
     background-image: url('img/Annual_Report_3.webp');
-    --fade-opacity: 0.05;
+    /* butterfly */
+    --fade-opacity: 0.03;
 }
 
 #letter-from-david::before {
-    background-image: url('img/caterpillar-twig.webp');
+    background-image: url('img/PatternMutedBlack01.webp');
+    /* caterpillar */
     --fade-opacity: 0.03;
 }
 
 #history-centerstone::before {
-    background-image: url('img/caterpillar-twig.webp');
+    background-image: url('img/caterpillar-muted.webp');
+    --fade-opacity: 0.03;
+}
+
+#highlights-accomplishments::before {
+    background-image: url('img/PatternMutedBlack01.webp');
+    --fade-opacity: 0.03;
+}
+
+#patient-stories::before {
+    background-image: url('img/Annual_Report_2.webp');
     --fade-opacity: 0.03;
 }
 
 #update-988::before {
-    background-image: url('img/watercolor_pupa_1.webp');
-    --fade-opacity: 0.09;
+    background-image: url('img/PatternMutedBlack01.webp');
+    --fade-opacity: 0.03;
+}
+
+#national-policy::before {
+    background-image: url('img/Annual_Report_4.webp');
+    --fade-opacity: 0.03;
 }
 
 #by-the-numbers::before {
-    background-image: url('img/watercolor_pupa_2.webp');
-    --fade-opacity: 0.09;
+    background-image: url('img/PatternMutedBlack01.webp');
+    --fade-opacity: 0.03;
 }
 
 #financial-growth::before {
-    background-image: url('img/watercolor_butterfly_1.webp');
-    --fade-opacity: 0.09;
+    background-image: url('img/Annual_Report_5.webp');
+    --fade-opacity: 0.03;
 }
+
+#military-services::before {
+    background-image: url('img/PatternMutedBlack01.webp');
+    --fade-opacity: 0.03;
+}
+
+#institute::before {
+    background-image: url('img/Annual_Report_7.webp');
+    --fade-opacity: 0.03;
+}
+
+#team-photo-gallery::before {
+    background-image: url('img/PatternMutedBlack01.webp');
+    --fade-opacity: 0.03;
+}
+
 
 #our-board-members::before {
     opacity: 0;
-    position: fixed !important;
+    background-attachment: fixed !important;
     background-size: cover !important;
-    background-image: url('img/watercolor_butterfly_2.webp');
-    --fade-opacity: 0.09;
+    background-image: url('img/PatternMutedBlack01.webp');
+    --fade-opacity: 0.03;
 }
 
 #our-donors::before {
     opacity: 0;
-    position: fixed !important;
+    background-attachment: fixed !important;
     background-size: cover !important;
-    background-image: url('img/watercolor_butterfly_3.webp');
-    --fade-opacity: 0.09;
+    background-image: url('img/Annual_Report_3.webp');
+    --fade-opacity: 0.03;
+    pointer-events: none;
 }
 
 #our-board-members:not(.in-viewport)::before {
@@ -464,18 +534,22 @@ h2.w-100 .highlight-text {
     opacity: 0;
 }
 
-
-#financial-growth::before {
-    z-index: 2;
-    /* This will position it above the other elements */
-    background-image: url('img/watercolor_butterfly_1.webp');
-    --fade-opacity: 0.09;
+#about-the-design::before {
+    background-image: url('img/caterpillar-muted.webp');
+    --fade-opacity: 0.03;
 }
 
-#financial-growth .container {
-    z-index: 3;
+#about-the-design {
+    background: url('img/Annual_Report_9.webp') no-repeat calc(100% - 10px) calc(100% - 10px) / 25% auto;
 }
 
+#donorModal .modal-body {
+    background: url('img/Annual_Report_9.webp') no-repeat left calc(100% - 10px) / 25% auto;
+}
+
+section#our-donors {
+    border-right: 1px solid #ecebee;
+}
 
 /* ----- Our Board Members section ----- */
 #our-board-members h6 {
@@ -526,7 +600,7 @@ h2.w-100 .highlight-text {
 }
 
 .sidebar ul li {
-    margin-bottom: 10px;
+    margin-bottom: 6px;
 }
 
 .sidebar ul li a {
@@ -570,7 +644,7 @@ h2.w-100 .highlight-text {
 
 /* Sidebar Menu Background */
 #sidebarMenu {
-    background-image: url('data:image/svg+xml;base64,...'), url(img/Annual_Report_1_copy.png);
+    background-image: url(img/Annual_Report_1_copy.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center 60%;
@@ -588,7 +662,8 @@ h2.w-100 .highlight-text {
 }
 
 .sidebar {
-    max-height: 100vh; /* 100% of the viewport height */
+    max-height: 100vh;
+    /* 100% of the viewport height */
 }
 
 
@@ -607,9 +682,9 @@ h2.w-100 .highlight-text {
         max-height: none;
     }
 
-    .section {
-        align-items: flex-start !important;
-    }
+    /*    .section {
+    align-items: flex-start !important;
+}*/
 
     img.centerstone-logo {
         width: 200px;
@@ -744,8 +819,8 @@ h2.w-100 .highlight-text {
 
 /* To tilt the list on the x-axis */
 /*#donor-list-container {
-    transform: rotateX(35deg);
-    transform-origin: center;
+transform: rotateX(35deg);
+transform-origin: center;
 }*/
 
 /* To make the font size larger */
@@ -792,6 +867,7 @@ h2.w-100 .highlight-text {
 
 /* Default state of the buttons */
 .toggle-filter,
+.filter-style,
 .not-filter {
     color: #414142;
     /* Dark color for text */
@@ -805,6 +881,7 @@ h2.w-100 .highlight-text {
 
 /* Hover state of the buttons */
 .toggle-filter:hover,
+.togglefilter-style,
 .not-filter:hover {
     color: #F4B753;
     /* Lighter color when hovered */
@@ -816,6 +893,7 @@ h2.w-100 .highlight-text {
 
 /* Active state of the buttons */
 .toggle-filter.active,
+.toggle-filter-style,
 .not-filter.active,
 .btn-outline-primary:not(:disabled):not(.disabled).active,
 .btn-outline-primary:not(:disabled):not(.disabled):active,
@@ -829,6 +907,7 @@ h2.w-100 .highlight-text {
 }
 
 .toggle-filter:focus,
+.togglefilter-style,
 .not-filter:focus {
     outline: 3px solid #F4B753 !important;
     /* Change to your preferred color */
@@ -879,8 +958,8 @@ h2.w-100 .highlight-text {
 }
 
 /*.toggle-filter.active {
-    background-color: #007bff;
-    color: white;
+background-color: #007bff;
+color: white;
 }*/
 
 
@@ -956,18 +1035,71 @@ a.btn.rounded-right {
     /* Ensures it stays above other content */
 }
 
+.border-sm {
+    background-color: rgba(211, 211, 211, 0.5);
+    /* Light gray background with some opacity */
+    border-radius: 5px;
+    /* Adjust radius as needed */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    /* Subtle shadow */
+    padding: 1rem;
+}
+
+.donor-name.border-bottom {
+    margin-bottom: 1.2rem;
+}
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 10px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.gallery a {
+    display: block;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    transition: transform 0.2s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
 
 @media (max-width: 768px) {
     .display-3 {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     .display-4 {
-        font-size: 1.75rem;
+        font-size: 2.05rem;
     }
+
+    .sidebar ul li {
+        margin-bottom: 6px;
+    }
+
+    .our-board-members-row {
+        margin-left: -2rem;
+    }
+
+/*    .donor-nav {
+        display: none !important;
+    }*/
 }
 
-@media screen and (max-width: 992px) { /* Adjust this value based on your mobile breakpoint */
+@media screen and (max-width: 992px) {
+
+    /* Adjust this value based on your mobile breakpoint */
     [data-aos] {
         transition: none !important;
         opacity: 1 !important;
@@ -978,7 +1110,8 @@ a.btn.rounded-right {
 .card-stats {
     position: relative;
     transition: transform 0.3s ease-in-out;
-    border: 2px solid transparent; /* Maintains card layout */
+    border: 2px solid transparent;
+    /* Maintains card layout */
     z-index: 999;
 }
 
@@ -989,18 +1122,354 @@ a.btn.rounded-right {
     left: 0;
     width: 0;
     height: 100%;
-    border: 2px solid #dc9a7d;
+    border: 2px solid #f4b753;
     transition: width 0.3s ease-in-out;
-    z-index: -999; 
+    z-index: -999;
 }
 
 .card-stats-active::before {
-    width: 100%; /* Expand border */
+    width: 100%;
+    /* Expand border */
 }
 
 .card-stats-active {
-    transform: scale(1.05); /* Scale effect */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    transform: scale(1.05);
+    /* Scale effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Optional shadow for depth */
+}
+
+.dotted-border-top {
+    border-top: 2px dotted #f4b753;
 }
 
 
+/* This CSS will apply when the screen width is less than 992px */
+@media (max-width: 991.98px) {
+    img.centered-mobile {
+        float: none;
+        /* Removes any floating properties */
+        display: block;
+        /* Makes the image a block element */
+        margin-left: auto;
+        /* These two margin properties */
+        margin-right: auto;
+        /* center the image horizontally */
+    }
+}
+
+/* Apply vh-100 for larger screens */
+@media (min-width: 992px) {
+
+    /* Adjust breakpoint as needed */
+    .container.vh-100-custom {
+        height: 100vh;
+    }
+}
+
+/* For smaller screens, set height to auto or 100% */
+@media (max-width: 991px) {
+
+    /* Adjust breakpoint as needed */
+    .container.vh-100-custom {
+        height: 100% !important;
+        /* or 100% */
+    }
+}
+
+
+.plus-sign {
+    vertical-align: super;
+    font-size: smaller;
+    /* Adjust the size as needed */
+}
+
+
+#video-gallery,
+#by-the-numbers,
+footer {
+    position: relative;
+    z-index: 2;
+}
+
+.carousel-item {
+    width: 100%;
+}
+
+#video-gallery a img,
+#shorts-gallery a img {
+    transition: all 0.3s ease-in-out;
+}
+
+#video-gallery a:hover img,
+#shorts-gallery a:hover img {
+    filter: grayscale(10%);
+    transform: translateY(-10px);
+}
+
+.z-index-neg {
+    z-index: -1;
+}
+
+.z-index-1 {
+    z-index: 1;
+}
+
+.z-index-5 {
+    z-index: 5;
+}
+
+#video-gallery .video-container {
+    max-width: 60%;
+    /* Adjust the width as needed */
+    margin: auto;
+    /* Center the video */
+}
+
+
+.table-responsive.table-fy22.rounded {
+    background: rgb(255 255 255 / 70%);
+    font-size: 1.3rem;
+}
+
+.table td,
+.table th {
+    border-top: 1px solid #414142;
+}
+
+/* Customizing the size of Ekko Lightbox */
+.ekko-lightbox .modal-dialog {
+    max-width: 80%;
+    /* Adjust this value to control the width */
+    width: auto;
+    /* Auto width for responsive behavior */
+}
+
+.ekko-lightbox .ekko-lightbox-container {
+    height: auto;
+    /* Auto height to accommodate content */
+}
+
+/*Highlights*/
+.zoomed-in {
+    transform: scale(2.5) !important;
+    z-index: -1;
+    position: relative;
+}
+
+.zoomed-in.animate {
+    animation: fadeRightZoom 3s ease forwards;
+}
+
+@keyframes fadeRightZoom {
+    from {
+        opacity: 0;
+        transform: translateX(-30px) scale(2.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(2.5);
+    }
+}
+
+.text-success {
+    color: #55a49c !important;
+}
+
+.clickable-card {
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, border 0.3s ease;
+    /* Updated transition for border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    /* Adds gap around the image */
+    background-color: #fff;
+    /* Background color of the card */
+    border: 1px solid transparent;
+    /* Initial border set to transparent */
+}
+
+.clickable-card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid #ddd;
+    /* Border color on hover */
+}
+
+.card-link {
+    text-decoration: none;
+}
+
+.img-thumbnail-style {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    padding: 5px;
+    background-color: #fff;
+}
+
+#donorSection .heading,
+#modal_donors {
+    list-style-type: none;
+    /* Removes the default bullet points */
+    padding-left: 0;
+    /* Removes default padding */
+}
+
+/* Styles for "In memory of" and introductory text */
+.memorial-intro,
+.honorary-intro {
+    font-weight: bold;
+}
+
+/* Styles for the name of the person */
+.memorial-name,
+.honorary-name {
+    font-style: italic;
+}
+
+/* Styles for the names of the donors */
+.memorial-from,
+.honorary-from {
+    font-size: smaller;
+}
+
+
+
+
+/*#donor-container::before,
+#honorary-container::before,
+#memorial-container::before,
+#sapphire-container::before,
+#endowment-container::before,
+#invested-funds-container::before*/
+
+/*#sapphire-container::before {
+    content: '';
+    display: block;
+    height: 100px;
+    margin-top: -100px;
+    visibility: hidden;
+    pointer-events: none;
+}
+*/
+/* Hide scrollbar for Chrome, Safari and Opera */
+.sidebarMenu-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.sidebarMenu-scroll {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.sidebarMenu-scroll {
+    height: 100vh !important;
+    overflow: scroll !important;
+}
+
+
+.pie-chart {
+    height: 365px;
+    position: relative;
+}
+
+.hover-excerpt {
+    background-color: #e4923f;
+    transition-property: all;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    overflow: hidden;
+    height: 65px;
+    position: absolute;
+    bottom: 0px;
+    z-index: 3;
+}
+
+.pie-chart:hover .hover-excerpt {
+    transition-property: all;
+    transition-duration: .5s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    position: absolute;
+    bottom: 0px;
+    height: 365px;
+    color: #fff;
+}
+
+.card-img-overlay {
+    background: #414142;
+    opacity: 0.8;
+}
+
+.card-img-overlay.default_opacity {
+    opacity: 0 !important;
+}
+
+.card-title-overlay {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.card-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+ul#memorialList,
+ul#endowmentList {
+    list-style-type: none;
+}
+
+.btn-icon {
+    display: flex;
+    align-items: center;
+}
+
+.icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.btn-primary {
+    background-color: #e4923f; /* New primary color */
+    border-color: #cd8338; /* Darker border color for contrast */
+}
+
+.btn-primary:hover {
+    background-color: #e69c52; /* Lighter on hover */
+    border-color: #e69c52;
+}
+
+.btn-primary:focus, .btn-primary.focus {
+    box-shadow: 0 0 0 0.25rem rgba(228, 146, 63, 0.5); /* Focus shadow with opacity */
+}
+
+.btn-primary:disabled, .btn-primary.disabled {
+    background-color: #e4923f;
+    border-color: #cd8338;
+    opacity: 0.65; /* Disabled state opacity */
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, 
+.btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+    background-color: #cd8338; /* Darker color on active state */
+    border-color: #cd8338;
+}
+
+section {
+    padding-bottom: 3rem;
+}
