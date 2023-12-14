@@ -11,11 +11,75 @@
     // Refresh AOS to ensure animations are applied
     AOS.refresh();
 
+    // Turn on scrollspy
+    $('body').scrollspy({ target: '#navbar', offset: 10 });
+
+
+    // Select all links with hashes
+    $('a[href*="#"]')
+      // Remove links that don't actually link to anything
+      .not('[href="#"]')
+      .not('[href="#0"]')
+      .click(function(event) {
+        // On-page links
+        if (
+          location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+          && 
+          location.hostname == this.hostname
+        ) {
+          // Figure out element to scroll to
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+          // Does a scroll target exist?
+          if (target.length) {
+            // Only prevent default if animation is actually gonna happen
+            event.preventDefault();
+            $('html, body').animate({
+              scrollTop: target.offset().top
+            }, 1000, function() {
+              // Callback after animation
+              // Must change focus!
+              var $target = $(target);
+              $target.focus();
+              if ($target.is(":focus")) { // Checking if the target was focused
+                return false;
+              } else {
+                $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+                $target.focus(); // Set focus again
+              };
+            });
+          }
+        }
+      });
+
     $(document).on('click', '[data-toggle="lightbox"]', function(event) {
       event.preventDefault();
       $(this).ekkoLightbox();
     });
 
+
+    var originalBodyPaddingRight = null;
+
+    $('.modal').on('show.bs.modal', function() {
+        // Check if body has a vertical scrollbar
+        var hasScrollbar = window.innerWidth > document.documentElement.clientWidth;
+        
+        if (hasScrollbar) {
+            // Save original body padding right
+            originalBodyPaddingRight = document.body.style.paddingRight;
+            
+            // Get scrollbar width
+            var scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
+            // Set a corresponding right padding on the body
+            document.body.style.paddingRight = scrollbarWidth + 'px';
+        }
+    });
+
+    $('.modal').on('hidden.bs.modal', function() {
+        // Reset the padding on the body
+        document.body.style.paddingRight = originalBodyPaddingRight;
+    });
 
     function applyHighlight() {
       if ($(window).width() >= 992) {
@@ -494,7 +558,7 @@
 
     // Function to handle activation of section links
     function handleSectionActivation() {
-      const offset = -150;
+      const offset = 50;
       const currentScroll = $(window).scrollTop() + offset;
       let $currentSection;
 
@@ -513,79 +577,79 @@
     }
 
     // Initialize Scrollify if window width is sufficient
-    function initializeScrollify() {
-      if ($(window).width() >= 992) {
-        $.scrollify({
-          section: ".section",
-          easing: "easeOutExpo",
-          scrollSpeed: 800,
-          setHeights: true,
-          updateHash: false,
-          after: function(sectionIndex) {
-              var scrolledSection = $.scrollify.current();
-              if (scrolledSection.length > 0) {
-                  var topOffset = scrolledSection.offset().top;
-                  if (window.scrollY !== topOffset) {
-                      window.scrollTo(0, topOffset);
-                  }
-              }
-          }
-        });
-      } else {
-        $.scrollify.destroy();
-      }
-    }
+    // function initializeScrollify() {
+    //   if ($(window).width() >= 992) {
+    //     $.scrollify({
+    //       section: ".section-",
+    //       easing: "easeOutExpo",
+    //       scrollSpeed: 800,
+    //       setHeights: false,
+    //       updateHash: false,
+    //       after: function(sectionIndex) {
+    //           var scrolledSection = $.scrollify.current();
+    //           if (scrolledSection.length > 0) {
+    //               var topOffset = scrolledSection.offset().top;
+    //               if (window.scrollY !== topOffset) {
+    //                   window.scrollTo(0, topOffset);
+    //               }
+    //           }
+    //       }
+    //     });
+    //   } else {
+    //     $.scrollify.destroy();
+    //   }
+    // }
 
     // Also consider reinitializing on window resize
-    $(window).on('resize', function() {
-      initializeScrollify();
-    });
+    // $(window).on('resize', function() {
+    //   initializeScrollify();
+    // });
 
 
     // Function to handle Scrollify navigation
-    function handleScrollifyNavigation() {
-      $(document).on("click", ".nav-link", function(event) {
-        console.log('nav-link click');
+    // function handleScrollifyNavigation() {
+    //   $(document).on("click", ".nav-link", function(event) {
+    //     console.log('nav-link click');
 
-        // Check if the window's width is greater than 992px
-        if ($(window).width() > 992) {
-          event.preventDefault();
-          const target = $(this).attr("href");
-          const index = $(target).index('.section');
-          if (index !== -1) {
-            $.scrollify.move(index);
-          }
-        }
-      });
-    }
+    //     // Check if the window's width is greater than 992px
+    //     if ($(window).width() > 992) {
+    //       event.preventDefault();
+    //       const target = $(this).attr("href");
+    //       const index = $(target).index('.section');
+    //       if (index !== -1) {
+    //         $.scrollify.move(index);
+    //       }
+    //     }
+    //   });
+    // }
 
 
     // Event Listeners
     $(window).on('scroll resize', checkVisibility);
     // Usage with your scroll event
     $(window).on('scroll', debounce(handleSectionActivation, 150));
-    initializeScrollify();
-    handleScrollifyNavigation();
+    // initializeScrollify();
+    // handleScrollifyNavigation();
 
     // Modal event handlers
-    $('#donorModal').on('shown.bs.modal', function() {
-      $.scrollify.disable();
+    // $('#donorModal').on('shown.bs.modal', function() {
+      // $.scrollify.disable();
       // Rest of the modal open logic
-    });
+    // });
 
-    $('#donorModal').on('hidden.bs.modal', function() {
-      $.scrollify.enable();
+    // $('#donorModal').on('hidden.bs.modal', function() {
+      // $.scrollify.enable();
       // Additional logic when modal is closed, if needed
-    });
+    // });
 
     // Handle Scrollify state for scrollable list
-    $('#donor-list-container').on('mouseenter mouseleave', function(event) {
-      if (event.type === 'mouseenter') {
-        $.scrollify.disable();
-      } else {
-        $.scrollify.enable();
-      }
-    });
+    // $('#donor-list-container').on('mouseenter mouseleave', function(event) {
+    //   if (event.type === 'mouseenter') {
+    //     $.scrollify.disable();
+    //   } else {
+    //     $.scrollify.enable();
+    //   }
+    // });
 
 
     // SIDEBAR //

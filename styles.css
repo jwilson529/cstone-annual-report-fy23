@@ -28,6 +28,10 @@
 }
 
 
+html {
+    scroll-behavior: smooth;
+}
+
 body,
 h1,
 h2,
@@ -544,7 +548,7 @@ h2.w-100 .highlight-text {
 }
 
 #donorModal .modal-body {
-    background: url('img/Annual_Report_9.webp') no-repeat left calc(100% - 10px) / 25% auto;
+    background: url(img/Annual_Report_9.webp) no-repeat left calc(100% - 10px) / 10% auto;
 }
 
 section#our-donors {
@@ -713,8 +717,8 @@ section#our-donors {
 }
 
 @media (max-width: 768px) {
-    html {
-        scroll-behavior: smooth;
+    #donorModal .modal-body {
+        background: url(img/Annual_Report_9.webp) no-repeat right calc(100% - 10px) / 25% auto;
     }
 }
 
@@ -1092,7 +1096,7 @@ a.btn.rounded-right {
         margin-left: -2rem;
     }
 
-/*    .donor-nav {
+    /*    .donor-nav {
         display: none !important;
     }*/
 }
@@ -1113,6 +1117,7 @@ a.btn.rounded-right {
     border: 2px solid transparent;
     /* Maintains card layout */
     z-index: 999;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card-stats::before {
@@ -1142,6 +1147,24 @@ a.btn.rounded-right {
 .dotted-border-top {
     border-top: 2px dotted #f4b753;
 }
+
+.dotted-border-bottom {
+    border-bottom: 3px dotted #f4b753;
+}
+
+.img-thumbnail-contained {
+    width: 150px;
+    /* Desired width */
+    height: 150px;
+    /* Desired height */
+    object-fit: cover;
+    /* Ensures image is fully visible */
+    background-position: center;
+    display: block;
+     transform: translateZ(0);
+    /* Removes any extra space around the image */
+}
+
 
 
 /* This CSS will apply when the screen width is less than 992px */
@@ -1274,7 +1297,7 @@ footer {
 }
 
 .text-success {
-    color: #55a49c !important;
+    color: #367689 !important;
 }
 
 .clickable-card {
@@ -1444,32 +1467,54 @@ ul#endowmentList {
 }
 
 .btn-primary {
-    background-color: #e4923f; /* New primary color */
-    border-color: #cd8338; /* Darker border color for contrast */
+    background-color: #e4923f;
+    /* New primary color */
+    border-color: #cd8338;
+    /* Darker border color for contrast */
+}
+.btn-primary.focus, .btn-primary:focus {
+    background-color: #e4923f;
+    border-color: #cd8338;
+    box-shadow: 0 0 0 0.25rem rgba(228, 146, 63, 0.5);
 }
 
 .btn-primary:hover {
-    background-color: #e69c52; /* Lighter on hover */
+    background-color: #e69c52;
+    /* Lighter on hover */
     border-color: #e69c52;
 }
 
-.btn-primary:focus, .btn-primary.focus {
-    box-shadow: 0 0 0 0.25rem rgba(228, 146, 63, 0.5); /* Focus shadow with opacity */
+.btn-primary:focus,
+.btn-primary.focus {
+    box-shadow: 0 0 0 0.25rem rgba(228, 146, 63, 0.5);
+    /* Focus shadow with opacity */
 }
 
-.btn-primary:disabled, .btn-primary.disabled {
+.btn-primary:disabled,
+.btn-primary.disabled {
     background-color: #e4923f;
     border-color: #cd8338;
-    opacity: 0.65; /* Disabled state opacity */
+    opacity: 0.65;
+    /* Disabled state opacity */
 }
 
-.btn-primary:not(:disabled):not(.disabled):active, 
+.btn-primary:not(:disabled):not(.disabled):active,
 .btn-primary:not(:disabled):not(.disabled).active,
-.show > .btn-primary.dropdown-toggle {
-    background-color: #cd8338; /* Darker color on active state */
+.show>.btn-primary.dropdown-toggle {
+    background-color: #cd8338;
+    /* Darker color on active state */
     border-color: #cd8338;
 }
 
 section {
     padding-bottom: 3rem;
+}
+
+#our-board-members h6 {
+    font-size: 0.95rem;
+    font-weight: 200;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #414142!important;
 }

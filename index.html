@@ -17,7 +17,8 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#navbar">
+
 	<!-- Combined Sidebar and Hamburger Menu -->
 	<div class="d-flex flex-column flex-md-row" id="combined-sections">
 		<div id="sidebarMenu" class="sidebar navbar navbar-expand-md d-flex flex-column justify-content-center justify-content-between align-items-center bigger-sidebar p-0 mh-100">
@@ -27,9 +28,9 @@
 					<span class="sr-only">Toggle Menu</span>
 				</button>
 			</div>
-			<div class="flex-column align-items-center sidebarMenu-scroll">
-				<ul class="navbar-nav">
-					<li class="nav-item" data-aos="fade-left" data-aos-delay="50"><a class="nav-link" href="https://centerstone.org"><img src="https://centerstone.org/wp-content/uploads/logo_white.png" width="85%" class="centerstone-logo"></a></li>
+			<div class="flex-column align-items-center sidebarMenu-scroll mt-lg-5">
+				<ul class="navbar-nav" id="navbar">
+					<li class="nav-item" data-aos="fade-left" data-aos-delay="50"><img src="https://centerstone.org/wp-content/uploads/logo_white.png" width="85%" class="centerstone-logo"></li>
 					<li class="nav-item" data-aos-anchor="#sidebarMenu" data-aos="fade-left" data-aos-delay="100"><a class="nav-link animated-underline active" href="#annual-report-23">Annual Report FY23</a></li>
 					<li class="nav-item" data-aos-anchor="#sidebarMenu" data-aos="fade-left" data-aos-delay="150"><a class="nav-link animated-underline" href="#letter-from-david">Letter from the CEO</a></li>
 					<li class="nav-item" data-aos-anchor="#sidebarMenu" data-aos="fade-left" data-aos-delay="200"><a class="nav-link animated-underline" href="#history-centerstone">History of Centerstone</a></li>
@@ -59,6 +60,7 @@
 					<a href="http://youtube.com/CenterstoneVideos" role="button" alt="YouTube" data-aos="fade-left" data-aos-delay="1000" data-aos-anchor="#sidebarMenu"><i class="text-white fa fa-youtube-play mx-1 p-0"></i></a>
 					<!-- Linkedin -->
 					<a href="https://www.linkedin.com/company/centerstone" role="button" alt="Linkedin" data-aos="fade-left" data-aos-delay="1050" data-aos-anchor="#sidebarMenu"><i class="text-white fa fa-linkedin mx-1 p-0"></i></a>
+					<a href="#" role="button" alt="Download" data-aos="fade-left" data-aos-delay="1150" data-aos-anchor="#sidebarMenu"><i class="text-white fa fa-download" aria-hidden="true"></i></a>
 				</div>
 			</div>
 		</div>
@@ -94,15 +96,15 @@
 			<!-- Letter From David -->
 			<section id="letter-from-david" class="clearfix section bg-ar-yellow-light d-flex justify-content-center align-items-start align-items-xl-center">
 				<div class="container">
-					<h1 class="text-md-right display-3">Letter from the CEO</h1>
+					<h1 class="text-md-right display-3" data-aos="fade-up" data-aos-anchor="#letter-from-david" data-aos-delay="50">Letter from the CEO</h1>
 					<img src="/img/Dotted Lines-01.png" alt="" class="img-fluid my-2" data-aos="fade-left" data-aos-duration="1500" data-aos-anchor="#letter-from-david">
-					<img src="https://centerstone.org/wp-content/uploads/David-Guth-2022-01-300x300.png" alt="CEO Picture" width="300" height="300" class="aligncenter size-medium wp-image-74898 float-md-right rounded-circle ml-md-3 mb-3 centered-mobile" data-aos="flip-right" data-aos-anchor="#letter-from-david" data-aos-delay="100" />
-					<p data-aos="flip-right" data-aos-anchor="#letter-from-david" data-aos-delay="200">I am always humbled when I pause and reflect on Centerstone’s many accomplishments, which are only made possible by the leadership and support from our boards of directors and our dedicated team of more than 3,800 staff members whose tremendous impact positively changes patient lives and extends into our greater communities. As the unprecedented demand for mental health resources continues to grow, our service areas are expanding to reach the ever-growing number of people who need mental health and substance use disorder support. I’m proud of our organization’s response to the cataclysmic changes affecting the behavioral health industry in recent years and our sustained high standards for delivering compassionate, quality care. </p>
-					<p data-aos="flip-right" data-aos-anchor="#letter-from-david" data-aos-delay="300">Over the past year, we have continued to break down barriers to care and reduce the stigma of mental health diagnoses and treatment. We know good treatment works, and Centerstone is leading the way in normalizing open, candid conversations about mental health and substance use disorder. This year we also celebrated the first anniversary of the 988 Suicide & Crisis Lifeline and further developed strong relationships with policy decision-makers at the local, state, and federal level, advocating for policies that support increased access to care, behavioral health workforce development, and mental health parity. Regulators want the same things we want at Centerstone, which is the best for our communities, so we are grateful for the opportunity to work with them on solutions that benefit everyone.</p>
-					<p data-aos="flip-right" data-aos-anchor="#letter-from-david" data-aos-delay="400">Centerstone has also worked to support our teams to make work more manageable and to equip our staff with effective tools through initiatives like Centerstone’s Simulation Training Center and the use of artificial intelligence. We know these innovations help accelerate and enhance the science of care which leads to our patients getting better faster. In the coming year, we will continue to cast a wide net for the best talent to care for the increasing numbers of people needing mental health resources. </p>
-					<p data-aos="flip-right" data-aos-anchor="#letter-from-david" data-aos-delay="500">Over the years, Centerstone has enjoyed a strong reputation as a professional friend and neighbor in collaborative partnerships and joint ventures. We remain committed to our established relationships, and we look forward to forming new relationships in the coming year to extend our reach to patients and help strengthen communities in need. </p>
-					<p data-aos="flip-right" data-aos-anchor="#letter-from-david" data-aos-delay="600">To deliver care that changes people’s lives is our noble purpose. It’s what compels each Centerstone colleague to join our organization and provide excellent patient experiences. We’re bringing our momentum into the coming year to continue our life-changing work and we invite you to join us on our journey!</p>
-					<p data-aos="flip-right" data-aos-anchor="#letter-from-david" data-aos-delay="700"><img src="https://centerstone.org/wp-content/uploads/David_Guth_signature_mutedblack-01-300x169.png" alt="" width="auto" height="100" class="aligncenter size-medium wp-image-74796" /><br><strong>David C. Guth, Jr. | CEO</strong>
+					<img src="https://centerstone.org/wp-content/uploads/David-Guth-2022-01-300x300.png" alt="CEO Picture" width="300" height="300" class="aligncenter size-medium wp-image-74898 float-md-right rounded-circle ml-md-3 mb-3 centered-mobile" data-aos="fade-up" data-aos-anchor="#letter-from-david" data-aos-delay="100" />
+					<p data-aos="fade-up" data-aos-anchor="#letter-from-david" data-aos-delay="200">I am always humbled when I pause and reflect on Centerstone’s many accomplishments, which are only made possible by the leadership and support from our boards of directors and our dedicated team of more than 3,800 staff members whose tremendous impact positively changes patient lives and extends into our greater communities. As the unprecedented demand for mental health resources continues to grow, our service areas are expanding to reach the ever-growing number of people who need mental health and substance use disorder support. I’m proud of our organization’s response to the cataclysmic changes affecting the behavioral health industry in recent years and our sustained high standards for delivering compassionate, quality care. </p>
+					<p data-aos="fade-up" data-aos-anchor="#letter-from-david" data-aos-delay="300">Over the past year, we have continued to break down barriers to care and reduce the stigma of mental health diagnoses and treatment. We know good treatment works, and Centerstone is leading the way in normalizing open, candid conversations about mental health and substance use disorder. This year we also celebrated the first anniversary of the 988 Suicide & Crisis Lifeline and further developed strong relationships with policy decision-makers at the local, state, and federal level, advocating for policies that support increased access to care, behavioral health workforce development, and mental health parity. Regulators want the same things we want at Centerstone, which is the best for our communities, so we are grateful for the opportunity to work with them on solutions that benefit everyone.</p>
+					<p data-aos="fade-up" data-aos-anchor="#letter-from-david" data-aos-delay="400">Centerstone has also worked to support our teams to make work more manageable and to equip our staff with effective tools through initiatives like Centerstone’s Simulation Training Center and the use of artificial intelligence. We know these innovations help accelerate and enhance the science of care which leads to our patients getting better faster. In the coming year, we will continue to cast a wide net for the best talent to care for the increasing numbers of people needing mental health resources. </p>
+					<p data-aos="fade-up" data-aos-anchor="#letter-from-david" data-aos-delay="500">Over the years, Centerstone has enjoyed a strong reputation as a professional friend and neighbor in collaborative partnerships and joint ventures. We remain committed to our established relationships, like our relationship with our largest donor, the Cohen Veterans Network. We also look forward to forming new relationships in the coming year to extend our reach to patients and help strengthen communities in need.</p>
+					<p data-aos="fade-up" data-aos-anchor="#letter-from-david" data-aos-delay="600">To deliver care that changes people’s lives is our noble purpose. It’s what compels each Centerstone colleague to join our organization and provide excellent patient experiences. We’re bringing our momentum into the coming year to continue our life-changing work and we invite you to join us on our journey!</p>
+					<p data-aos="fade-up" data-aos-anchor="#letter-from-david" data-aos-delay="700"><img src="https://centerstone.org/wp-content/uploads/David_Guth_signature_mutedblack-01-300x169.png" alt="" width="auto" height="100" class="aligncenter size-medium wp-image-74796" /><br><strong>David C. Guth, Jr. | CEO</strong>
 					</p>
 				</div>
 			</section>
@@ -110,18 +112,35 @@
 			<section id="history-centerstone" class="clearfix section bg-ar-orange-light d-flex justify-content-center align-items-start align-items-xl-center">
 				<!-- Container -->
 				<div class="container">
-					<h1 class="display-3" data-aos="flip-down" data-aos-anchor="#history-centerstone" data-aos-delay="100">History of Centerstone</h1>
+					<h1 class="display-3" data-aos="fade-down" data-aos-anchor="#history-centerstone" data-aos-delay="100">History of Centerstone</h1>
 					<!-- Row -->
+					<p data-aos="fade-down" data-aos-anchor="#history-centerstone" data-aos-delay="200">Important work like delivering care that changes people’s lives doesn’t happen in a vacuum. It requires time, resources, a fiercely dedicated workforce, and most importantly, strong relationships. Through this blend of essential ingredients, Centerstone has grown over its 60-plus year history to become one of the nation’s largest nonprofit behavioral health systems, providing care to more than 110,000 people across the country each year.</p>
+					<p data-aos="fade-down" data-aos-anchor="#history-centerstone" data-aos-delay="300">Centerstone’s history can be traced back to 1955 with the founding of our Behavioral Health Hospital & Addiction Center, which at that time was known as Manatee Glens. In the nearly seven decades since its founding, all of the organizations listed below, whose services span the full behavioral health continuum, have come together under one shared mission and vision. By coming together as one, Centerstone has maximized resources to expand access to critically important mental health care, thereby creating one of the most unique behavioral health organizations in the country.</p>
+					<p data-aos="fade-down" data-aos-anchor="#history-centerstone" data-aos-delay="400">Centerstone hasn’t grow without meticulous thought and consideration. Before we grow, before we look at expansion into new communities or developing new service lines, we always ask ourselves, “how can we take care of our current clients, our staff, and our communities?” That is and always has been our primary focus. We grow to better serve those in our communities who need us!</p>
 					<div class="row">
-						<p data-aos="flip-down" data-aos-anchor="#history-centerstone" data-aos-delay="200">Important work like delivering care that changes people’s lives doesn’t happen in a vacuum. It requires time, resources, a fiercely dedicated workforce, and most importantly, strong relationships. Through this blend of essential ingredients, Centerstone has grown over its 60-plus year history to become one of the nation’s largest nonprofit behavioral health systems, providing care to more than 110,000 people across the country each year.</p>
-						<p data-aos="flip-down" data-aos-anchor="#history-centerstone" data-aos-delay="300">Centerstone’s history can be traced back to 1955 with the founding of our Behavioral Health Hospital & Addiction Center, which at that time was known as Manatee Glens. In the six decades since its founding, 20 more organizations whose services span the full behavioral health continuum have come together under one shared mission and vision. Some of these notable organizations include The Dede Wallace Center, Harriet Cohn Guidance Center, Luton Mental Health Center, Quinco Behavioral Health, The H Group, Wellspring Resources, and Dunn Mental Health Centers. By coming together as one, Centerstone has maximized resources to expand access to critically important mental health care, thereby creating one of the most unique behavioral health organizations in the country.</p>
-						<p data-aos="flip-down" data-aos-anchor="#history-centerstone" data-aos-delay="400">Centerstone hasn’t grow without meticulous thought and consideration. Before we grow, before we look at expansion into new communities or developing new service lines, we always ask ourselves, “how can we take care of our current clients, our staff, and our communities?” That is and always has been our primary focus. We grow to better serve those in our communities who need us!</p>
+						<div class="col-md-6 mb-3"><span class="dotted-border-bottom">Center for Behavioral Health</span></div>
+						<div class="col-md-6 mb-3"><span class="dotted-border-bottom">Columbia Area Mental Health Center</span></div>
+						<div class="col-md-6 mb-3"><span class="dotted-border-bottom">Dede Wallace Center</span></div>
+						<div class="col-md-6 mb-3"><span class="dotted-border-bottom">Dunn Mental Health Center</span></div>
+						<div class="col-md-6 mb-3"><span class="dotted-border-bottom">Elam Mental Health Services</span></div>
+						<div class="col-md-6 mb-3"><span class="dotted-border-bottom">The Fellowship House</span></div>
+						<div class="col-md-6 mb-3"><span class="dotted-border-bottom">Harriet Cohn Guidance Center</span></div>
+						<div class="col-md-6 mb-3"><span class="dotted-border-bottom">Highland Rim Mental Health Center</span></div>
+						<div class="col-md-6 mb-3"><span class="dotted-border-bottom">Johnson Nichols Health Clinic</span></div>
+						<div class="col-md-6 mb-3"><span class="dotted-border-bottom">Luton Mental Health Services</span></div>
+						<div class="col-md-6 mb-3"><span class="dotted-border-bottom">Manatee Glens</span></div>
+						<div class="col-md-6 mb-3"><span class="dotted-border-bottom">Not Alone</span></div>
+						<div class="col-md-6 mb-3"><span class="dotted-border-bottom">Quinco Behavioral Health Systems</span></div>
+						<div class="col-md-6 mb-3"><span class="dotted-border-bottom">Southern Illinois Regional Social Services</span></div>
+						<div class="col-md-6 mb-3"><span class="dotted-border-bottom">Stepping Stones</span></div>
+						<div class="col-md-6 mb-3"><span class="dotted-border-bottom">Supportive Systems</span></div>
+						<div class="col-md-6 mb-3"><span class="dotted-border-bottom">The H Group</span></div>
+						<div class="col-md-6 mb-3"><span class="dotted-border-bottom">Wellspring Resources</span></div>
 					</div>
-					<!-- End of Row -->
 					<div class="row align-items-center mt-3">
-						<div class="col-4 text-center text-md-right"><img src="https://centerstone.org/wp-content/uploads/mental_dedication-300x300.jpg" alt="Dedication of Mental Health Guidance Center 1955" width="300" height="300" class="size-full wp-image-15147 rounded-circle img-fluid" data-aos="flip-left" data-aos-anchor="#history-centerstone" data-aos-delay="500" /></div>
+						<div class="col-4 text-center text-md-right"><img src="https://centerstone.org/wp-content/uploads/mental_dedication-150x150.jpg" alt="Dedication of Mental Health Guidance Center 1955" width="300" height="300" class="size-full wp-image-15147 rounded-circle img-fluid" data-aos="fade-left" data-aos-anchor="#history-centerstone" data-aos-delay="500" /></div>
 						<div class="col-4 z-index-neg"><img src="/img/Dotted Lines-05.png" alt="" class="img-fluid my-2" data-aos="fade-right" data-aos-duration="3000" data-aos-anchor="#annual-report-fy23"></div>
-						<div class="col-4 text-center text-md-left"><img src="https://centerstone.org/wp-content/uploads/alton-ar-fy23.jpg" alt="Centerstone facility in Alton, TN" width="300" height="300" class="size-large wp-image-74975 rounded-circle img-fluid" data-aos="flip-right" data-aos-anchor="#history-centerstone" data-aos-delay="500" /></div>
+						<div class="col-4 text-center text-md-left"><img src="https://centerstone.org/wp-content/uploads/alton-ar-fy23.jpg" alt="Centerstone facility in Alton, TN" width="300" height="300" class="size-large wp-image-74975 rounded-circle img-fluid" data-aos="fade-right" data-aos-anchor="#history-centerstone" data-aos-delay="500" /></div>
 					</div>
 				</div>
 				<!-- End of Container -->
@@ -130,10 +149,10 @@
 			<section id="highlights-accomplishments" class="clearfix section bg-ar-yellow d-flex justify-content-center align-items-start align-items-xl-center px-1">
 				<div class="container">
 					<h1 class="text-md-left display-3" data-aos="fade-left" data-aos-anchor="#highlights-accomplishments" data-aos-delay="50">Highlights & Accomplishments</h1>
-					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae, non, a. Odio reiciendis asperiores doloribus dolorem modi nihil amet tempore, ut quos nesciunt! Excepturi, dignissimos. Enim rem ab a asperiores!</p>
+					<p>Centerstone services reach people in communities across the country and encompass a robust continuum of mental health and substance use disorder treatments. The selection of accomplishments below are just a small sample of our many achievements over the last year. We invite you to read more about our fiscal year 2023 accomplishments by reviewing the community impact reports for each of our distinct regions. These reports will give you a full scope of what Centerstone does and how our team positively influences thousands of lives each year.</p>
 					<div class="row justify-content-center my-5 nav-links">
 						<div class="col-6 col-md-3 col-xl-2 text-center mb-3">
-							<a href="#!" class="btn btn-primary btn-icon nav-link" data-board="florida">
+							<a href="https://centerstone.org/wp-content/uploads/FL-Impact-Report-FY23-_FINAL-3.pdf" target="_blank" class="btn btn-primary btn-icon nav-link" data-board="florida" rel="noopener">
 								<div class="icon-wrapper">
 									<img decoding="async" class="impactIcon" src="https://centerstone.org/wp-content/uploads/fl_icon_white_no_bg.svg" data-toggle="popover" data-trigger="hover" data-content="Florida" data-original-title="" title="">
 								</div>
@@ -141,7 +160,7 @@
 							</a>
 						</div>
 						<div class="col-6 col-md-3 col-xl-2 text-center mb-3">
-							<a href="#!" class="btn btn-primary btn-icon nav-link" data-board="illinois">
+							<a href="https://centerstone.org/wp-content/uploads/IL-Impact-Report-FY23_FINAL-3.pdf" target="_blank" class="btn btn-primary btn-icon nav-link" data-board="illinois" rel="noopener">
 								<div class="icon-wrapper">
 									<img decoding="async" class="impactIcon" src="https://centerstone.org/wp-content/uploads/il_icon_white_no_bg.svg" data-toggle="popover" data-trigger="hover" data-content="Illinois" data-original-title="" title="">
 								</div>
@@ -149,7 +168,7 @@
 							</a>
 						</div>
 						<div class="col-6 col-md-3 col-xl-2 text-center mb-3">
-							<a href="#!" class="btn btn-primary btn-icon nav-link" data-board="indiana">
+							<a href="https://centerstone.org/wp-content/uploads/IN-Impact-Report-FY23_FINAL-3.pdf" target="_blank" class="btn btn-primary btn-icon nav-link" data-board="indiana" rel="noopener">
 								<div class="icon-wrapper">
 									<img decoding="async" class="impactIcon" src="https://centerstone.org/wp-content/uploads/in_icon_white_no_bg.svg" data-toggle="popover" data-trigger="hover" data-content="Indiana" data-original-title="" title="">
 								</div>
@@ -157,7 +176,7 @@
 							</a>
 						</div>
 						<div class="col-6 col-md-3 col-xl-2 text-center mb-3">
-							<a href="#!" class="btn btn-primary btn-icon nav-link" data-board="tennessee">
+							<a href="https://centerstone.org/wp-content/uploads/TN-Impact-Report-FY23_FINAL-3.pdf" target="_blank" class="btn btn-primary btn-icon nav-link" data-board="tennessee" rel="noopener">
 								<div class="icon-wrapper">
 									<img decoding="async" class="impactIcon" src="https://centerstone.org/wp-content/uploads/tn_icon_white_no_bg.svg" data-toggle="popover" data-trigger="hover" data-content="Tennessee" data-original-title="" title="">
 								</div>
@@ -165,7 +184,7 @@
 							</a>
 						</div>
 						<div class="col-6 col-md-3 col-xl-2 text-center mb-3">
-							<a href="#!" class="btn btn-primary btn-icon nav-link" data-board="military">
+							<a href="https://centerstone.org/wp-content/uploads/Military-Services-Impact-Report-FY23_FINAL-2.pdf" target="_blank" class="btn btn-primary btn-icon nav-link" data-board="military" rel="noopener">
 								<div class="icon-wrapper">
 									<img decoding="async" class="impactIcon" src="https://centerstone.org/wp-content/uploads/military_icon_white_no_bg.svg" data-toggle="popover" data-trigger="hover" data-content="Military Services" data-original-title="" title="">
 								</div>
@@ -173,7 +192,7 @@
 							</a>
 						</div>
 						<div class="col-6 col-md-3 col-xl-2 text-center mb-3">
-							<a href="#!" class="btn btn-primary btn-icon nav-link" data-board="research">
+							<a href="https://centerstone.org/wp-content/uploads/Institute-Impact-Report-FY23_FINAL-4.pdf" target="_blank" class="btn btn-primary btn-icon nav-link" data-board="research" rel="noopener">
 								<div class="icon-wrapper">
 									<img decoding="async" class="impactIcon" src="https://centerstone.org/wp-content/uploads/research_icon_white_no_bg.svg" data-toggle="popover" data-trigger="hover" data-content="Institute" data-original-title="" title="">
 								</div>
@@ -181,22 +200,21 @@
 							</a>
 						</div>
 					</div>
-					<p>Centerstone services reach people in communities across the country and encompass a robust continuum of mental health and substance use disorder treatments. The selection of accomplishments below are just a small sample of our many achievements over the last year. We invite you to read more about our fiscal year 2023 accomplishments by reviewing the community impact reports for each of our distinct regions. These reports will give you a full scope of what Centerstone does and how our team positively influences thousands of lives each year.</p>
-					<div class="row mb-3" data-aos="fade-right" data-aos-delay="100" data-aos-anchor="#highlights-accomplishments">
+					<div class="row mb-3">
 						<div class="col-md-2">
-							<img src="https://centerstone.org/wp-content/uploads/13-flower.png" alt="" class="img-fluid d-none d-md-block my-2" data-aos="fade-right" data-aos-duration="100" data-aos-anchor="#highlights-accomplishments">
+							<img src="https://centerstone.org/wp-content/uploads/13-flower.png" alt="" class="img-fluid d-none d-md-block my-2">
 						</div>
 						<div class="col-md mb-3 d-flex align-items-center">
-							<div class="card w-100 card-stats card-stats-active">
+							<div class="card w-100 card-stats">
 								<div class="card-body">
 									<p>Opened six new supportive housing locations totaling 48 new beds, and bringing the total number of adult residential beds to more than 1,000 across our system.</p>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="row mb-3" data-aos="fade-right" data-aos-delay="200" data-aos-anchor="#highlights-accomplishments">
+					<div class="row mb-3">
 						<div class="col-md mb-3 d-flex align-items-center">
-							<div class="card w-100 card-stats card-stats-active">
+							<div class="card w-100 card-stats">
 								<div class="card-body">
 									<p>Expanded Screening, Brief Intervention, and Referral to Treatment (SBIRT) for substance use services in all clinic and school-based locations in Tennessee, providing 9,766 screenings for alcohol and substance use disorders.</p>
 								</div>
@@ -206,21 +224,21 @@
 							<img src="https://centerstone.org/wp-content/uploads/1-flower-150x150.png" alt="" width="150" height="150" class="alignnone size-thumbnail wp-image-74981 img-fluid d-none d-md-block" />
 						</div>
 					</div>
-					<div class="row mb-3" data-aos="fade-right" data-aos-delay="300" data-aos-anchor="#highlights-accomplishments">
+					<div class="row mb-3">
 						<div class="col-md-2">
 							<img src="https://centerstone.org/wp-content/uploads/2-flower-150x150.png" alt="" width="150" height="150" class="alignnone size-thumbnail wp-image-74984 img-fluid d-none d-md-block" />
 						</div>
 						<div class="col-md mb-3 d-flex align-items-center">
-							<div class="card w-100 card-stats card-stats-active">
+							<div class="card w-100 card-stats">
 								<div class="card-body">
 									<p>Served 357 children through Centerstone’s therapeutic foster care program in Indiana and Tennessee, with 129 new admissions, 46 adoptions, and 67 family reunifications.</p>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="row mb-3" data-aos="fade-right" data-aos-delay="400" data-aos-anchor="#highlights-accomplishments">
+					<div class="row mb-3">
 						<div class="col-md mb-3 d-flex align-items-center">
-							<div class="card w-100 card-stats card-stats-active">
+							<div class="card w-100 card-stats">
 								<div class="card-body">
 									<p>Expanded access to mental health services in Jeffersonville, Indiana through the opening of a new outpatient office, which includes touchdown space for school-based staff. Centerstone now serves students in more than 850 schools throughout the country, including more than 250 schools in Indiana.</p>
 								</div>
@@ -230,21 +248,21 @@
 							<img src="https://centerstone.org/wp-content/uploads/3-flower-150x150.png" alt="" width="150" height="150" class="alignnone size-thumbnail wp-image-74987 img-fluid d-none d-md-block" />
 						</div>
 					</div>
-					<div class="row mb-3" data-aos="fade-right" data-aos-delay="500" data-aos-anchor="#highlights-accomplishments">
+					<div class="row mb-3">
 						<div class="col-md-2">
 							<img src="https://centerstone.org/wp-content/uploads/4-flower-150x150.png" alt="" width="150" height="150" class="alignnone size-thumbnail wp-image-74990 img-fluid d-none d-md-block" />
 						</div>
 						<div class="col-md mb-3 d-flex align-items-center">
-							<div class="card w-100 card-stats card-stats-active">
+							<div class="card w-100 card-stats">
 								<div class="card-body">
 									<p>Expanded crisis diversion services by opening a new Stride Center location in Columbus, Indiana, offering 24/7 access to recovery coaches, peer support specialists, therapists, and nurses who help support guests during times of mental health or substance use crisis.</p>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="row mb-3" data-aos="fade-right" data-aos-delay="600" data-aos-anchor="#highlights-accomplishments">
+					<div class="row mb-3">
 						<div class="col-md mb-3 d-flex align-items-center">
-							<div class="card w-100 card-stats card-stats-active">
+							<div class="card w-100 card-stats">
 								<div class="card-body">
 									<p>Awarded a $6.5 million contract from the Lee County Board of Commissioners to establish the Wellness Intervention for Substance Abuse Harms Abatement (WISH) Program which bolsters local efforts to prevent overdoses and provide substance use disorder treatment in Florida.</p>
 								</div>
@@ -254,21 +272,21 @@
 							<img src="https://centerstone.org/wp-content/uploads/5-flower-150x150.png" alt="" width="150" height="150" class="alignnone size-thumbnail wp-image-74993 img-fluid d-none d-md-block" />
 						</div>
 					</div>
-					<div class="row mb-3" data-aos="fade-right" data-aos-delay="700" data-aos-anchor="#highlights-accomplishments">
+					<div class="row mb-3">
 						<div class="col-md-2">
 							<img src="https://centerstone.org/wp-content/uploads/6-flower-150x150.png" alt="" width="150" height="150" class="alignnone size-thumbnail wp-image-74996 img-fluid d-none d-md-block" />
 						</div>
 						<div class="col-md mb-3 d-flex align-items-center">
-							<div class="card w-100 card-stats card-stats-active">
+							<div class="card w-100 card-stats">
 								<div class="card-body">
 									<p>Secured $3 million in capital funding from the State of Florida to continue renovations and establish a Community Resource Center that will provide shelter for unhoused individuals and people who need mental health and substance use disorder treatment.</p>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="row mb-3" data-aos="fade-right" data-aos-delay="800" data-aos-anchor="#highlights-accomplishments">
+					<div class="row mb-3">
 						<div class="col-md mb-3 d-flex align-items-center">
-							<div class="card w-100 card-stats card-stats-active">
+							<div class="card w-100 card-stats">
 								<div class="card-body">
 									<p>Completed a $3 million renovation of Centerstone’s Behavioral Health Hospital & Addiction Center in Bradenton, Florida, made possible through the generosity from the Bishop Parker Foundation and William G. & Marie Selby Foundation. The renovations resulted in expansion of the 24/7 Access Center, new patient rooms and nurses’ station on the psychiatric unit of the hospital as well as the creation of private rooms and additional meeting space on the hospital’s addiction unit.</p>
 								</div>
@@ -278,21 +296,21 @@
 							<img src="https://centerstone.org/wp-content/uploads/7-flower-150x150.png" alt="" width="150" height="150" class="alignnone size-thumbnail wp-image-74999 img-fluid d-none d-md-block" />
 						</div>
 					</div>
-					<div class="row mb-3" data-aos="fade-right" data-aos-delay="900" data-aos-anchor="#highlights-accomplishments">
+					<div class="row mb-3">
 						<div class="col-md-2">
 							<img src="https://centerstone.org/wp-content/uploads/8-flower-150x150.png" alt="" width="150" height="150" class="alignnone size-thumbnail wp-image-75002 img-fluid d-none d-md-block" />
 						</div>
 						<div class="col-md mb-3 d-flex align-items-center">
-							<div class="card w-100 card-stats card-stats-active">
+							<div class="card w-100 card-stats">
 								<div class="card-body">
 									<p>Centerstone received multiple federal Certified Community Behavioral Health Clinic (CCBHC) awards worth $28,000,000 to support coordinated comprehensive behavioral health care services for the next four years.</p>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="row mb-3" data-aos="fade-right" data-aos-delay="1000" data-aos-anchor="#highlights-accomplishments">
+					<div class="row mb-3">
 						<div class="col-md mb-3 d-flex align-items-center">
-							<div class="card w-100 card-stats card-stats-active">
+							<div class="card w-100 card-stats">
 								<div class="card-body">
 									<p>Opened a new 24-hour Crisis Stabilization in Carterville, Illinois that provides a supportive stabilizing environment for adults experiencing a mental health crisis or difficulty managing mental health symptoms.</p>
 								</div>
@@ -302,21 +320,21 @@
 							<img src="https://centerstone.org/wp-content/uploads/9-flower-150x150.png" alt="" width="150" height="150" class="alignnone size-thumbnail wp-image-75005 img-fluid d-none d-md-block" />
 						</div>
 					</div>
-					<div class="row mb-3" data-aos="fade-right" data-aos-delay="1100" data-aos-anchor="#highlights-accomplishments">
+					<div class="row mb-3">
 						<div class="col-md-2">
 							<img src="https://centerstone.org/wp-content/uploads/10-flower-150x150.png" alt="" width="150" height="150" class="alignnone size-thumbnail wp-image-75008 img-fluid d-none d-md-block" />
 						</div>
 						<div class="col-md mb-3 d-flex align-items-center">
-							<div class="card w-100 card-stats card-stats-active">
+							<div class="card w-100 card-stats">
 								<div class="card-body">
 									<p>Designated as a Care Coordination and Support Organization (CCSO) for youth ages infant – 21 years by The Illinois Department of Healthcare and Family Services. Now operating in a total of nine counties in southern and central Illinois, Centerstone's CCSO provides an array of services focused on improving outcomes for youth and families within the Illinois community behavioral health service system.</p>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="row mb-3" data-aos="fade-right" data-aos-delay="1200" data-aos-anchor="#highlights-accomplishments">
+					<div class="row mb-3">
 						<div class="col-md mb-3 d-flex align-items-center">
-							<div class="card w-100 card-stats card-stats-active">
+							<div class="card w-100 card-stats">
 								<div class="card-body">
 									<p>Centerstone's Foundation hosted 10 special events including the Reclaiming Lives Luncheon, a 3-day Bocce Tournament, and Centerstone’s 20th Annual Life;Story 5k/10k raising $322,680 to support patient care at Centerstone.</p>
 								</div>
@@ -326,12 +344,12 @@
 							<img src="https://centerstone.org/wp-content/uploads/11-flower-150x150.png" alt="" width="150" height="150" class="alignnone size-thumbnail wp-image-75011 img-fluid d-none d-md-block" />
 						</div>
 					</div>
-					<div class="row mb-3" data-aos="fade-right" data-aos-delay="1300" data-aos-anchor="#highlights-accomplishments">
+					<div class="row mb-3">
 						<div class="col-md-2">
 							<img src="https://centerstone.org/wp-content/uploads/12-flower-150x150.png" alt="" width="150" height="150" class="alignnone size-thumbnail wp-image-75014 img-fluid d-none d-md-block" />
 						</div>
 						<div class="col-md mb-3 d-flex align-items-center">
-							<div class="card w-100 card-stats card-stats-active">
+							<div class="card w-100 card-stats">
 								<div class="card-body">
 									<p>Created a Patient Safety Organization (PSO) that is certified by the Agency for Healthcare Research and Quality (AHRQ). Centerstone's PSO ensures the organization adopts proactive clinical risk management practices, analyzes and acts on data related to patient safety, and assess physical and psychological safety culture. Out of the 111 PSOs across the United States, Centerstone's is the only entity that exclusively focuses on behavioral health. </p>
 								</div>
@@ -343,16 +361,16 @@
 			<!-- Patient Stories -->
 			<section id="patient-stories" class="clearfix section bg-ar-orange text-ar-dark-gray d-flex justify-content-center align-items-start align-items-xl-center">
 				<div class="container">
-					<h1 class="display-3" data-aos="zoom-in" data-aos-anchor="#patient-stories" data-aos-delay="100">Patient Stories</h1>
-					<p>The moment Centerstone patients make the decision to seek support, their journey to healing begins. Much like the butterfly, patients can transform their lives and the lives of those around them by taking steps to self-discovery in a safe, compassionate space.
+					<h1 class="display-3" data-aos="fade-up-left" data-aos-anchor="#patient-stories" data-aos-delay="100">Patient Stories</h1>
+					<p data-aos="fade-up-left" data-aos-anchor="#patient-stories" data-aos-delay="150">The moment Centerstone patients make the decision to seek support, their journey to healing begins. Much like the butterfly, patients can transform their lives and the lives of those around them by taking steps to self-discovery in a safe, compassionate space.
 						Through these stories and in their own words, patients share their experiences, outcomes, and the work they have done to move forward. We encourage you to pull up a chair and listen to these inspiring stories of hope and healing.</p>
-					<div class="row align-items-center border-sm mb-3">
+					<div class="row align-items-center border-sm mb-3" data-aos="fade-up-left" data-aos-anchor="#patient-stories" data-aos-delay="300">
 						<div class="col-md-6">
 							<h2 class="display-4"><strong>Alissan's Story:</strong></h2>
-							<p class="lead aos-init aos-animate" data-aos="zoom-in" data-aos-anchor="#patient-stories" data-aos-delay="300"> Alissan experienced a brutal attack that left her in a coma. She turned to alcohol as a way to cope with that traumatic experience, but quickly realized it was not helping her in the way she wanted it to. After being referred to Centerstone, Alissan entered a long-term treatment program and is now well on her way to recovery.</p>
+							<p class="lead"> Alissan experienced a brutal attack that left her in a coma. She turned to alcohol as a way to cope with that traumatic experience, but quickly realized it was not helping her in the way she wanted it to. After being referred to Centerstone, Alissan entered a long-term treatment program and is now well on her way to recovery.</p>
 						</div>
 						<div class="col-md-6">
-							<div class="row text-center mt-5 aos-init aos-animate" data-aos="zoom-in" data-aos-anchor="#patient-stories" data-aos-delay="300">
+							<div class="row text-center mt-5">
 								<div class="col-md-12 mb-3">
 									<a href="https://www.youtube.com/watch?v=1i2slOPPxDM" data-width="1280" data-toggle="lightbox" data-title="Alissan | Centerstone Stories | Recovery through Long-Term Treatment" data-gallery="gallery">
 										<img src="https://centerstone.org/wp-content/uploads/coa_annualReportFY23_alissan_YT_1280x720px-1024x576.jpg" alt="" width="640" height="360" class="aligncenter size-large wp-image-74874 img-fluid" />
@@ -361,13 +379,13 @@
 							</div>
 						</div>
 					</div>
-					<div class="row align-items-center border-sm mb-3">
+					<div class="row align-items-center border-sm mb-3" data-aos="fade-up-left" data-aos-anchor="#patient-stories" data-aos-delay="400">
 						<div class="col-md-6 order-md-2">
 							<h2 class="display-4"><strong>Babs' Story:</strong></h2>
-							<p class="lead aos-init aos-animate" data-aos="zoom-in" data-aos-anchor="#patient-stories" data-aos-delay="300"> Babs' entire life was consumed by her addiction to alcohol. After losing everything, she enrolled in intensive detox and residential treatment at Centerstone. After treatment, Centerstone staff encouraged and reassured her that she was ready for the next step and helped her get a job. Now, several years later, she owns a thriving business and has achieved so much. And she credits it all to her recovery.</p>
+							<p class="lead"> Babs' entire life was consumed by her addiction to alcohol. After losing everything, she enrolled in intensive detox and residential treatment at Centerstone. After treatment, Centerstone staff encouraged and reassured her that she was ready for the next step and helped her get a job. Now, several years later, she owns a thriving business and has achieved so much. And she credits it all to her recovery.</p>
 						</div>
 						<div class="col-md-6 order-md-1">
-							<div class="row text-center mt-5 aos-init aos-animate" data-aos="zoom-in" data-aos-anchor="#patient-stories" data-aos-delay="300">
+							<div class="row text-center mt-5" data-aos="fade-up-left" data-aos-anchor="#patient-stories" data-aos-delay="300">
 								<div class="col-md-12 mb-3">
 									<a href="https://www.youtube.com/watch?v=7bBBPJ2Y6rQ" data-width="1280" data-toggle="lightbox" data-title="Babs | Centerstone Stories | Recovery through Long-Term Treatment" data-gallery="gallery">
 										<img src="https://centerstone.org/wp-content/uploads/coa_annualReportFY23_babs_YT_1280x720px-1024x576.jpg" alt="" width="640" height="360" class="aligncenter size-large wp-image-74877 img-fluid" />
@@ -376,13 +394,13 @@
 							</div>
 						</div>
 					</div>
-					<div class="row align-items-center border-sm mb-3">
+					<div class="row align-items-center border-sm mb-3" data-aos="fade-up-left" data-aos-anchor="#patient-stories" data-aos-delay="500">
 						<div class="col-md-6">
 							<h2 class="display-4"><strong>Michelle & Jennifer's Story:</strong></h2>
-							<p class="lead aos-init aos-animate" data-aos="zoom-in" data-aos-anchor="#patient-stories" data-aos-delay="300"> Michelle and Jennifer had considered fostering children in their home, and connected with Centerstone to foster five children. A Centerstone case manager came alongside them and equipped them to navigate the foster care journey, and they eventually adopted all five children. Jennifer said, “From the moment our first two children showed up at our house, I couldn’t imagine a life where they weren’t there with us."</p>
+							<p class="lead"> Michelle and Jennifer had considered fostering children in their home, and connected with Centerstone to foster five children. A Centerstone case manager came alongside them and equipped them to navigate the foster care journey, and they eventually adopted all five children. Jennifer said, “From the moment our first two children showed up at our house, I couldn’t imagine a life where they weren’t there with us."</p>
 						</div>
 						<div class="col-md-6">
-							<div class="row text-center mt-5 aos-init aos-animate" data-aos="zoom-in" data-aos-anchor="#patient-stories" data-aos-delay="300">
+							<div class="row text-center mt-5">
 								<div class="col-md-12 mb-3">
 									<a href="https://www.youtube.com/watch?v=Hz-c9kakvTQ" data-width="1280" data-toggle="lightbox" data-title="Michelle & Jennifer | Centerstone Stories | Recovery through Long-Term Treatment" data-gallery="gallery">
 										<img src="https://centerstone.org/wp-content/uploads/coa_annualReportFY23_michelleJennifer_YT_1280x720px-1024x576.jpg" alt="" width="640" height="360" class="aligncenter size-large wp-image-74871 img-fluid" />
@@ -396,13 +414,13 @@
 			<!-- 988 Update -->
 			<section id="update-988" class="clearfix section bg-ar-blue text-ar-light-gray d-flex justify-content-center align-items-start align-items-xl-center">
 				<div class="container">
-					<h1 class="display-3" data-aos="fade-right" data-aos-anchor="#update-988" data-aos-delay="50">One Year of the 988 Suicide & Crisis Lifeline</h1>
+					<h1 class="display-3" data-aos="fade-up" data-aos-anchor="#update-988" data-aos-delay="50">One Year of the 988 Suicide & Crisis Lifeline</h1>
 					<div class="row align-items-center">
 						<div class="col-md-4">
-							<img src="https://centerstone.org/wp-content/uploads/Becky-Stoll-01-300x300.png" alt="" width="300" height="300" class="aligncenter size-large wp-image-74895 centered-mobile" />
+							<img src="https://centerstone.org/wp-content/uploads/Becky-Stoll-01-300x300.png" alt="" width="300" height="300" class="aligncenter size-large wp-image-74895 centered-mobile" data-aos="fade-up" data-aos-anchor="#update-988" data-aos-delay="150" />
 						</div>
 						<div class="col-md-8">
-							<p data-aos="flip-up" data-aos-anchor="#update-988" data-aos-delay="100">"This year we celebrated the first anniversary of the launch of the 988 Suicide and Crisis Lifeline and what a year it has been. Centerstone is proud to be a part of this life saving resource by operating two national 988 call centers, responding to callers in their time of need. In the coming year, our goal is to continue spreading the word of the 988 Lifeline and its life-saving resources."</p>
+							<p data-aos="fade-right" data-aos-anchor="#update-988" data-aos-delay="100">This year we celebrated the first anniversary of the launch of the 988 Suicide and Crisis Lifeline and what a year it has been. Centerstone is proud to be a part of this life saving resource by operating two national 988 call centers, responding to callers in their time of need. In the coming year, our goal is to continue spreading the word of the 988 Lifeline and its life-saving resources.</p>
 							<p><strong>Becky Stoll</strong>, Senior Vice President of Crisis Services</p>
 						</div>
 					</div>
@@ -415,14 +433,14 @@
 			<!-- National Policy -->
 			<section id="national-policy" class="clearfix section bg-ar-blue-light d-flex justify-content-center align-items-start align-items-xl-center">
 				<div class="container">
-					<h1 class="display-3" data-aos="flip-up" data-aos-anchor="#national-policy" data-aos-delay="50">National Policy</h1>
+					<h1 class="display-3" data-aos="fade-up" data-aos-anchor="#national-policy" data-aos-delay="50">National Policy</h1>
 					<div class="row">
 						<div class="col-md-4">
 							<img src="https://centerstone.org/wp-content/uploads/Lauren-Conaboy-01-300x300.png" alt="" width="300" height="300" class="aligncenter size-large wp-image-74922 img-fluid rounded-circle mb-3 centered-mobile" data-aos-anchor="#national-policy" data-aos-delay="75" data-aos="flip-left" />
 						</div>
 						<div class="col-md-8">
-							<p data-aos="flip-up" data-aos-anchor="#national-policy" data-aos-delay="100">"Centerstone has continued its work at the Federal level advocating for policy solutions that advance the best science of mental health care, including policy solutions to ensure more individuals and families have access to the services they need when they most need them. Through our federal advocacy, we have increased funding for the 988 Suicide & Crisis Lifeline and the continuum of crisis services that supports 988, advanced a game changing clinical model – known as the Certified Community Behavioral Health Clinic (CCBHC) program, and worked hand in hand with congressional offices to make improvements to the 2018 SUPPORT Act, a massive opioid bill geared toward addressing the opioid crisis, which is slated to be reauthorized by the end of 2023.</p>
-							<p data-aos="flip-up" data-aos-anchor="#national-policy" data-aos-delay="200">"Over the last year, Centerstone has hosted several sitting members of U.S. Congress and their staff at our facilities – so we can show firsthand how we are delivering care that changes people’s lives. Additionally, we have started to host Centerstone Hill Days in Washington DC, in which our leaders meet in person with their elected members and their staff to educate lawmakers about our services as well as to hear from the congressional leaders what their concerns are. Through our cumulative national policy efforts, we have continued to position Centerstone as a trusted subject matter expert for both lawmakers and federal agencies that support the health and wellbeing of our nation."</p>
+							<p data-aos="fade-up" data-aos-anchor="#national-policy" data-aos-delay="100">Centerstone has continued its work at the Federal level advocating for policy solutions that advance the best science of mental health care, including policy solutions to ensure more individuals and families have access to the services they need when they most need them. Through our federal advocacy, we have increased funding for the 988 Suicide & Crisis Lifeline and the continuum of crisis services that supports 988, advanced a game changing clinical model – known as the Certified Community Behavioral Health Clinic (CCBHC) program, and worked hand in hand with congressional offices to make improvements to the 2018 SUPPORT Act, a massive opioid bill geared toward addressing the opioid crisis, which is slated to be reauthorized by the end of 2023.</p>
+							<p data-aos="fade-up" data-aos-anchor="#national-policy" data-aos-delay="200">Over the last year, Centerstone has hosted several sitting members of U.S. Congress and their staff at our facilities – so we can show firsthand how we are delivering care that changes people’s lives. Additionally, we have started to host Centerstone Hill Days in Washington DC, in which our leaders meet in person with their elected members and their staff to educate lawmakers about our services as well as to hear from the congressional leaders what their concerns are. Through our cumulative national policy efforts, we have continued to position Centerstone as a trusted subject matter expert for both lawmakers and federal agencies that support the health and wellbeing of our nation.</p>
 							<p><strong>Lauren Conaboy</strong>, Vice President of National Policy</p>
 						</div>
 					</div>
@@ -431,13 +449,13 @@
 			<!-- By the Numbers -->
 			<section id="by-the-numbers" class="clearfix section bg-ar-red-1 text-ar-light-gray d-flex justify-content-center align-items-center">
 				<div class="container h-100 d-flex flex-column justify-content-center">
-					<h1 class="display-3 text-center text-ar-dark-gray" data-aos="flip-down" data-aos-anchor="#by-the-numbers" data-aos-delay="50">By the Numbers</h1>
+					<h1 class="display-3 text-center text-ar-dark-gray" data-aos="fade-down" data-aos-anchor="#by-the-numbers" data-aos-delay="50">By the Numbers</h1>
 					<div class="image-reveal-container">
 						<img src="/img/Dotted Lines-02.png" alt="" class="img-fluid my-2" data-aos="fade-left" data-aos-duration="3000" data-aos-anchor="#annual-report-fy23">
 					</div>
 					<div class="row">
-						<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-3" data-aos="flip-down" data-aos-anchor="#by-the-numbers" data-aos-delay="100">
-							<div class="card card-stats card-stats-active w-100 h-100 mb-xl-0">
+						<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-3" data-aos="fade-down" data-aos-anchor="#by-the-numbers" data-aos-delay="100">
+							<div class="card card-stats  w-100 h-100 mb-xl-0">
 								<div class="card-body d-flex flex-column justify-content-between">
 									<div class="row">
 										<div class="col">
@@ -457,8 +475,8 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-3" data-aos="flip-down" data-aos-anchor="#by-the-numbers" data-aos-delay="200">
-							<div class="card card-stats card-stats-active w-100 h-100 mb-xl-0">
+						<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-3" data-aos="fade-down" data-aos-anchor="#by-the-numbers" data-aos-delay="200">
+							<div class="card card-stats  w-100 h-100 mb-xl-0">
 								<div class="card-body d-flex flex-column justify-content-between">
 									<div class="row">
 										<div class="col">
@@ -478,8 +496,8 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-3" data-aos="flip-down" data-aos-anchor="#by-the-numbers" data-aos-delay="300">
-							<div class="card card-stats card-stats-active w-100 h-100 mb-xl-0">
+						<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-3" data-aos="fade-down" data-aos-anchor="#by-the-numbers" data-aos-delay="300">
+							<div class="card card-stats  w-100 h-100 mb-xl-0">
 								<div class="card-body d-flex flex-column justify-content-between">
 									<div class="row">
 										<div class="col">
@@ -495,8 +513,8 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-3" data-aos="flip-down" data-aos-anchor="#by-the-numbers" data-aos-delay="400">
-							<div class="card card-stats card-stats-active w-100 h-100 mb-xl-0">
+						<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-3" data-aos="fade-down" data-aos-anchor="#by-the-numbers" data-aos-delay="400">
+							<div class="card card-stats  w-100 h-100 mb-xl-0">
 								<div class="card-body d-flex flex-column justify-content-between">
 									<div class="row">
 										<div class="col">
@@ -516,8 +534,8 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-3" data-aos="flip-down" data-aos-anchor="#by-the-numbers" data-aos-delay="500">
-							<div class="card card-stats card-stats-active w-100 h-100 mb-xl-0">
+						<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-3" data-aos="fade-down" data-aos-anchor="#by-the-numbers" data-aos-delay="500">
+							<div class="card card-stats  w-100 h-100 mb-xl-0">
 								<div class="card-body d-flex flex-column justify-content-between">
 									<div class="row">
 										<div class="col">
@@ -537,8 +555,8 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-3" data-aos="flip-down" data-aos-anchor="#by-the-numbers" data-aos-delay="600">
-							<div class="card card-stats card-stats-active w-100 h-100 mb-xl-0">
+						<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-3" data-aos="fade-down" data-aos-anchor="#by-the-numbers" data-aos-delay="600">
+							<div class="card card-stats  w-100 h-100 mb-xl-0">
 								<div class="card-body d-flex flex-column justify-content-between">
 									<div class="row">
 										<div class="col">
@@ -554,8 +572,8 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-3" data-aos="flip-down" data-aos-anchor="#by-the-numbers" data-aos-delay="600">
-							<div class="card card-stats card-stats-active w-100 h-100 mb-xl-0">
+						<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-3" data-aos="fade-down" data-aos-anchor="#by-the-numbers" data-aos-delay="600">
+							<div class="card card-stats  w-100 h-100 mb-xl-0">
 								<div class="card-body d-flex flex-column justify-content-between">
 									<div class="row">
 										<div class="col">
@@ -575,8 +593,8 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-3" data-aos="flip-down" data-aos-anchor="#by-the-numbers" data-aos-delay="600">
-							<div class="card card-stats card-stats-active w-100 h-100 mb-xl-0">
+						<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-3" data-aos="fade-down" data-aos-anchor="#by-the-numbers" data-aos-delay="600">
+							<div class="card card-stats  w-100 h-100 mb-xl-0">
 								<div class="card-body d-flex flex-column justify-content-between">
 									<div class="row">
 										<div class="col">
@@ -592,8 +610,8 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-3" data-aos="flip-down" data-aos-anchor="#by-the-numbers" data-aos-delay="600">
-							<div class="card card-stats card-stats-active w-100 h-100 mb-xl-0">
+						<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-3" data-aos="fade-down" data-aos-anchor="#by-the-numbers" data-aos-delay="600">
+							<div class="card card-stats  w-100 h-100 mb-xl-0">
 								<div class="card-body d-flex flex-column justify-content-center">
 									<div class="row">
 										<div class="col">
@@ -610,8 +628,8 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-3" data-aos="flip-down" data-aos-anchor="#by-the-numbers" data-aos-delay="600">
-							<div class="card card-stats card-stats-active w-100 h-100 mb-xl-0">
+						<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-3" data-aos="fade-down" data-aos-anchor="#by-the-numbers" data-aos-delay="600">
+							<div class="card card-stats  w-100 h-100 mb-xl-0">
 								<div class="card-body d-flex flex-column justify-content-center">
 									<div class="row">
 										<div class="col">
@@ -628,8 +646,8 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-3" data-aos="flip-down" data-aos-anchor="#by-the-numbers" data-aos-delay="600">
-							<div class="card card-stats card-stats-active w-100 h-100 mb-xl-0">
+						<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-3" data-aos="fade-down" data-aos-anchor="#by-the-numbers" data-aos-delay="600">
+							<div class="card card-stats  w-100 h-100 mb-xl-0">
 								<div class="card-body d-flex flex-column justify-content-center">
 									<div class="row">
 										<div class="col">
@@ -646,8 +664,8 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-3" data-aos="flip-down" data-aos-anchor="#by-the-numbers" data-aos-delay="600">
-							<div class="card card-stats card-stats-active w-100 h-100 mb-xl-0">
+						<div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-3" data-aos="fade-down" data-aos-anchor="#by-the-numbers" data-aos-delay="600">
+							<div class="card card-stats  w-100 h-100 mb-xl-0">
 								<div class="card-body d-flex flex-column justify-content-center">
 									<div class="row">
 										<div class="col">
@@ -674,7 +692,7 @@
 					<div class="row align-items-center">
 						<div class="col-md-4"><img src="https://centerstone.org/wp-content/uploads/Carol-Bean-01-300x300.png" alt="" class="aligncenter size-large wp-image-74919 img-fluid rounded-circle mb-3 centered-mobile" data-aos="fade-down" data-aos-anchor="#financial-growth" data-aos-delay="50"></div>
 						<div class="col-md-8">
-							<p data-aos="fade-down" data-aos-anchor="#financial-growth" data-aos-delay="100">"As our nation emerges from the effects of the pandemic, there are still several financial challenges to navigate for many organizations. Workforce shortages, economic uncertainty, and inflationary pressures are just a few reasons why Centerstone has worked harder to sustain our financial health. Over the course of fiscal year 2023, Centerstone received reimbursement rate increases, which helped increase revenues by 11.4% when compared to our previous fiscal year. While these rate increases are encouraging, it is important that we continue to make bold decisions that will defend us from the economic volatility that continues to exist."</p>
+							<p data-aos="fade-down" data-aos-anchor="#financial-growth" data-aos-delay="100">As our nation emerges from the effects of the pandemic, there are still several financial challenges to navigate for many organizations. Workforce shortages, economic uncertainty, and inflationary pressures are just a few reasons why Centerstone has worked harder to sustain our financial health. Over the course of fiscal year 2023, Centerstone received reimbursement rate increases, which helped increase revenues by 11.4% when compared to our previous fiscal year. While these rate increases are encouraging, it is important that we continue to make bold decisions that will defend us from the economic volatility that continues to exist.</p>
 							<p data-aos="fade-down" data-aos-anchor="#financial-growth" data-aos-delay="100"><strong>Carol Bean</strong>, Chief Financial Officer</p>
 						</div>
 					</div>
@@ -686,12 +704,12 @@
 									<h3 class="card-title-overlay text-white text-center w-100 px-3 display-4">Revenue<br>by Payer Type</h3>
 									<div class="card-img-overlay h-100 my-auto d-flex align-items-center"></div>
 									<div class="card-footer text-white text-larger hover-excerpt w-100">
-										<div class="text-center"><button class="btn bg-transparent text-white w-100">View</button></div>
+										<div class="text-center"><button class="btn bg-transparent text-white w-100"><i class="fa fa-2x fa-search-plus"></i></button></div>
 										<div class="text-center mt-3">
 											<h3 class="text-white display-4">Revenue<br>by Payer Type</h3>
 										</div>
 										<div class="text-center">
-											<i class="fa fa-2x fa-search-plus"></i>
+											&nbsp;
 										</div>
 									</div>
 								</div>
@@ -704,12 +722,12 @@
 									<h3 class="card-title-overlay text-white text-center w-100 px-3 display-4">Revenue<br>by Service Line</h3>
 									<div class="card-img-overlay h-100 my-auto d-flex align-items-center"></div>
 									<div class="card-footer text-white text-larger hover-excerpt w-100">
-										<div class="text-center"><button class="btn bg-transparent text-white w-100">View</button></div>
+										<div class="text-center"><button class="btn bg-transparent text-white w-100"><i class="fa fa-2x fa-search-plus"></i></button></div>
 										<div class="text-center mt-3">
 											<h3 class="text-white display-4">Revenue<br>by Service Line</h3>
 										</div>
 										<div class="text-center">
-											<i class="fa fa-2x fa-search-plus"></i>
+											&nbsp;
 										</div>
 									</div>
 								</div>
@@ -726,7 +744,7 @@
 						<div class="col-md-4">
 							<img src="https://centerstone.org/wp-content/uploads/Blas-Villalobos-01-300x300.png" alt="" class="aligncenter size-large wp-image-74907 img-fluid rounded-circle mb-3 centered-mobile" data-aos="fade-down" data-aos-anchor="#military-services" data-aos-delay="50"></div>
 						<div class="col-md-8">
-							<p>“In our efforts to support military service members, veterans, and their families, Centerstone’s Military Services has seen significant improvements in patient outcomes and access to care by reducing patient wait times for appointments. In the past year, we have continued to strengthen partnerships with military-related organizations to provide resources and treatment through a nationwide network of providers. And we will continue our work to reduce the stigma around mental health treatment for those who have bravely served.”</p>
+							<p>In our efforts to support military service members, veterans, and their families, Centerstone’s Military Services has seen significant improvements in patient outcomes and access to care by reducing patient wait times for appointments. In the past year, we have continued to strengthen partnerships with military-related organizations to provide resources and treatment through a nationwide network of providers. And we will continue our work to reduce the stigma around mental health treatment for those who have bravely served.</p>
 							<p><strong>Dr. Blas Villalobos</strong>, CEO, Military Services</p>
 						</div>
 					</div>
@@ -750,7 +768,7 @@
 					<div class="row">
 						<div class="col-md-12" data-aos="fade-up" data-aos-delay="400" data-aos-anchor="#military-services">
 							<h2 class="mb-3 display-4">Impact and Outreach</h2>
-							<p>Over the past year, Centestone’s Military Services served 6,567 active duty military personnel, veterans, and their families. You can learn more about our lifesaving work by <a href="https://centerstone.org/military-services/" target="_blank">visiting our website</a>.</p>
+							<p>Over the past year, Centestone’s Military Services served 6,567 active duty military personnel, veterans, and their families. You can learn more about our lifesaving work by <a href="https://centerstone.org/military-services/" target="_blank" rel="noopener">visiting our website</a>.</p>
 						</div>
 					</div>
 				</div>
@@ -765,22 +783,20 @@
 								<img src="https://centerstone.org/wp-content/uploads/Ashley-Newton-2022-01-300x300.png" alt="" width="300" height="300" class="aligncenter size-large wp-image-74913" alt="Ashley Newton" class="img-fluid rounded-circle mb-3 centered-mobile" data-aos="flip-left" data-aos-anchor="#update-988">
 							</div>
 							<div class="col-md-8 m-0 p-0">
-								<p data-aos="flip-up" data-aos-anchor="#update-988" data-aos-delay="100">"Over the past year, the team within Centerstone’s Institute has been laser focused on a number of initiatives that support staff and patients alike. Clinical education, for example, has long been a primary focus, but this year we have dedicated many hours to researching, planning, and designing clinical education modules that support our Simulation Training Center. We have worked diligently to find what questions are most important to our organization and where we can meet those gaps with quality information. We’ve considered the best ways to implement training delivery so that it’s user friendly for our staff members, and we’ve also worked to determine our clinicians’ comfort level regarding the use of evidence-based practices in care."</p>
-								<p><strong>Ashley Newton</strong>, CEO of Centerstone’s Institute</p>
+								<p data-aos="fade-up" data-aos-anchor="#institute" data-aos-delay="100">Over the past year, the team within Centerstone’s Institute has been laser focused on a number of initiatives that support staff and patients alike. Clinical education, for example, has long been a primary focus, but this year we have dedicated many hours to researching, planning, and designing clinical education modules that support our Simulation Training Center. We have worked diligently to find what questions are most important to our organization and where we can meet those gaps with quality information through research and evaluation. We’ve considered the best ways to implement training delivery so that it’s user friendly for our staff members, and we’ve also worked to determine our clinicians’ comfort level regarding the use of evidence-based practices in care. </p>
+								<p>During the last fiscal year, Centerstone also earned certification as a Patient Safety Organization (PSO). We accelerated our certification process and completed it in eight months as opposed to the usual 12 – 18 months for most organizations. There are currently only 111 PSOs in the United States, but because Centerstone’s is the only PSO to focus solely on behavioral health, we are uniquely positioned to lead patient safety in the behavioral health space. This development significantly expands the availability of many exciting opportunities for our organization.</p>
 							</div>
 						</div>
 						<div class="row">
-							<p>During this last fiscal year, Centerstone also earned certification as a Patient Safety Organization (PSO). We accelerated our certification process and completed it in eight months as opposed to the usual 12 – 18 months for most organizations. There are currently only 111 PSOs in the United States, but because Centerstone’s is the only PSO to focus solely on behavioral health, we are uniquely positioned to lead patient safety in the behavioral health space. This development significantly expands the availability of many exciting opportunities for our organization. </p>
-							<p>Other areas of focus for the team within Centerstone’s Institute include culture-building initiatives, preventing professional burnout through scientific research and resource building, as well as continued advances in patient quality initiatives. It is an exciting time for Centerstone’s Institute and we are looking forward to continued growth in our next fiscal year.</p>
-						</div>
-						<div class="row">
+							<p>Other areas of focus for the team within Centerstone’s Institute include culture-building initiatives, preventing professional burnout through scientific research and resource building, advancing measurement-informed care, and evaluating a selection of clinical services. It is an exciting time for Centerstone’s Institute and we are looking forward to continued growth in our next fiscal year.</p>
+							<p><strong>Ashley Newton</strong>, CEO of Centerstone’s Institute</p>
 							<h2 class="display-4">Centerstone’s Simulation Training Center</h2>
-							<p>Our commitment to clinical education has expanded through the continued development of our Simulation Training (SIM) Center. Centerstone’s Institute designs and delivers trainings for our clinical staff through simulation technology to advance clinical competency and accessibility to training information. It then evaluates these educational offerings to ensure that Centerstone offers the most relevant education and best practices to ensure our patients get better faster. </p>
-							<p>The SIM Center uses live patient actors to reflect real world situations staff may experience in their daily work, and staff feedback has been overwhelmingly positive. We also utilize an artificial intelligence platform so staff can access trainings easier in their own time and we can offer it to a greater number of our workforce. The SIM Center currently offers 16 custom-built trainings on evidence-based practices. To date, nearly 800 Centerstone staff members have participated in these trainings. </p>
+							<p>Our commitment to clinical education has expanded through the continued development of our Simulation Training (SIM) Center. Centerstone’s Institute designs and delivers trainings for our clinical staff through simulation technology to advance clinical competency and accessibility to training information. It then evaluates these educational offerings to ensure that Centerstone offers the most relevant education and best practices to ensure our patients get better faster.</p>
+							<p>The SIM Center uses live patient actors to reflect real world situations staff may experience in their daily work, and staff feedback has been overwhelmingly positive. We are implementing an artificial intelligence platform so staff can access trainings easier in their own time and we can offer it to a greater number of our workforce. The SIM Center currently offers 16 custom-built trainings on evidence-based practices. To date, nearly 800 Centerstone staff members have participated in these trainings.</p>
 						</div>
 						<div class="row">
 							<h2 class="display-4">Centerstone’s Patient Safety Organization</h2>
-							<p>Centerstone’s Patient Safety Organization (PSO) ensures the organization adopts proactive clinical risk management practices, analyzes and acts on data related to patient safety, and assesses physical and psychological safety culture. The PSO provides safe and confidential spaces for Centerstone to study adverse patient reports, and can help staff understand the context around what happened, and examine system-level changes that can be made to reduce errors.</p>
+							<p>Centerstone’s Patient Safety Organization (PSO) ensures the organization adopts proactive clinical risk management practices, analyzes and acts on data related to patient safety, and assesses physical and psychological safety culture. The PSO provides safe and confidential spaces for Centerstone to study adverse patient reports, and can help staff understand the context around what happened, and examine system-level changes that can be made to reduce errors. </p>
 							<p>Centerstone’s PSO is certified by the Agency for Healthcare Research and Quality (AHRQ) whose mission is to bridge research and practice to make healthcare safer, equitable, accessible, and affordable. Currently, there are 111 PSOs across the United States, and Centerstone is proud to be the only entity that exclusively focuses on behavioral health.</p>
 						</div>
 					</div>
@@ -789,7 +805,7 @@
 			<!-- Our Board Members -->
 			<section id="our-board-members" class="clearfix section bg-ar-blue text-ar-light-gray d-flex justify-content-center align-items-start align-items-xl-center">
 				<div class="container">
-					<h1 class="display-3" data-aos="flip-down">Our Board Members</h1>
+					<h1 class="display-3" data-aos="fade-down">Our Board Members</h1>
 					<div class="row">
 						<div class="col-12">
 							Providing vision and leadership, our Board of Directors is a group of dedicated members of our communities who are deeply committed to Centerstone’s mission of delivering care that changes people’s lives. We are eternally grateful for the work they do to help our clients and our organization achieve greatness.
@@ -797,7 +813,7 @@
 					</div>
 					<div class="row our-board-members-row">
 						<div class="col-6 col-lg-2" data-ref="research">
-							<figure class="figure px-3 pt-3 h-100"><img src="https://centerstone.org/wp-content/uploads/Annual_Report_FY23-02-150x150.png" alt="" width="150" height="150" class="aligncenter size-large wp-image-74561" />
+							<figure class="figure px-3 pt-3 h-100"><img src="https://centerstone.org/wp-content/uploads/Arnett-_Jamie-150x150.jpg" alt="" width="150" height="150" class="alignnone size-medium wp-image-38831 rounded-circle" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Jamie Arnett</h4>
 									<h6>Board Member, Tennessee</h6>
@@ -805,7 +821,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="research">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-60295" src="https://centerstone.org/wp-content/uploads/Audet_Carolyn_square-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-60295" src="https://centerstone.org/wp-content/uploads/Audet_Carolyn_square-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Dr. Carolyn Audet</h4>
 									<h6>Secretary, Institute</h6>
@@ -813,7 +829,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="foundation">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-52121" src="https://centerstone.org/wp-content/uploads/Barrick-Bruce-2022-square-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-52121" src="https://centerstone.org/wp-content/uploads/Barrick-Bruce-2022-square-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Bruce Barrick</h4>
 									<h6>Vice Chair, Foundation</h6>
@@ -821,7 +837,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="florida">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61670" src="https://centerstone.org/wp-content/uploads/Bencie-Jennifer-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61670" src="https://centerstone.org/wp-content/uploads/Bencie-Jennifer-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Dr. Jennifer Bencie</h4>
 									<h6>Board Member, Florida</h6>
@@ -829,7 +845,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="tennessee">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61682" src="https://centerstone.org/wp-content/uploads/Binkley-Shay-2022-square-scaled-1-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61682" src="https://centerstone.org/wp-content/uploads/Binkley-Shay-2022-square-scaled-1-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Shay Binkley</h4>
 									<h6>Board Member, Tennessee</h6>
@@ -837,39 +853,47 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="military">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61685" src="https://centerstone.org/wp-content/uploads/Blanks-Deborah-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61685" src="https://centerstone.org/wp-content/uploads/Blanks-Deborah-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Rev. Dr. Deborah Blanks</h4>
 									<h6>Board Member, Military</h6>
 								</figcaption>
 							</figure>
 						</div>
-						<div class="col-6 col-lg-2" data-ref="coa">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61691" src="https://centerstone.org/wp-content/uploads/Brackett-Lee-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
-								<figcaption class="figure-caption text-center mt-3">
-									<h4>Lee Brackett</h4>
-									<h6>Immediate Past Chair, America</h6>
-								</figcaption>
-							</figure>
-						</div>
 						<div class="col-6 col-lg-2" data-ref="illinois">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61688" src="https://centerstone.org/wp-content/uploads/Brackett-Bonnie-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61688" src="https://centerstone.org/wp-content/uploads/Brackett-Bonnie-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Bonnie Brackett</h4>
 									<h6>Board Member, Illinois</h6>
 								</figcaption>
 							</figure>
 						</div>
+						<div class="col-6 col-lg-2" data-ref="coa">
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61691" src="https://centerstone.org/wp-content/uploads/Brackett-Lee-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
+								<figcaption class="figure-caption text-center mt-3">
+									<h4>Lee Brackett</h4>
+									<h6>Immediate Past Chair, America</h6>
+								</figcaption>
+							</figure>
+						</div>
 						<div class="col-6 col-lg-2" data-ref="military">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61694" src="https://centerstone.org/wp-content/uploads/Brower-Scott-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61694" src="https://centerstone.org/wp-content/uploads/Brower-Scott-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>BG (Ret) Scott Brower</h4>
 									<h6>Board Member, Military</h6>
 								</figcaption>
 							</figure>
 						</div>
+						<div class="col-6 col-lg-2" data-ref="military">
+							<figure class="figure px-3 pt-3 h-100"><img src="https://centerstone.org/wp-content/uploads/Nelson-Burns-square-1-150x150.jpg" alt="" width="150" height="150" class="alignnone size-medium wp-image-64432 rounded-circle" />
+								<figcaption class="figure-caption text-center mt-3">
+									<h4>Nelson Burns</h4>
+									<h6>Board Member, Institute</h6>
+								</figcaption>
+							</figure>
+						</div>
 						<div class="col-6 col-lg-2" data-ref="research">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61700" src="https://centerstone.org/wp-content/uploads/Campbell-Lisa-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61700" src="https://centerstone.org/wp-content/uploads/Campbell-Lisa-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Lisa Campbell</h4>
 									<h6>Board Member, Institute</h6>
@@ -877,15 +901,31 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="military florida">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61697" src="https://centerstone.org/wp-content/uploads/Campbell-Ann-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61697" src="https://centerstone.org/wp-content/uploads/Campbell-Ann-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Ann Campbell</h4>
 									<h6>Vice Chair, Military | Board Member, Florida</h6>
 								</figcaption>
 							</figure>
 						</div>
+						<div class="col-6 col-lg-2" data-ref="military florida">
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-38489" src="https://centerstone.org/wp-content/uploads/Crockett-square-150x150.jpg" alt="" width="150" height="150" />
+								<figcaption class="figure-caption text-center mt-3">
+									<h4>Kelly Crockett</h4>
+									<h6>Chair, Tennessee</h6>
+								</figcaption>
+							</figure>
+						</div>
+						<div class="col-6 col-lg-2" data-ref="indiana">
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61703" src="https://centerstone.org/wp-content/uploads/Davidson-Terrye-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
+								<figcaption class="figure-caption text-center mt-3">
+									<h4>Terrye Davidson</h4>
+									<h6>Vice Chair, Indiana</h6>
+								</figcaption>
+							</figure>
+						</div>
 						<div class="col-6 col-lg-2" data-ref="tennessee">
-							<figure class="figure px-3 pt-3 h-100"><img src="https://centerstone.org/wp-content/uploads/Annual_Report_FY23-02-150x150.png" alt="" width="150" height="150" class="aligncenter size-large wp-image-74561" />
+							<figure class="figure px-3 pt-3 h-100"><img src="https://centerstone.org/wp-content/uploads/Dodge_square-150x150.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail wp-image-38501 rounded-circle" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Molly Dodge</h4>
 									<h6>Board Member, Indiana</h6>
@@ -893,7 +933,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="tennessee">
-							<figure class="figure px-3 pt-3 h-100"><img src="https://centerstone.org/wp-content/uploads/Annual_Report_FY23-02-150x150.png" alt="" width="150" height="150" class="aligncenter size-large wp-image-74561" />
+							<figure class="figure px-3 pt-3 h-100"><img src="https://centerstone.org/wp-content/uploads/Annual_Report_FY23-02-150x150.png" alt="" width="150" height="150" class="aligncenter size-large wp-image-74561 rounded-circle" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Devan Dwenger</h4>
 									<h6>Board Member, Indiana</h6>
@@ -901,7 +941,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="military">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61826" src="https://centerstone.org/wp-content/uploads/Haltom-Claire-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61826" src="https://centerstone.org/wp-content/uploads/Haltom-Claire-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Claire Haltom</h4>
 									<h6>Secretary, Military</h6>
@@ -909,15 +949,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="indiana">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61703" src="https://centerstone.org/wp-content/uploads/Davidson-Terrye-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
-								<figcaption class="figure-caption text-center mt-3">
-									<h4>Terrye Davidson</h4>
-									<h6>Vice Chair, Indiana</h6>
-								</figcaption>
-							</figure>
-						</div>
-						<div class="col-6 col-lg-2" data-ref="indiana">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61706" src="https://centerstone.org/wp-content/uploads/Davis-Sharrie-Harlan-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61706" src="https://centerstone.org/wp-content/uploads/Davis-Sharrie-Harlan-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Sharon Harlin</h4>
 									<h6>Secretary, Indiana</h6>
@@ -925,7 +957,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="indiana">
-							<figure class="figure px-3 pt-3 h-100"><img src="https://centerstone.org/wp-content/uploads/Annual_Report_FY23-02-150x150.png" alt="" width="150" height="150" class="aligncenter size-large wp-image-74561" />
+							<figure class="figure px-3 pt-3 h-100"><img src="https://centerstone.org/wp-content/uploads/Annual_Report_FY23-02-150x150.png" alt="" width="150" height="150" class="aligncenter size-large wp-image-74561 rounded-circle" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Laurie Dickerson</h4>
 									<h6>Board Member, Indiana</h6>
@@ -933,7 +965,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="tennessee">
-							<figure class="figure px-3 pt-3 h-100"><img src="https://centerstone.org/wp-content/uploads/Annual_Report_FY23-02-150x150.png" alt="" width="150" height="150" class="aligncenter size-large wp-image-74561" />
+							<figure class="figure px-3 pt-3 h-100"><img src="https://centerstone.org/wp-content/uploads/Annual_Report_FY23-02-150x150.png" alt="" width="150" height="150" class="aligncenter size-large wp-image-74561 rounded-circle" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Hannah Dudney</h4>
 									<h6>Board Member, Tennessee</h6>
@@ -941,15 +973,15 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="illinois">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-38846" src="https://centerstone.org/wp-content/uploads/Dunn-square-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-38846" src="https://centerstone.org/wp-content/uploads/Dunn-square-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
-									<h4>Ronda Dunn, PhD</h4>
+									<h4>Dr. Ronda Dunn</h4>
 									<h6>Board Member, Illinois</h6>
 								</figcaption>
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="illinois">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61709" src="https://centerstone.org/wp-content/uploads/Eagles-Jonette-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61709" src="https://centerstone.org/wp-content/uploads/Eagles-Jonette-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Jonette Eagles</h4>
 									<h6>Board Member, Illinois</h6>
@@ -957,7 +989,15 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="military">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61712" src="https://centerstone.org/wp-content/uploads/Enos-Mike-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img src="https://centerstone.org/wp-content/uploads/Ellis_square-150x150.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail wp-image-38513 rounded-circle" />
+								<figcaption class="figure-caption text-center mt-3">
+									<h4>Matt Ellis </h4>
+									<h6>Board Member, Military</h6>
+								</figcaption>
+							</figure>
+						</div>
+						<div class="col-6 col-lg-2" data-ref="military">
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61712" src="https://centerstone.org/wp-content/uploads/Enos-Mike-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Mike Enos</h4>
 									<h6>Immediate Past Chair, Military</h6>
@@ -965,7 +1005,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="coa military">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61715" src="https://centerstone.org/wp-content/uploads/Farley-Reed-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61715" src="https://centerstone.org/wp-content/uploads/Farley-Reed-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Reed Farley</h4>
 									<h6>Chair, Military | Board Member, America</h6>
@@ -973,15 +1013,23 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="tennessee research">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61718" src="https://centerstone.org/wp-content/uploads/Faulkner-Mark-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61718" src="https://centerstone.org/wp-content/uploads/Faulkner-Mark-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Mark Faulkner</h4>
 									<h6>Vice Chair, Tennessee | Board Member, Institute</h6>
 								</figcaption>
 							</figure>
 						</div>
+						<div class="col-6 col-lg-2">
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61829" src="https://centerstone.org/wp-content/uploads/Fischer-Pat-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
+								<figcaption class="figure-caption text-center mt-3">
+									<h4>Patricia Fischer</h4>
+									<h6>Vice Chair, Illinois</h6>
+								</figcaption>
+							</figure>
+						</div>
 						<div class="col-6 col-lg-2" data-ref="indiana">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-59285" src="https://centerstone.org/wp-content/uploads/Friend-Rhonda-2022-square-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-59285" src="https://centerstone.org/wp-content/uploads/Friend-Rhonda-2022-square-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Rhonda Friend</h4>
 									<h6>Board Member, Indiana</h6>
@@ -989,15 +1037,23 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="foundation florida">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61832" src="https://centerstone.org/wp-content/uploads/Golden-James-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61832" src="https://centerstone.org/wp-content/uploads/Golden-James-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Rev. James Golden</h4>
 									<h6>Immediate Past Chair, Florida | Board Member, Foundation</h6>
 								</figcaption>
 							</figure>
 						</div>
+						<div class="col-6 col-lg-2" data-ref="tennessee">
+							<figure class="figure px-3 pt-3 h-100"><img src="https://centerstone.org/wp-content/uploads/Griffith_square-150x150.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail wp-image-38543 rounded-circle" />
+								<figcaption class="figure-caption text-center mt-3">
+									<h4>Parker Griffith </h4>
+									<h6>Board Member, Foundation</h6>
+								</figcaption>
+							</figure>
+						</div>
 						<div class="col-6 col-lg-2 has-four" data-ref="coa illinois military research">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61835" src="https://centerstone.org/wp-content/uploads/Guth-David-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61835" src="https://centerstone.org/wp-content/uploads/Guth-David-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>David Guth</h4>
 									<h6>CEO, America | Board Member, Institute | Board Member, Military | Board Member, Illinois</h6>
@@ -1005,15 +1061,15 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="tennessee">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-38552" src="https://centerstone.org/wp-content/uploads/Hamilton_square-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-38552" src="https://centerstone.org/wp-content/uploads/Hamilton_square-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Dr. Kevin Hamilton</h4>
-									<h6>Board Member, Tennessee</h6>
+									<h6>Board Member, Tennessee | Board Member, Foundation</h6>
 								</figcaption>
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="military">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61727" src="https://centerstone.org/wp-content/uploads/Hill_Marvin_375x500_square-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61727" src="https://centerstone.org/wp-content/uploads/Hill_Marvin_375x500_square-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>CSM (Ret) Marvin Hill</h4>
 									<h6>Board Member, Military</h6>
@@ -1021,7 +1077,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="coa">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61952" src="https://centerstone.org/wp-content/uploads/higgens_square-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61952" src="https://centerstone.org/wp-content/uploads/higgens_square-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Sara Huggins</h4>
 									<h6>Board Member, America</h6>
@@ -1029,7 +1085,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="illinois">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61838" src="https://centerstone.org/wp-content/uploads/Johnson-Tom-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61838" src="https://centerstone.org/wp-content/uploads/Johnson-Tom-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Tom Johnson</h4>
 									<h6>Board Member, Illinois</h6>
@@ -1037,7 +1093,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="illinois">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-38570" src="https://centerstone.org/wp-content/uploads/Kaytor_square-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-38570" src="https://centerstone.org/wp-content/uploads/Kaytor_square-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Kim Kaytor</h4>
 									<h6>Board Member, Illinois</h6>
@@ -1045,7 +1101,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="illinois">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61841" src="https://centerstone.org/wp-content/uploads/Kidder-Susan-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61841" src="https://centerstone.org/wp-content/uploads/Kidder-Susan-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Susan Kidder</h4>
 									<h6>Board Member, Illinois</h6>
@@ -1053,7 +1109,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="foundation florida">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61844" src="https://centerstone.org/wp-content/uploads/Knowles-Tim-2022-square-scaled-1-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61844" src="https://centerstone.org/wp-content/uploads/Knowles-Tim-2022-square-scaled-1-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Timothy Knowles</h4>
 									<h6>Chair, Foundation | Secretary, Florida</h6>
@@ -1061,7 +1117,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="indiana">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-38702" src="https://centerstone.org/wp-content/uploads/Koesel_square-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-38702" src="https://centerstone.org/wp-content/uploads/Koesel_square-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Suzanne Koesel</h4>
 									<h6>CEO, Indiana</h6>
@@ -1069,7 +1125,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="coa">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-59303" src="https://centerstone.org/wp-content/uploads/Krebs-Phil-2022-square-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-59303" src="https://centerstone.org/wp-content/uploads/Krebs-Phil-2022-square-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Phil Krebs</h4>
 									<h6>Vice Chair, America</h6>
@@ -1077,7 +1133,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="florida">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61847" src="https://centerstone.org/wp-content/uploads/Larkin-Skinner-Melissa-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61847" src="https://centerstone.org/wp-content/uploads/Larkin-Skinner-Melissa-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Melissa Larkin-Skinner</h4>
 									<h6>CEO, Florida</h6>
@@ -1085,7 +1141,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="indiana">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-38582" src="https://centerstone.org/wp-content/uploads/Leonard_square-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-38582" src="https://centerstone.org/wp-content/uploads/Leonard_square-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Douglas Leonard</h4>
 									<h6>Immediate Past Chair, Indiana</h6>
@@ -1093,7 +1149,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="military">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-38585" src="https://centerstone.org/wp-content/uploads/Lopey_square-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-38585" src="https://centerstone.org/wp-content/uploads/Lopey_square-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>COL (Ret) Jon Lopey</h4>
 									<h6>Board Member, Military</h6>
@@ -1101,7 +1157,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="coa">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-59312" src="https://centerstone.org/wp-content/uploads/Lucas-Pat-2022-square-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-59312" src="https://centerstone.org/wp-content/uploads/Lucas-Pat-2022-square-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Dr. Patricia Lucas</h4>
 									<h6>Secretary, America</h6>
@@ -1109,7 +1165,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="foundation military research">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-59315" src="https://centerstone.org/wp-content/uploads/Mahler-Tom-2022-square-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-59315" src="https://centerstone.org/wp-content/uploads/Mahler-Tom-2022-square-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>COL (Ret) Tom Mahler</h4>
 									<h6>Board Member, Foundation | Board Member, Institute | Board Member, Military</h6>
@@ -1117,7 +1173,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="indiana">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61853" src="https://centerstone.org/wp-content/uploads/McKim-Geoff-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61853" src="https://centerstone.org/wp-content/uploads/McKim-Geoff-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Geoff McKim</h4>
 									<h6>Chair, Indiana</h6>
@@ -1125,7 +1181,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="research illinois">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61856" src="https://centerstone.org/wp-content/uploads/Melby-David-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61856" src="https://centerstone.org/wp-content/uploads/Melby-David-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Dr. David J. Melby</h4>
 									<h6>Board Member, Institute | Board Member, Illinois</h6>
@@ -1133,7 +1189,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="illinois">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-38600" src="https://centerstone.org/wp-content/uploads/Meyer_stephani_square-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-38600" src="https://centerstone.org/wp-content/uploads/Meyer_stephani_square-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Stephani Meyer</h4>
 									<h6>Secretary, Illinois</h6>
@@ -1141,7 +1197,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="tennessee">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61733" src="https://centerstone.org/wp-content/uploads/Middleton-square-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61733" src="https://centerstone.org/wp-content/uploads/Middleton-square-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Ben Middleton</h4>
 									<h6>CEO, Tennessee</h6>
@@ -1149,7 +1205,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="research">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61859" src="https://centerstone.org/wp-content/uploads/Morphett-Jonathan-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61859" src="https://centerstone.org/wp-content/uploads/Morphett-Jonathan-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Jonathan Morphett</h4>
 									<h6>Immediate Past Chair, Institute</h6>
@@ -1157,7 +1213,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="military">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-38612" src="https://centerstone.org/wp-content/uploads/Murrie_square-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-38612" src="https://centerstone.org/wp-content/uploads/Murrie_square-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>BG (Ret) Eden Murrie</h4>
 									<h6>Board Member, Military</h6>
@@ -1165,7 +1221,15 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="tennessee">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-51096" src="https://centerstone.org/wp-content/uploads/New_Scott_375x500-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img src="https://centerstone.org/wp-content/uploads/nahley-square-lg-1-150x150.png" alt="" width="150" height="150" class="alignnone size-thumbnail wp-image-64507 rounded-circle" />
+								<figcaption class="figure-caption text-center mt-3">
+									<h4>Jeff Nahley</h4>
+									<h6>Board Member, Military</h6>
+								</figcaption>
+							</figure>
+						</div>
+						<div class="col-6 col-lg-2" data-ref="tennessee">
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-51096" src="https://centerstone.org/wp-content/uploads/New_Scott_375x500-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Scott Neu</h4>
 									<h6>Board Member, Tennessee</h6>
@@ -1173,7 +1237,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="indiana">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61862" src="https://centerstone.org/wp-content/uploads/Newgent-Dave-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61862" src="https://centerstone.org/wp-content/uploads/Newgent-Dave-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>David Newgent</h4>
 									<h6>Board Member, Indiana</h6>
@@ -1181,7 +1245,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="research">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-67285" src="https://centerstone.org/wp-content/uploads/Ashley_Newton_1200x1200-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-67285" src="https://centerstone.org/wp-content/uploads/Ashley_Newton_1200x1200-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Ashley Newton</h4>
 									<h6>CEO, Institute</h6>
@@ -1189,7 +1253,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="tennessee">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-59333" src="https://centerstone.org/wp-content/uploads/Obremsky-Jill-2022-square-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-59333" src="https://centerstone.org/wp-content/uploads/Obremsky-Jill-2022-square-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Dr. Jill Obremskey</h4>
 									<h6>Secretary, Tennessee</h6>
@@ -1197,7 +1261,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="tennessee">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61871" src="https://centerstone.org/wp-content/uploads/Oman-Dana-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61871" src="https://centerstone.org/wp-content/uploads/Oman-Dana-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Dana Oman</h4>
 									<h6>Immediate Past Chair, Tennessee</h6>
@@ -1205,15 +1269,31 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="illinois">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61874" src="https://centerstone.org/wp-content/uploads/Phillips-Bob-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img src="https://centerstone.org/wp-content/uploads/Pass_square-150x150.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail wp-image-38627 rounded-circle" />
+								<figcaption class="figure-caption text-center mt-3">
+									<h4>Wes Pass</h4>
+									<h6>Board Member, Military</h6>
+								</figcaption>
+							</figure>
+						</div>
+						<div class="col-6 col-lg-2" data-ref="illinois">
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61874" src="https://centerstone.org/wp-content/uploads/Phillips-Bob-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Pastor Robert Phillips</h4>
 									<h6>Chair, Illinois</h6>
 								</figcaption>
 							</figure>
 						</div>
+						<div class="col-6 col-lg-2">
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-74561" src="https://centerstone.org/wp-content/uploads/Annual_Report_FY23-02-150x150.png" alt="" width="150" height="150" />
+								<figcaption class="figure-caption text-center mt-3">
+									<h4>Raymond Pilon</h4>
+									<h6>Board Member, Illinois</h6>
+								</figcaption>
+							</figure>
+						</div>
 						<div class="col-6 col-lg-2" data-ref="research">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-59342" src="https://centerstone.org/wp-content/uploads/Pollack-Nedda-2022-square-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-59342" src="https://centerstone.org/wp-content/uploads/Pollack-Nedda-2022-square-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Nedda Pollack</h4>
 									<h6>Board Member, Institute</h6>
@@ -1221,7 +1301,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="foundation">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61916" src="https://centerstone.org/wp-content/uploads/Rhodes-496164-square-scaled-1-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61916" src="https://centerstone.org/wp-content/uploads/Rhodes-496164-square-scaled-1-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Ramona Rhodes</h4>
 									<h6>President, Foundation</h6>
@@ -1229,7 +1309,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="illinois">
-							<figure class="figure px-3 pt-3 h-100"><img src="https://centerstone.org/wp-content/uploads/Annual_Report_FY23-02-150x150.png" alt="" width="150" height="150" class="aligncenter size-large wp-image-74561" />
+							<figure class="figure px-3 pt-3 h-100"><img src="https://centerstone.org/wp-content/uploads/Annual_Report_FY23-02-150x150.png" alt="" width="150" height="150" class="aligncenter size-large wp-image-74561 rounded-circle" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Waverly Robinson</h4>
 									<h6>Board Member, Illinois</h6>
@@ -1237,15 +1317,15 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="research">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61886" src="https://centerstone.org/wp-content/uploads/Rose-A-John-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61886" src="https://centerstone.org/wp-content/uploads/Rose-A-John-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
-									<h4>A John Rose</h4>
+									<h4>A. John Rose</h4>
 									<h6>Vice Chair, Institute</h6>
 								</figcaption>
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="tennessee">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-59348" src="https://centerstone.org/wp-content/uploads/Satz-Kate-2022-square-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-59348" src="https://centerstone.org/wp-content/uploads/Satz-Kate-2022-square-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Kate Satz</h4>
 									<h6>Board Member, Tennessee</h6>
@@ -1253,7 +1333,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="tennessee">
-							<figure class="figure px-3 pt-3 h-100"><img src="https://centerstone.org/wp-content/uploads/Annual_Report_FY23-02-150x150.png" alt="" width="150" height="150" class="aligncenter size-large wp-image-74561" />
+							<figure class="figure px-3 pt-3 h-100"><img src="https://centerstone.org/wp-content/uploads/Schickling_square-150x150.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail wp-image-38642 rounded-circle" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Chris Schickling</h4>
 									<h6>Board Member, Military Services</h6>
@@ -1261,7 +1341,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="foundation">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-38855" src="https://centerstone.org/wp-content/uploads/smith_square-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-38855" src="https://centerstone.org/wp-content/uploads/smith_square-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Brad Smith</h4>
 									<h6>Board Member, Foundation</h6>
@@ -1269,7 +1349,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="indiana">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61745" src="https://centerstone.org/wp-content/uploads/Staley-Photo-2020-square-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61745" src="https://centerstone.org/wp-content/uploads/Staley-Photo-2020-square-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>J. Reneae Staley</h4>
 									<h6>Board Member, Indiana</h6>
@@ -1277,7 +1357,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="coa">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61889" src="https://centerstone.org/wp-content/uploads/Sweeten-Jim-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61889" src="https://centerstone.org/wp-content/uploads/Sweeten-Jim-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>James Sweeten</h4>
 									<h6>Chair, America</h6>
@@ -1285,7 +1365,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="florida">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61889" src="https://centerstone.org/wp-content/uploads/Thayer-Colleen-2022-square-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61889" src="https://centerstone.org/wp-content/uploads/Thayer-Colleen-2022-square-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Colleen Thayer</h4>
 									<h6>Chair, Florida</h6>
@@ -1301,7 +1381,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="research">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61895" src="https://centerstone.org/wp-content/uploads/Upender-Raghu-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61895" src="https://centerstone.org/wp-content/uploads/Upender-Raghu-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Dr. Raghu Upender</h4>
 									<h6>Chair, Institute</h6>
@@ -1309,7 +1389,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="research">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61898" src="https://centerstone.org/wp-content/uploads/Vero-Bob-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61898" src="https://centerstone.org/wp-content/uploads/Vero-Bob-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Dr. Robert Vero</h4>
 									<h6>Board Member, Institute</h6>
@@ -1317,7 +1397,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="military">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61748" src="https://centerstone.org/wp-content/uploads/Villalobos-square-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61748" src="https://centerstone.org/wp-content/uploads/Villalobos-square-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Dr. Blas Villalobos</h4>
 									<h6>CEO, Military</h6>
@@ -1325,15 +1405,23 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="foundation">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61910" src="https://centerstone.org/wp-content/uploads/Voigt-John-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61910" src="https://centerstone.org/wp-content/uploads/Voigt-John-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>John Voigt</h4>
 									<h6>Secretary, Foundation</h6>
 								</figcaption>
 							</figure>
 						</div>
+						<div class="col-6 col-lg-2" data-ref="foundation">
+							<figure class="figure px-3 pt-3 h-100"><img src="https://centerstone.org/wp-content/uploads/Waber_Lisa-150x150.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail wp-image-59399 rounded-circle" />
+								<figcaption class="figure-caption text-center mt-3">
+									<h4>Lisa Waber</h4>
+									<h6>Board Member, Indiana</h6>
+								</figcaption>
+							</figure>
+						</div>
 						<div class="col-6 col-lg-2" data-ref="florida">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61751" src="https://centerstone.org/wp-content/uploads/Waiters-Lorenzo-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61751" src="https://centerstone.org/wp-content/uploads/Waiters-Lorenzo-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Lorenzo Waiters</h4>
 									<h6>Board Member, Florida</h6>
@@ -1341,7 +1429,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="foundation">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61754" src="https://centerstone.org/wp-content/uploads/Wallace-Jack-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61754" src="https://centerstone.org/wp-content/uploads/Wallace-Jack-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Jack Wallace</h4>
 									<h6>Immediate Past Chair, Foundation</h6>
@@ -1349,7 +1437,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="military">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61757" src="https://centerstone.org/wp-content/uploads/Was-Chris-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61757" src="https://centerstone.org/wp-content/uploads/Was-Chris-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Chris Was</h4>
 									<h6>Board Member, Military</h6>
@@ -1357,7 +1445,15 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="tennessee">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-full wp-image-69808" src="https://centerstone.org/wp-content/uploads/mary_wilson_300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img src="https://centerstone.org/wp-content/uploads/Wheeler_square-150x150.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail wp-image-38681 rounded-circle" />
+								<figcaption class="figure-caption text-center mt-3">
+									<h4>Robert Wheeler</h4>
+									<h6>Board Member, Military</h6>
+								</figcaption>
+							</figure>
+						</div>
+						<div class="col-6 col-lg-2" data-ref="tennessee">
+							<figure class="figure px-3 pt-3 h-100"><img src="https://centerstone.org/wp-content/uploads/mary_wilson_300x300-150x150.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail wp-image-69808 rounded-circle" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Mary Wilson</h4>
 									<h6>Board Member, Tennessee</h6>
@@ -1365,7 +1461,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="indiana">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61772" src="https://centerstone.org/wp-content/uploads/Young-Laura-2022-square-scaled-1-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-61772" src="https://centerstone.org/wp-content/uploads/Young-Laura-2022-square-scaled-1-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Laura Weinland Young</h4>
 									<h6>Board Member, Indiana</h6>
@@ -1373,7 +1469,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="florida">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-59378" src="https://centerstone.org/wp-content/uploads/Wrightson-Amy-2022-square-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-59378" src="https://centerstone.org/wp-content/uploads/Wrightson-Amy-2022-square-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Amy Wrightson</h4>
 									<h6>Vice Chair, Florida</h6>
@@ -1381,7 +1477,7 @@
 							</figure>
 						</div>
 						<div class="col-6 col-lg-2" data-ref="foundation illinois">
-							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-38687" src="https://centerstone.org/wp-content/uploads/Zwick_square-300x300.jpg" alt="" width="150" height="150" />
+							<figure class="figure px-3 pt-3 h-100"><img class="aligncenter rounded-circle size-medium wp-image-38687" src="https://centerstone.org/wp-content/uploads/Zwick_square-150x150.jpg" alt="" width="150" height="150" />
 								<figcaption class="figure-caption text-center mt-3">
 									<h4>Carol Zwick</h4>
 									<h6>Immediate Past Chair, Illinois | Board Member, Foundation</h6>
@@ -1435,12 +1531,6 @@
 			<div class="modal fade" id="donorModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
 				<div class="modal-dialog modal-fullscreen" role="document">
 					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="modalLabel">All Donors</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
 						<div class="modal-body pt-0">
 							<div class="container pt-0">
 								<div class="row justify-content-around mb-3 sticky-top py-5 bg-white border-bottom d-none d-md-block">
@@ -1448,7 +1538,7 @@
 										<a href="#donor-container" class="btn btn-outline-primary not-filter mb-2 mb-md-0 rounded-left w-100" role="button">Donors</a>
 										<a href="#honorary-container" class="btn btn-outline-primary not-filter mb-2 mb-md-0 rounded-0 w-100" role="button">Honorary</a>
 										<a href="#memorial-container" class="btn btn-outline-primary not-filter mb-2 mb-md-0 rounded-0 w-100" role="button">Memorial</a>
-										<a href="#sapphire-container" class="btn btn-outline-primary not-filter mb-2 mb-md-0 rounded-0 w-100" role="button">Sapphire</a>
+										<a href="#sapphire-container" class="btn btn-outline-primary not-filter mb-2 mb-md-0 rounded-0 w-100" role="button">Sapphire Society</a>
 										<a href="#endowment-container" class="btn btn-outline-primary not-filter mb-2 mb-md-0 rounded-0 w-100" role="button">Endowment</a>
 										<a href="#invested-funds-container" class="btn btn-outline-primary not-filter rounded-right w-100" role="button">Invested Funds</a>
 									</div>
@@ -1501,7 +1591,7 @@
 										<div class="table-responsive">
 											<table class="table table-bordered">
 												<thead class="thead-dark">
-													<tr>														
+													<tr>
 														<th scope="col">Fund</th>
 														<th scope="col">Description</th>
 													</tr>
@@ -1575,82 +1665,147 @@
 					<h1 class="display-3" data-aos="fade-up" data-aos-delay="100" data-aos-anchor="#team-photo-gallery">Team Photo Gallery</h1>
 					<div class="row">
 						<div class="col-md-12" data-aos="fade-up" data-aos-delay="100" data-aos-anchor="#team-photo-gallery">
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi vero expedita saepe quod accusantium, eaque quisquam quia necessitatibus maxime labore autem culpa aliquid obcaecati ex architecto. Odit iste facilis vero.</p>
+							<p>Centerstone’s expert team is at the heart of our mission of delivering care that changes people’s lives. From speeches and presentations to ribbon-cuttings and special events, our teams were active in their communities ensuring people in need could connect with our services. We’re so proud of all of our team members who make hard work just a little bit easier! </p>
 							<div class="teamGallery-container">
 								<div id="lightbox-gallery" class="row">
 									<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
 										<a href="https://centerstone.org/wp-content/uploads/Sean_Tiffany_Event1.jpg" data-toggle="lightbox" data-gallery="team-gallery">
-											<img src="https://centerstone.org/wp-content/uploads/Sean_Tiffany_Event1-150x150.jpg" alt="" width="150" height="150" class="aligncenter size-thumbnail wp-image-74952">
+											<img src="https://centerstone.org/wp-content/uploads/Sean_Tiffany_Event1-150x150.jpg" alt="" width="150" height="150" class="aligncenter size-thumbnail img-thumbnail img-thumbnail-contained wp-image-74952">
 										</a>
 									</div>
 									<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
 										<a href="https://centerstone.org/wp-content/uploads/Psychosocial_Vero_opening.jpg" data-toggle="lightbox" data-gallery="team-gallery">
-											<img src="https://centerstone.org/wp-content/uploads/Psychosocial_Vero_opening-150x150.jpg" alt="" width="150" height="150" class="aligncenter size-thumbnail wp-image-74949">
+											<img src="https://centerstone.org/wp-content/uploads/Psychosocial_Vero_opening-150x150.jpg" alt="" width="150" height="150" class="aligncenter size-thumbnail img-thumbnail img-thumbnail-contained wp-image-74949">
 										</a>
 									</div>
 									<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
 										<a href="https://centerstone.org/wp-content/uploads/NAMI-Conference-2023-scaled.jpg" data-toggle="lightbox" data-gallery="team-gallery">
-											<img src="https://centerstone.org/wp-content/uploads/NAMI-Conference-2023-150x150.jpg" alt="" width="150" height="150" class="aligncenter size-thumbnail wp-image-74946">
+											<img src="https://centerstone.org/wp-content/uploads/NAMI-Conference-2023-150x150.jpg" alt="" width="150" height="150" class="aligncenter size-thumbnail img-thumbnail img-thumbnail-contained wp-image-74946">
 										</a>
 									</div>
 									<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
 										<a href="https://centerstone.org/wp-content/uploads/Champions-of-Healthcare.jpg" data-toggle="lightbox" data-gallery="team-gallery">
-											<img src="https://centerstone.org/wp-content/uploads/Champions-of-Healthcare-150x150.jpg" alt="" width="150" height="150" class="aligncenter size-thumbnail wp-image-74943">
+											<img src="https://centerstone.org/wp-content/uploads/Champions-of-Healthcare-150x150.jpg" alt="" width="150" height="150" class="aligncenter size-thumbnail img-thumbnail img-thumbnail-contained wp-image-74943">
 										</a>
 									</div>
 									<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
 										<a href="https://centerstone.org/wp-content/uploads/Ben_SAMHSA_Roundtable.jpg" data-toggle="lightbox" data-gallery="team-gallery">
-											<img src="https://centerstone.org/wp-content/uploads/Ben_SAMHSA_Roundtable-150x150.jpg" alt="" width="150" height="150" class="aligncenter size-thumbnail wp-image-74940">
+											<img src="https://centerstone.org/wp-content/uploads/Ben_SAMHSA_Roundtable-150x150.jpg" alt="" width="150" height="150" class="aligncenter size-thumbnail img-thumbnail img-thumbnail-contained wp-image-74940">
 										</a>
 									</div>
 									<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
 										<a href="https://centerstone.org/wp-content/uploads/staffAppreciationBreakfast3.jpg" data-toggle="lightbox" data-gallery="team-gallery">
-											<img src="https://centerstone.org/wp-content/uploads/staffAppreciationBreakfast3-150x150.jpg" alt="" width="150" height="150" class="aligncenter size-thumbnail wp-image-74937">
+											<img src="https://centerstone.org/wp-content/uploads/staffAppreciationBreakfast3-150x150.jpg" alt="" width="150" height="150" class="aligncenter size-thumbnail img-thumbnail img-thumbnail-contained wp-image-74937">
 										</a>
 									</div>
 									<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
 										<a href="https://centerstone.org/wp-content/uploads/Lookouts-2.jpg" data-toggle="lightbox" data-gallery="team-gallery">
-											<img src="https://centerstone.org/wp-content/uploads/Lookouts-2-150x150.jpg" alt="" width="150" height="150" class="aligncenter size-thumbnail wp-image-74934">
+											<img src="https://centerstone.org/wp-content/uploads/Lookouts-2-150x150.jpg" alt="" width="150" height="150" class="aligncenter size-thumbnail img-thumbnail img-thumbnail-contained wp-image-74934">
 										</a>
 									</div>
 									<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
 										<a href="https://centerstone.org/wp-content/uploads/IMG_7173-scaled.jpg" data-toggle="lightbox" data-gallery="ekko-lightbox">
-											<img src="https://centerstone.org/wp-content/uploads/IMG_7173-150x150.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail wp-image-74974">
+											<img src="https://centerstone.org/wp-content/uploads/IMG_7173-150x150.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail img-thumbnail img-thumbnail-contained wp-image-74974">
 										</a>
 									</div>
 									<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
 										<a href="https://centerstone.org/wp-content/uploads/IMG_0062-scaled.jpg" data-toggle="lightbox" data-gallery="ekko-lightbox">
-											<img src="https://centerstone.org/wp-content/uploads/IMG_0062-150x150.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail wp-image-74971">
+											<img src="https://centerstone.org/wp-content/uploads/IMG_0062-150x150.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail img-thumbnail img-thumbnail-contained wp-image-74971">
 										</a>
 									</div>
 									<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
 										<a href="https://centerstone.org/wp-content/uploads/IMG_0021-scaled.jpg" data-toggle="lightbox" data-gallery="ekko-lightbox">
-											<img src="https://centerstone.org/wp-content/uploads/IMG_0021-150x150.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail wp-image-74968">
+											<img src="https://centerstone.org/wp-content/uploads/IMG_0021-150x150.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail img-thumbnail img-thumbnail-contained wp-image-74968">
 										</a>
 									</div>
 									<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
 										<a href="https://centerstone.org/wp-content/uploads/Marketing-Team-scaled.jpg" data-toggle="lightbox" data-gallery="ekko-lightbox">
-											<img src="https://centerstone.org/wp-content/uploads/Marketing-Team-150x150.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail wp-image-74965">
+											<img src="https://centerstone.org/wp-content/uploads/Marketing-Team-150x150.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail img-thumbnail img-thumbnail-contained wp-image-74965">
 										</a>
 									</div>
 									<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
 										<a href="https://centerstone.org/wp-content/uploads/Lexington-CRC-Team.jpg" data-toggle="lightbox" data-gallery="ekko-lightbox">
-											<img src="https://centerstone.org/wp-content/uploads/Lexington-CRC-Team-150x150.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail wp-image-74962">
+											<img src="https://centerstone.org/wp-content/uploads/Lexington-CRC-Team-150x150.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail img-thumbnail img-thumbnail-contained wp-image-74962">
 										</a>
 									</div>
 									<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
 										<a href="https://centerstone.org/wp-content/uploads/Ribbon-Cutting.jpg" data-toggle="lightbox" data-gallery="ekko-lightbox">
-											<img src="https://centerstone.org/wp-content/uploads/Ribbon-Cutting-150x150.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail wp-image-74959">
+											<img src="https://centerstone.org/wp-content/uploads/Ribbon-Cutting-150x150.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail img-thumbnail img-thumbnail-contained wp-image-74959">
 										</a>
 									</div>
 									<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
 										<a href="https://centerstone.org/wp-content/uploads/ribbon-cutting-31-1-scaled.jpg" data-toggle="lightbox" data-gallery="ekko-lightbox">
-											<img src="https://centerstone.org/wp-content/uploads/ribbon-cutting-31-1-150x150.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail wp-image-74956">
+											<img src="https://centerstone.org/wp-content/uploads/ribbon-cutting-31-1-150x150.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail img-thumbnail img-thumbnail-contained wp-image-74956">
 										</a>
 									</div>
 									<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
 										<a href="https://centerstone.org/wp-content/uploads/1684597514077.jpg" data-toggle="lightbox" data-gallery="ekko-lightbox">
-											<img src="https://centerstone.org/wp-content/uploads/1684597514077-150x150.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail wp-image-74953">
+											<img src="https://centerstone.org/wp-content/uploads/1684597514077-150x150.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail img-thumbnail img-thumbnail-contained wp-image-74953">
+										</a>
+									</div>
+									<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
+										<a href="https://centerstone.org/wp-content/uploads/Linda-Grove-Paul-Welcomes-Attendees-at-Sam-Quinones-Event.jpg" data-toggle="lightbox" data-gallery="ekko-lightbox">
+											<img src="https://centerstone.org/wp-content/uploads/Linda-Grove-Paul-Welcomes-Attendees-at-Sam-Quinones-Event.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail img-thumbnail img-thumbnail-contained wp-image-75028">
+										</a>
+									</div>
+									<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
+										<a href="https://centerstone.org/wp-content/uploads/ArchPhotoFLLS.jpg" data-toggle="lightbox" data-gallery="ekko-lightbox">
+											<img src="https://centerstone.org/wp-content/uploads/ArchPhotoFLLS.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail img-thumbnail img-thumbnail-contained wp-image-73939">
+										</a>
+									</div>
+									<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
+										<a href="https://centerstone.org/wp-content/uploads/Cherie-and-Anne.jpg" data-toggle="lightbox" data-gallery="ekko-lightbox">
+											<img src="https://centerstone.org/wp-content/uploads/Cherie-and-Anne.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail img-thumbnail img-thumbnail-contained wp-image-72679">
+										</a>
+									</div>
+									<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
+										<a href="https://centerstone.org/wp-content/uploads/Reclaiming_Lives_Luncheon_2023_TW4_7116.jpg" data-toggle="lightbox" data-gallery="ekko-lightbox">
+											<img src="https://centerstone.org/wp-content/uploads/Reclaiming_Lives_Luncheon_2023_TW4_7116.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail img-thumbnail img-thumbnail-contained wp-image-67656">
+										</a>
+									</div>
+									<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
+										<a href="https://centerstone.org/wp-content/uploads/Reclaiming_Lives_Luncheon_2023_TW3_6204.jpg" data-toggle="lightbox" data-gallery="ekko-lightbox">
+											<img src="https://centerstone.org/wp-content/uploads/Reclaiming_Lives_Luncheon_2023_TW3_6204.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail img-thumbnail img-thumbnail-contained wp-image-67554">
+										</a>
+									</div>
+									<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
+										<a href="https://centerstone.org/wp-content/uploads/Reclaiming_Lives_Luncheon_2023_TW3_6390.jpg" data-toggle="lightbox" data-gallery="ekko-lightbox">
+											<img src="https://centerstone.org/wp-content/uploads/Reclaiming_Lives_Luncheon_2023_TW3_6390.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail img-thumbnail img-thumbnail-contained wp-image-67596">
+										</a>
+									</div>
+									<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
+										<a href="https://centerstone.org/wp-content/uploads/2022-graduated-with-dr-linares.jpg" data-toggle="lightbox" data-gallery="ekko-lightbox">
+											<img src="https://centerstone.org/wp-content/uploads/2022-graduated-with-dr-linares.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail img-thumbnail img-thumbnail-contained wp-image-67054">
+										</a>
+									</div>
+									<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
+										<a href="https://centerstone.org/wp-content/uploads/Rose.jpg" data-toggle="lightbox" data-gallery="ekko-lightbox">
+											<img src="https://centerstone.org/wp-content/uploads/Rose.jpg" alt="Representative John Rose and Centerstone staff." width="150" height="150" class="size-thumbnail img-thumbnail img-thumbnail-contained wp-image-63239">
+										</a>
+									</div>
+									<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
+										<a href="https://centerstone.org/wp-content/uploads/cohenpride.jpg" data-toggle="lightbox" data-gallery="ekko-lightbox">
+											<img src="https://centerstone.org/wp-content/uploads/cohenpride.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail img-thumbnail img-thumbnail-contained wp-image-73194">
+										</a>
+									</div>
+									<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
+										<a href="https://centerstone.org/wp-content/uploads/Military-Connected-Womens-Day-at-the-Movies02.jpg" data-toggle="lightbox" data-gallery="ekko-lightbox">
+											<img src="https://centerstone.org/wp-content/uploads/Military-Connected-Womens-Day-at-the-Movies02.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail img-thumbnail img-thumbnail-contained wp-image-67108">
+										</a>
+									</div>
+									<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
+										<a href="https://centerstone.org/wp-content/uploads/A-Year-in-Review.jpg" data-toggle="lightbox" data-gallery="ekko-lightbox">
+											<img src="https://centerstone.org/wp-content/uploads/A-Year-in-Review.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail img-thumbnail img-thumbnail-contained wp-image-69206">
+										</a>
+									</div>
+									<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
+										<a href="https://centerstone.org/wp-content/uploads/mobile-cart-library-launch.jpg" data-toggle="lightbox" data-gallery="ekko-lightbox">
+											<img src="https://centerstone.org/wp-content/uploads/mobile-cart-library-launch.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail img-thumbnail img-thumbnail-contained wp-image-67060">
+										</a>
+									</div>
+									<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-3">
+										<a href="https://centerstone.org/wp-content/uploads/Snowball-Express-Disney-in-December-Event-02.jpg" data-toggle="lightbox" data-gallery="ekko-lightbox">
+											<img src="https://centerstone.org/wp-content/uploads/Snowball-Express-Disney-in-December-Event-02.jpg" alt="" width="150" height="150" class="alignnone size-thumbnail img-thumbnail img-thumbnail-contained wp-image-61018">
 										</a>
 									</div>
 								</div>
@@ -1690,7 +1845,7 @@
 	<!-- Include Bootstrap JS -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js" integrity="sha512-7rusk8kGPFynZWu26OKbTeI+QPoYchtxsmPeBqkHIEXJxeun4yJ4ISYe7C6sz9wdxeE1Gk3VxsIWgCZTc+vX3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<!-- Include Scrollify -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js" integrity="sha512-UyX8JsMsNRW1cYl8BoxpcamonpwU2y7mSTsN0Z52plp7oKo1u92Xqfpv6lOlTyH3yiMXK+gU1jw0DVCsPTfKew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js" integrity="sha512-UyX8JsMsNRW1cYl8BoxpcamonpwU2y7mSTsN0Z52plp7oKo1u92Xqfpv6lOlTyH3yiMXK+gU1jw0DVCsPTfKew==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 	<!-- Include AOS -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<!-- Include CountUp -->
