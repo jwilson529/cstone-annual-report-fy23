@@ -150,7 +150,6 @@
 
           // Search within this section
           section.find("li").each(function() {
-            console.log(section);
             if (!$(this).hasClass('heading')) {
               var name = $(this).text().toLowerCase().replace(/\s+/g, ' ').trim();
               if (name.includes(searchValue)) {
@@ -466,8 +465,6 @@
             modalBody.animate({
                 scrollTop: modalBody.scrollTop() + scrollDistance
             }, 1000); // Duration of the animation in milliseconds
-        } else {
-            console.log('Target element not found for ID:', sectionId);
         }
     });
 
@@ -609,7 +606,6 @@
     // Function to handle Scrollify navigation
     // function handleScrollifyNavigation() {
     //   $(document).on("click", ".nav-link", function(event) {
-    //     console.log('nav-link click');
 
     //     // Check if the window's width is greater than 992px
     //     if ($(window).width() > 992) {
@@ -657,9 +653,6 @@
     // Toggle sidebar visibility and adjust main content
     function toggleSidebar() {
       let windowWidth = $(window).width();
-      console.log('main-content: ' + $('.main-content').width());
-      console.log('combined-sections: ' + $('#combined-sections').width());
-      console.log('body: ' + $('body').width());
 
       let position = parseFloat($(".sidebar").css("right")); // Parse the value to a float
 
